@@ -1,0 +1,47 @@
+body {
+    margin: 10px 0 10px;
+    background-color: #d5965d;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #1f0706;
+    font-size: 35px;
+}
+
+.secao a:visited {
+    color: #d5965d;
+}
+
+.secao {
+    background-color: #1f0706;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.secao a{
+    text-decoration: none;
+}
+
+#slogan {
+    color: #611f0e;
+    font-size: 20px;
+}
+
+.texto-chamada {
+    color: #1f0706;
+    font-size: 20px;
+}
+
+.imagem-home-primaria {
+    width: 33%;
+    margin: 10px 15px;
+}
+
+.imagem-home {
+    width: 30%;
+    margin: 10px 15px;
+}

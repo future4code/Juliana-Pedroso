@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    background-color: #e3e3e3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    color: #200241;
+    font-size: 40px;
+    opacity: 0.9;
+    padding-right: 300px;
+}
+
+.principal {
+    background-color: #6136c5;
+    text-align: center;
+    padding: 20px;
+}
+
+.principal .foto-perfil {
+    float: left;
+    margin: 20px 0 0 100px;
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+}
+
+.o-que-faco { 
+    color: #e3e3e3;
+    opacity: 0.6;
+    font-size: 18px;
+    padding-left: 600px;
+}
+
+.navegacao {
+    font-size: 19px;
+    padding-right: 300px;
+}
+
+.navegacao a {
+    text-decoration: none;
+}
+
+.foto-perfil{
+    width: 220px;
+    height: 220px;
+}
+
+a {
+    color: #200241;
+    text-decoration: none;
+}
+
+#referencia {
+    color: #200241;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #e3e3e3;
+}
+
+p {
+    font-size: 20px;
+    text-align: justify;
+    margin: 10px 90px 10px 90px;
+    padding: 0 20px 0 20px;
+    
+}
+

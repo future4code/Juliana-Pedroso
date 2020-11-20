@@ -49,6 +49,15 @@ a:visited {
     color: #e3e3e3;
 }
 
+.experiencias .linhas {
+    border-color: #4200ff;
+}
+
+.linha {
+    width: 80px;
+    border-top: 2px solid;
+}
+
 .experiencias, .habilidades, .projetos {
     margin-left: 100px;
     list-style-type: none;

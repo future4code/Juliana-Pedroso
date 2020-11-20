@@ -1,0 +1,38 @@
+* {
+    margin: 10px 0 10px;
+}
+
+body {
+    color: grey;
+    background-color: #2a282e;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-align: left;
+}
+
+p {
+    color: grey;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.secao a:visited {
+    color: grey;
+}
+
+.secao {
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.secao a{
+    text-decoration: none;
+}
+
+.texto-funcionarios {
+    margin-left: 30px;
+}

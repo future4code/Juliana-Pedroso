@@ -5,13 +5,14 @@ body {
 }
 
 h1 {
-    color: #200241;
+    color: #2f0161;
     font-size: 40px;
-    opacity: 0.9;
+    font-weight: 900;
 }
 
-h2 {
-    margin-left: 750px;
+.texto-projeto {
+    text-align: center;
+    margin-left: 40px;
 }
 
 .principal {
@@ -23,47 +24,83 @@ h2 {
 .o-que-faco { 
     color: #e3e3e3;
     opacity: 0.6;
+    text-align: center;
     font-size: 18px;
-    padding-left: 400px;
+    padding: 0 0 8px 30px;
 }
 
 .navegacao {
-    font-size: 19px;
+    font-size: 15px;
     padding-left: 20px;
 }
 
 .navegacao a {
+    background-color: #2f0161;
+    color: #ffffff;
     text-decoration: none;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 2px 30px;
 }
 
-/* #link-visitador a:visited {
+#menu a:hover {
+    background-color: #b776dd;
+    transition: 300ms;
+}
+
+#link-visitador a:visited {
     color: #e3e3e3;
-} */
-
-p {
-    font-size: 20px;
-    text-align: justify;
-    margin: 10px 90px 10px 90px;
-    padding: 0 20px 0 20px;
-    
-}
-
-.lista-projetos {
-    align-items: center;
 }
 
 .programaria, .labenu {
-    margin-left: 300px;
-    width: 600px;
-    height: 300px;
+    width: 300px;
+    height: 150px;  
     display: block;
+}
+
+li a {
+    font-size: 16px;
+}
+
+a {
+    margin: 35px;
+    color: #6136c5;
+    font-weight: bold;
 }
 
 .lista-projetos {
     list-style: none;
-    margin-left: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 400px;
+    padding: 0 10px;
 }
 
 .lista-projetos a {
     text-decoration: none;
 }
+
+/* .imagem-contato {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+}
+
+footer {
+    background-color: #ffffff;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 8px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 2px;
+    font-size: 13px;
+} */
+

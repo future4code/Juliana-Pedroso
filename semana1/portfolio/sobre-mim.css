@@ -5,9 +5,9 @@ body {
 }
 
 h1 {
-    color: #200241;
+    color: #2f0161;
     font-size: 40px;
-    opacity: 0.9;
+    font-weight: 900;
     padding-right: 300px;
 }
 
@@ -27,17 +27,29 @@ h1 {
 .o-que-faco { 
     color: #e3e3e3;
     opacity: 0.6;
+    text-align: center;
     font-size: 18px;
-    padding-left: 430px;
+    padding: 0 220px 8px 0;
 }
 
 .navegacao {
-    font-size: 19px;
+    font-size: 15px;
     padding-right: 300px;
 }
 
 .navegacao a {
+    background-color: #2f0161;
+    color: #ffffff;
     text-decoration: none;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 2px 30px;
+}
+
+#menu a:hover {
+    background-color: #b776dd;
+    transition: 300ms;
 }
 
 .foto-perfil{
@@ -64,6 +76,28 @@ p {
     text-align: justify;
     margin: 10px 90px 10px 90px;
     padding: 0 20px 0 20px;
-    
+}
+
+.imagem-contato {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+}
+
+footer {
+    background-color: #ffffff;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 8px;
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* para rodapé, é importante usar o position: fixed + o width: 100% para que ocupe a linha toda */
+}
+
+footer p {
+    text-align: center;
+    margin-top: 2px;
+    font-size: 13px;
 }
 

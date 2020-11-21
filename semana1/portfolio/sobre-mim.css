@@ -28,7 +28,7 @@ h1 {
     color: #e3e3e3;
     opacity: 0.6;
     font-size: 18px;
-    padding-left: 400px;
+    padding-left: 430px;
 }
 
 .navegacao {
@@ -60,7 +60,7 @@ a:visited {
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     text-align: justify;
     margin: 10px 90px 10px 90px;
     padding: 0 20px 0 20px;

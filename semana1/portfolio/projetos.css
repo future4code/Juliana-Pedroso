@@ -6,13 +6,16 @@ body {
 
 h1 {
     color: #2f0161;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 900;
 }
 
-.texto-projeto {
-    text-align: center;
-    margin-left: 40px;
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 15px;
 }
 
 .principal {
@@ -25,12 +28,12 @@ h1 {
     color: #e3e3e3;
     opacity: 0.6;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     padding: 0 0 8px 30px;
 }
 
 .navegacao {
-    font-size: 15px;
+    font-size: 13px;
     padding-left: 20px;
 }
 
@@ -38,7 +41,7 @@ h1 {
     background-color: #2f0161;
     color: #ffffff;
     text-decoration: none;
-    border: 3px solid #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 20px;
     margin: 10px;
     padding: 2px 30px;
@@ -53,54 +56,45 @@ h1 {
     color: #e3e3e3;
 }
 
-.programaria, .labenu {
-    width: 300px;
-    height: 150px;  
-    display: block;
-}
-
-li a {
-    font-size: 16px;
+.texto-projeto {
+    text-align: center;
+    margin-left: 40px;
 }
 
 a {
-    margin: 35px;
+    margin-left: 70px;
     color: #6136c5;
     font-weight: bold;
+}
+
+.programaria, .labenu {
+    margin: 0;
+    width: 300px;
+    height: 150px;  
+    display: block;
+    padding: 20px;
 }
 
 .lista-projetos {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin: 0 400px;
-    padding: 0 10px;
+    margin: 0 300px;
 }
 
 .lista-projetos a {
     text-decoration: none;
 }
 
-/* .imagem-contato {
-    margin: 0;
-    width: 30px;
-    height: 30px;
-    padding: 3px;
+.bloco {
+    margin-left: 80px;
 }
 
-footer {
-    background-color: #ffffff;
-    font-weight: 500;
-    text-align: center;
-    padding-top: 8px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+li {
+    font-size: 14px;
 }
 
-footer p {
-    text-align: center;
-    margin-top: 2px;
-    font-size: 13px;
-} */
+li a {
+    font-size: 14px;
+}
 

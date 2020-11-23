@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    background-color: #e3e3e3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    color: #2f0161;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.principal {
+    background-color: #6136c5;
+    text-align: center;
+    padding: 20px;
+}
+
+.o-que-faco { 
+    color: #e3e3e3;
+    opacity: 0.6;
+    text-align: center;
+    font-size: 15px;
+    padding: 0 0 8px 30px;
+}
+
+.navegacao {
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.navegacao a {
+    background-color: #2f0161;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 2px 30px;
+}
+
+#menu a:hover {
+    background-color: #b776dd;
+    transition: 300ms;
+}
+
+#link-visitador a:visited {
+    color: #e3e3e3;
+}
+
+.texto-projeto {
+    text-align: center;
+    margin-left: 40px;
+}
+
+a {
+    margin-left: 70px;
+    color: #6136c5;
+    font-weight: bold;
+}
+
+.programaria, .labenu {
+    margin: 0;
+    width: 300px;
+    height: 150px;  
+    display: block;
+    padding: 20px;
+}
+
+.lista-projetos {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 300px;
+}
+
+.lista-projetos a {
+    text-decoration: none;
+}
+
+.bloco {
+    margin-left: 80px;
+}
+
+li {
+    font-size: 14px;
+}
+
+li a {
+    font-size: 14px;
+}
+

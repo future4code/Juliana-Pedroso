@@ -58,6 +58,10 @@ div img {
     text-align: center;
 }
 
+#container-de-descricao {
+    padding-top: 20px;
+}
+
 .icone {
     height: 15px;
 }

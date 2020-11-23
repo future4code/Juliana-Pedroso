@@ -65,6 +65,11 @@ button:hover {
     text-align: center;
 }
 
+.listagem {
+    list-style-type: decimal;
+    display: inline-block;
+}
+
 #container-de-descricao {
     padding-top: 60px;
 }

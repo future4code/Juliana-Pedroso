@@ -92,6 +92,9 @@ div img {
     font-size: 60px;
 }
 
+td {
+    text-align: center;
+}
 
 /**
   *

@@ -26,7 +26,8 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 50px;
+    height: 50px;
 }
 
 div>p:first-child {
@@ -34,7 +35,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: #ffffff;
 }
 
 .botao-amarelo {
@@ -47,6 +48,7 @@ div img {
     display: block;
     position: absolute;
     left: 40%;
+    margin-top: 100px;
 }
 
 .botao-amarelo:hover {
@@ -59,10 +61,11 @@ div img {
 }
 
 #container-de-descricao {
-    padding-top: 20px;
+    padding-top: 60px;
 }
 
 .icone {
+    width: 15px;
     height: 15px;
 }
 
@@ -90,11 +93,6 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
-}
-
-img {
-    width: 50px;
-    height: 50px;
 }
 
 td {

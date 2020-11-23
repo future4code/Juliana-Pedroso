@@ -73,6 +73,11 @@ button:hover {
     height: 15px;
 }
 
+td button {
+    border: none;
+    border-bottom: 2px solid;
+}
+
 
 /** 
   *

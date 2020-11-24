@@ -1,0 +1,170 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid;
+    height: 20px;
+    width: 500px;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+div>p:first-child {
+    display: inline;
+}
+
+div img {
+    background: #ffffff;
+}
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    display: block;
+    position: absolute;
+    left: 40%;
+    margin-top: 100px;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+button:hover {
+    background-color: #fe7e02;
+}
+
+.container {
+    height: 500px;
+    text-align: center;
+}
+
+.listagem {
+    list-style-type: decimal;
+    display: inline-block;
+}
+
+#container-de-descricao {
+    padding-top: 60px;
+}
+
+.icone {
+    width: 15px;
+    height: 15px;
+}
+
+td button {
+    border: none;
+    border-bottom: 2px solid;
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+}
+
+#container-de-descricao>ol {
+    padding: 15px 0px;
+}
+
+#container-para-comprar {
+    background-color: #e7eb90;
+}
+
+#container-para-comprar>p {
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+}
+
+td {
+    text-align: center;
+}
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 60%;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+
+#back-button {
+    margin: 200px 0 0 640px;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+.icone:hover {
+    opacity: 0.7;
+}
+
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+}
+
+#back-button:hover {
+    background-color: #635a3d
+}

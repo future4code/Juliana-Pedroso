@@ -14,10 +14,11 @@
 
     <header>
         <h1>LabeTube</h1>
-        <!-- <img id="icon-play" src="./img/icon-play.jpg" alt="Ícone vermelho de Play"> -->
+        <img id="icon-play" src="./img/icon-play.jpg" alt="Ícone vermelho de Play">
 
         <div id="search">
-            <input id="text-search" type="text" placeholder="Pesquisar vídeo"> 
+            <label for="text-search"></label>
+            <input id="text-search" type="text" placeholder="Pesquisar vídeo" required> 
             <button id="button-search">Buscar</button>
         </div>
     
@@ -25,45 +26,61 @@
 
 
     <main id="main-container">
-        <article class="block-video">Vídeo 1</article>
+        <div class="display">
+            <article class="block-video"><a href="./videos.html">Receita 4 Patês</a></article>
             <div><img class="image" src="./img/receita-4pates.png" alt="Receita de 4 patês"></div>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
         
-        <article class="block-video">Vídeo 2</article>
-            <div><img class="image" src="./img/receita-strogonoff.png" alt="Receita de receita strogonoff vegetariano"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video"><a href="./videos.html">Receita Strogonoff Vegetariano</a></article>
+                <div><img class="image" src="./img/receita-strogonoff.png" alt="Receita de receita strogonoff vegetariano"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
-        <article class="block-video">Vídeo 3</article>
-            <div><img class="image" src="./img/receita-batatarosti.jpg" alt="Receita de batata rosti"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video"><a href="./videos.html">Receita Batata Rosti Vegana</a></article>
+                <div><img class="image" src="./img/receita-batatarosti.jpg" alt="Receita de batata rosti vegana"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
-        <article class="block-video">Vídeo 4</article>
-            <div><img class="image" src="./img/receita-bolinha-de-queijo.jpg" alt="Receita de bolinha de queijo"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video">Receita Bolinha de Queijo</article>
+                <div><img class="image" src="./img/receita-bolinha-de-queijo.jpg" alt="Receita de bolinha de queijo"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
-        <article class="block-video">Vídeo 5</article>
-            <div><img class="image" src="./img/receita-panqueca.png" alt="Receita de panqueca"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video">Receita Panqueca Fofinha</article>
+                <div><img class="image" src="./img/receita-panqueca.png" alt="Receita de panqueca"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
-        <article class="block-video">Vídeo 6</article>
-            <div><img class="image" src="./img/receita-paozinho.png" alt="Receita de pãozinho frito"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video">Receita Pãozinho Frito</article>
+                <div><img class="image" src="./img/receita-paozinho.png" alt="Receita de pãozinho frito"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
-        <article class="block-video">Vídeo 7</article>
-            <div><img class="image" src="./img/receita-pate.jpg" alt="Receita de pate de azeitona"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video">Receita Patê de Azeitona</article>
+                <div><img class="image" src="./img/receita-pate.jpg" alt="Receita de pate de azeitona"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
-        <article class="block-video">Vídeo 8</article>
-            <div><img class="image" src="./img/receita-batata-frita.png" alt="Receita de batata frita"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        <div class="display">
+            <article class="block-video">Receita Batata Frita Gourmet</article>
+                <div><img class="image" src="./img/receita-batata-frita.png" alt="Receita de batata frita"></div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repudiandae!</p>
+        </div>
 
     </main>
 
     <footer>
         <p>Cadastre-se na Newslatter:</p>
-        <br>
-        <input type="email">
-        <input type="submit">
+        <label for="form-email"></label>
+        <input id="form-email" type="email" placeholder="Seu e-mail" required>
+        <input id="button-submit" type="submit">
     </footer>
     
 </body>

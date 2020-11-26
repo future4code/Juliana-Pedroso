@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: red;
+    border: 1px solid red;
+    height: 10vh;
+}
+
+.box-primary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: repeat(3, 1fr);
+    grid-column-gap: 2vh;
+    grid-row-gap: 2vh;
+    margin: 2vh;
+}
+
+.box-blue {
+    background-color: blue;
+    display: grid;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.box-yellow {
+    background-color: yellow;
+    display: grid;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.box-green {
+    background-color: green;
+    display: grid;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.box-secundary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 2vh;
+    grid-row-gap: 2vh;
+    margin: 2vh;
+}
+
+.box-black {
+    background-color: black;
+    color: white;
+    display: grid;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.box-tertiary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 2vh;
+    grid-row-gap: 2vh;
+    margin: 2vh;
+}
+
+.box-white {
+    background-color: white;
+    display: grid;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 420px) {
+    .box-primary {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .box-secundary {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .box-tertiary {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 800px) {
+    .box-primary, .box-secundary, .box-tertiary {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+
+
+    .box-blue, .box-yellow, .box-black {
+        width: 50%;
+
+    }
+    
+}

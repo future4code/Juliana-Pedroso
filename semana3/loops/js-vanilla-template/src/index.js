@@ -9,13 +9,11 @@ e no final, ele soma o resultado com seu próprio valor, totalizando 10 */
 a. O que vai ser impresso no console?
 >> este código está verificando os números no array que são maiores do que 18 e imprimindo na tela [19, 20, 21, 23, 25, 27, 30]
 
-b. Se eu quisesse acessar o índice de cada elemento dessa lista, o for...of... é suficiente? Se sim, o que poderia ser usado para fazer isso?*/
-// !!!!!const lista = [10, 11, 12, 15, 18, 19, 21, 23, 25, 27, 30]
-// let num = 0
+b. Se eu quisesse acessar o índice de cada elemento dessa lista, o for...of... é suficiente? Se sim, o que poderia ser usado para fazer isso?
+>> para acessar o índice, preciso incluir no console.log:
 
-// for (let num of lista) {
-//     console.log(lista + num[0])
-//     num ++
+// for(i = 0; i < lista.length; i++){
+//     console.log(i, lista[i])
 // }
 
 
@@ -43,31 +41,37 @@ b. Se eu quisesse acessar o índice de cada elemento dessa lista, o for...of... 
 
 // c. 
 // const arrayOriginal = [0, 17, 19, 6, 83, 10]
+// const novoArray = []
+
 // for(let numero of arrayOriginal) {
 //     if(numero % 2 === 0) {
-//         console.log(numero)
+//         novoArray.push(numero)
 //     }
 // }
 
+// console.log(novoArray)
+
 // d. 
 // const arrayOriginal = [0, 17, 19, 6, 83, 10]
-//     console.log("O elemento do index", [0], "é: ", arrayOriginal[0])
-//     console.log("O elemento do index", [1], "é: ", arrayOriginal[1])
-//     console.log("O elemento do index", [2], "é: ", arrayOriginal[2])
-//     console.log("O elemento do index", [3], "é: ", arrayOriginal[3])
-//     console.log("O elemento do index", [4], "é: ", arrayOriginal[4])
-//     console.log("O elemento do index", [5], "é: ", arrayOriginal[5])
+// for(i = 0; i < arrayOriginal.length; i++){
+//     console.log("Elemento ", i, " = ", arrayOriginal[i])
+// }
+
 
 // e.
 // const arrayOriginal = [0, 17, 19, 6, 83, 10]
-// let maior = 0
+// let maior = arrayOriginal[0]
+// let menor = arrayOriginal[0]
 
 // for(let i = 0; i < arrayOriginal.length; i++){
-//   if (arrayOriginal[i] > maior){
+//   if(arrayOriginal[i] > maior){
 //     maior = arrayOriginal[i]
+//   } else if (arrayOriginal[i] < menor){
+//     menor = arrayOriginal[i]
 //   }
 // }
-// console.log("O número maior é: ", maior)
+
+// console.log("O maior número é: ", maior, "e o menor número é: ", menor)
 
 // DESAFIO 2
 

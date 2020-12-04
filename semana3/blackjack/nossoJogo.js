@@ -17,6 +17,8 @@ let cartaUsuario2 = []
 
 
  if(confirm("Quer iniciar uma nova rodada?")){
+    // o que fazer se o usuário clicar em "ok"
+
     const cartaUsuario1 = comprarCarta()
     const cartaUsuario2 = comprarCarta()
     const pontuacaoUsuario = cartaUsuario1.valor + cartaUsuario2.valor
@@ -36,6 +38,7 @@ let cartaUsuario2 = []
     }
     
  } else {
+    // o que fazer se o usuário clicar em "cancelar"
       console.log("O jogo acabou!")
  }
 

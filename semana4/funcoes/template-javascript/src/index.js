@@ -50,6 +50,7 @@
 
 // b. Agora escreva uma função que receba 4 parâmetros que correspondem às informações de uma pessoa: o nome (string), a idade (number), a cidade (string) e um boolean que representa se é estudante ou não. Ela deve retornar uma string que unifique todas as informações da pessoa em uma só mensagem:
 // function informaSobreMim (nome, idade, cidadeAtual, ocupacaoEstudante, livroPredileto){
+
 //    console.log("Eu me chamo", nome + ",", "tenho", idade, "anos,", "moro em", cidadeAtual, "e sou", ocupacaoEstudante + ".", "Meu livro predileto é:", livroPredileto)
 // }
 // informaSobreMim("Juliana", 27, "São Paulo", "estudante da Labenu", "Meu Pé de Laranja Lima")

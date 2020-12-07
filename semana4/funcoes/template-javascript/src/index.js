@@ -102,23 +102,22 @@
 // b. Escreva uma função que receba um número e devolva um booleano indicando se ele é par ou não:
 // function verificaArrayPar (meuArray){
 //     if (meuArray % 2 === 0){
-//         const par = true
-//         return par
+//         return true
 //     } else {
-//         const impar = false
-//         return impar
+//         return false
 //     }
 // }
-// console.log(verificaArrayPar([12]))
+// console.log(verificaArrayPar([13]))
 
 // c. Escreva uma função que receba um array de números e devolva a quantidade de números pares dentro dele:
-// function verificaNumerosPares(meuArray){
-//     if (meuArray % 2 === 0){
 
-//         console.log(meuArray)
-//     } else {
-//         console.log(meuArray)
+// const array = [10, 23, 30, 77, 90]
+
+// function verificaNumerosPares(){
+    
+//     for(let i = 0; i < array.length; i++){
+//         if(i % 2 === 0)
+//         console.log(array[i])
 //     }
 // }
-// const meuArray = [1, 3, 4, 6, 13, 21, 30]
-// verificaNumerosPares(meuArray)
+// verificaNumerosPares()

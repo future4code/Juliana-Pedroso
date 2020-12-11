@@ -171,3 +171,5 @@
 // EXERCÍCIO 1.
 
 // >> objetos é uma forma de organizar melhor e de forma mais concisa os conteúdos das variáveis
+// >> arrays é um tipo de dado e eles armazenam dados
+

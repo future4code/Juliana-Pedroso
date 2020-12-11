@@ -106,3 +106,18 @@
 //         i++
 //     }
 
+// EXERCÍCIO 4.
+
+// let ladosIguais
+
+// function qualTipoDeTriangulo(a, b, c){
+//     if(ladosIguais === a, b, c){
+//         console.log("Equilátero")
+//     } else if(ladosIguais === a, b){
+//         console.log("Isósceles")
+//     } else {
+//         console.log("Escaleno")
+//     }
+// }
+
+// console.log(qualTipoDeTriangulo(1, 1, 1))

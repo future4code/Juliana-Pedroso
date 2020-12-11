@@ -216,3 +216,35 @@
 
 // console.log(anonimizarPessoa())
 
+
+// Exercícios de Arrays
+
+// EXERCÍCIO 1.
+
+// a.
+// const nomeEIdade = [
+//  { nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// const somenteAdultos = nomeEIdade.filter((nomeEIdade) => {
+//     return nomeEIdade.idade >= 20
+// })
+
+// console.log(somenteAdultos)
+
+// b. 
+// const nomeEIdade = [
+//     { nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// const somenteCriancasEJovens = nomeEIdade.filter((nomeEIdade) => {
+//     return nomeEIdade.idade < 20
+// })
+
+// console.log(somenteCriancasEJovens)

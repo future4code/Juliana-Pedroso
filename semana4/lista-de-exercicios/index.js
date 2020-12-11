@@ -96,3 +96,13 @@
 
 // e. !(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)
 // >> true
+
+// EXERCÍCIO 3.
+
+// let quantidadeDeNumerosPares = 3
+// let i = 0
+//     while(i < quantidadeDeNumerosPares){
+//         console.log(i * 2)
+//         i++
+//     }
+

@@ -173,3 +173,15 @@
 // >> objetos é uma forma de organizar melhor e de forma mais concisa os conteúdos das variáveis
 // >> arrays é um tipo de dado e eles armazenam dados
 
+// EXERCÍCIO 2.
+
+// function criarRetangulo (lado1, lado2){
+//     return {
+//         largura: lado1,
+//         altura: lado2,
+//         perimetro: 2 * (lado1 * lado2),
+//         area: lado1 * lado2
+//     }
+// }
+
+// console.log(criarRetangulo(10, 4))

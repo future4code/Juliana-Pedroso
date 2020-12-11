@@ -149,6 +149,7 @@
 // Exercícios de Funções
 
 // EXERCÍCIO 1.
+
 // let numerosArray = [2, 3, 5, 8, 10, 23]
 
 // function maioresEmenores(){
@@ -187,6 +188,7 @@
 // console.log(criarRetangulo(10, 4))
 
 // EXERCÍCIO 3.
+
 //  const filmePredileto = {
 //      titulo: "Milagre na Cela 7",
 //      ano: 2019,
@@ -195,3 +197,22 @@
 //  }
 
 //  console.log(`Venha assistir ao filme ${filmePredileto.titulo}, ano de lançamento: ${filmePredileto.ano}, dirigido por: ${filmePredileto.diretor} e estrelado por: ${filmePredileto.atoresEAtrizes}`)
+
+// EXERCÍCIO 4.
+
+// const caracteristicasPessoaAleatoria = {
+//     nome: "Camila Moraes",
+//     idade: 35,
+//     email: "camila.moraes@gmail.com",
+//     endereco: "Ruas das Oliveias, 57. Praça Profº Antunes Gonzaga. São Paulo"
+// }
+
+// function anonimizarPessoa(novaPessoa){
+//     return {
+//         ...novaPessoa,
+//         nome: "ANÔNIMO"
+//     }
+// }
+
+// console.log(anonimizarPessoa())
+

@@ -1,4 +1,5 @@
 /* -------- LISTA DE EXERCÍCIOS -------- */
+
 // Exercícios de interpretação de código
 
 // EXERCÍCIO 1.
@@ -43,3 +44,38 @@
 // >> e segundo if ele vai verificar se a nova variavel let numero é maior do que a variável let numero2
 // se true, o valor da let numero2, recebe o valor do maior número do array
 // por fim, o console.log imprime o novo valor de numero1 e numero2, respectivamente
+
+
+// Exercícios de Lógica de Programação
+
+// EXERCÍCIO 1.
+
+// >> podemos percorrer um array usando laços: while, for e for of
+// while:
+// let i = 10
+//     while(i <= 15){
+//         console.log(i)
+//         i++
+//     }
+
+// for:
+//  const frutas = ["morango", "kiwi", "abacate", "maçã", "melão"]
+//     for(let i = 0; i < frutas.length; i++){
+//         console.log(frutas[i])
+//     }
+
+// for of:
+// const numeros = [10, 11, 13, 15, 2, 26]
+// const numerosPares = []
+// const numerosImpares = []
+
+//     for(let numero of numeros){
+//         if(numero % 2 === 0){
+//             numerosPares.push(numero)
+//         } else {
+//             numerosImpares.push(numero)
+//         }
+//     }
+
+// console.log("Números pares: ", numerosPares)
+// console.log("Números ímpares: ", numerosImpares)

@@ -23,11 +23,23 @@
 
 // EXERCÍCIO 3.
 
-// const numeros está recebendo um array de vários números
-// const array1 e const array2 recebem como valor [] vazio
-// ao loop for of vai armazenar em uma variável let numero os números que passarão pela condional if
-// a condicional if verifica os números pares e se verdadeiro, guarda dentro da const array1
-// caso contrário, guarda os números dentro da const array2
-// o primeiro console.log vai imprimir a mensagem "Quantidade total de números" seguida do tamanho do array original
-// o segundo console.log vai imprimir o tamanho da const array1
-// e o terceiro console.log vai imprimir o tamanho da const array2
+// >> const numeros está recebendo um array de vários números
+// >> const array1 e const array2 recebem como valor [] vazio
+// >> o loop for of vai armazenar em uma variável let numero os números que passarão pela condional if
+// >> a condicional if verifica os números pares e se verdadeiro, guarda dentro da const array1
+// >> caso contrário, guarda os números dentro da const array2
+// >> o primeiro console.log vai imprimir a mensagem "Quantidade total de números" seguida do tamanho do array original
+// >> o segundo console.log vai imprimir o tamanho da const array1
+// >> e o terceiro console.log vai imprimir o tamanho da const array2
+
+// EXERCÍCIO 4.
+
+// >> const numeros está recebendo um array de vários números
+// >> a variável let numero1 está recebendo um valor "Infinity"
+// >> a variável let numero2 está recebendo um valor 0 
+// >> o loop for of vai armazenar em uma variável let numero os números que passarão pela condicional if
+// >> a condional if vai verificar se a nova variável let numero é menor do que a variável let numero1
+// >> se true, o valor da let numero1, recebe o valor do menor número do array
+// >> e segundo if ele vai verificar se a nova variavel let numero é maior do que a variável let numero2
+// se true, o valor da let numero2, recebe o valor do maior número do array
+// por fim, o console.log imprime o novo valor de numero1 e numero2, respectivamente

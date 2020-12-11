@@ -164,3 +164,10 @@
 // }
 
 // mensagem()
+
+
+// Exercícios de Objetos
+
+// EXERCÍCIO 1.
+
+// >> objetos é uma forma de organizar melhor e de forma mais concisa os conteúdos das variáveis

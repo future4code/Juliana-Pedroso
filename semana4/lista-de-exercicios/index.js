@@ -144,3 +144,23 @@
 // } else {
 //     console.log(`A diferença entre eles é de: ${segundoNumero - primeiroNumero}`)
 // }
+
+
+// Exercícios de Funções
+
+// EXERCÍCIO 1.
+// let numerosArray = [2, 3, 5, 8, 10, 23]
+
+// function maioresEmenores(){
+//     for(let i = numerosArray.length; i > 1; i--){
+//         console.log(numerosArray)
+//     }
+// }
+
+// EXERCÍCIO 2. 
+
+// let mensagem = (dizSaudacao) =>{
+//     alert("Hello, Labenu")
+// }
+
+// mensagem()

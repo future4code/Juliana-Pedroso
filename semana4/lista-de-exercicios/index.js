@@ -248,3 +248,13 @@
 // })
 
 // console.log(somenteCriancasEJovens)
+
+// EXERCÍCIO 2.
+
+// const array = [1, 2, 3, 4, 5, 6]
+
+// function numerosMultiplicadosPorDois(){
+//     return (array * 2)
+// }
+
+// console.log(numerosMultiplicadosPorDois())

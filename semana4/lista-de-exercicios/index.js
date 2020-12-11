@@ -20,3 +20,14 @@
 // >> a const segundoMontante armazena a função investeDinheiro e no caso do "Tesouro Direto", multiplica o valor por 200
 // >> por fim, o console.log imprime o resultado do novoMontante e do segundoMontante, respectivamente
 // >> como não existe um case para "Tesouro Direto", o console do segundoMontante vai ser impresso como undefined e alert vai ser acionado
+
+// EXERCÍCIO 3.
+
+// const numeros está recebendo um array de vários números
+// const array1 e const array2 recebem como valor [] vazio
+// ao loop for of vai armazenar em uma variável let numero os números que passarão pela condional if
+// a condicional if verifica os números pares e se verdadeiro, guarda dentro da const array1
+// caso contrário, guarda os números dentro da const array2
+// o primeiro console.log vai imprimir a mensagem "Quantidade total de números" seguida do tamanho do array original
+// o segundo console.log vai imprimir o tamanho da const array1
+// e o terceiro console.log vai imprimir o tamanho da const array2

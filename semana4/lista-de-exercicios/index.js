@@ -185,3 +185,13 @@
 // }
 
 // console.log(criarRetangulo(10, 4))
+
+// EXERCÍCIO 3.
+//  const filmePredileto = {
+//      titulo: "Milagre na Cela 7",
+//      ano: 2019,
+//      diretor: "Mehmet Ada Öztekin",
+//      atoresEAtrizes: ["Aras Bulut İynemli", " Cankat Aydos", " Celile Toyon Uysal", " Deniz Baysal"],
+//  }
+
+//  console.log(`Venha assistir ao filme ${filmePredileto.titulo}, ano de lançamento: ${filmePredileto.ano}, dirigido por: ${filmePredileto.diretor} e estrelado por: ${filmePredileto.atoresEAtrizes}`)

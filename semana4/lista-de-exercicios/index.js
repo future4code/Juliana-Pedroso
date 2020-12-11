@@ -121,3 +121,26 @@
 // }
 
 // console.log(qualTipoDeTriangulo(1, 1, 1))
+
+// EXERCÍCIO 5.
+
+// const primeiroNumero = Number(prompt("Digite um número!"))
+// const segundoNumero = Number(prompt("Digite outro número!"))
+
+// if(primeiroNumero > segundoNumero){
+//     console.log(`O primeiro número que é: ${primeiroNumero} é maior`)
+// } else {
+//     console.log(`O segundo número que é: ${segundoNumero} é maior`)
+// }
+
+// if(primeiroNumero / segundoNumero % 2 === 0){
+//     console.log(`${primeiroNumero} é divisível por ${segundoNumero}`)
+// } else {
+//     console.log(`${primeiroNumero} não é divisível por ${segundoNumero}`)
+// }
+
+// if(primeiroNumero >= segundoNumero){
+//     console.log(`A diferença entre eles é de: ${primeiroNumero - segundoNumero}`)
+// } else {
+//     console.log(`A diferença entre eles é de: ${segundoNumero - primeiroNumero}`)
+// }

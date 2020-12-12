@@ -316,3 +316,20 @@
 // })
 
 // console.log(pessoasNaoAutorizadas)
+
+// EXERCÍCIO 4. 
+
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+
+// const disparaEmail = consultas.filter((consultas) => {
+//     if(consultas.cancelada === true){
+//         console.log(`Olá, Sr(a). ${consultas.nome}! Estamos enviando esta mensagem para lembrá-lo(a) da sua consulta no dia ${consultas.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`)
+//     } else {
+//         console.log(`Olá, Sr(a). ${consultas.nome}! Infelizmente sua consulta marcada para o dia ${consultas.dataDaConsulta} foi cancelada. Caso queira, pode entrar em contato conosco para remarcá-la`) 
+//     }
+// })

@@ -237,7 +237,7 @@
 
 // b. 
 // const nomeEIdade = [
-//     { nome: "Pedro", idade: 20 },
+//  { nome: "Pedro", idade: 20 },
 // 	{ nome: "João", idade: 10 },
 // 	{ nome: "Paula", idade: 12 },
 // 	{ nome: "Artur", idade: 89 } 
@@ -251,6 +251,7 @@
 
 // EXERCÍCIO 2.
 
+// a.
 // const array = [1, 2, 3, 4, 5, 6]
 
 // const numerosMultiplicadosPorDois = array.map((numero) => {
@@ -258,4 +259,60 @@
 // })
 
 // console.log(numerosMultiplicadosPorDois)
-    
+ 
+// b. 
+// const array = [1, 2, 3, 4, 5, 6]
+
+// const numerosMultiplicadosPorTres = array.map((numero) => {
+//     const resultado = 3 * numero
+//     return resultado.toString()
+// })
+
+// console.log(numerosMultiplicadosPorTres)
+
+// c.
+// const array = [1, 2, 3, 4, 5, 6]
+
+// const parOuImpar = array.map((numero) => {
+//     if(numero % 2 === 0) {
+//         return numero + " = par"
+//     } else {
+//         return numero + " = ímpar"
+//     }
+// })
+
+// console.log(parOuImpar)
+
+// EXERCÍCIO 3. 
+
+// a.
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ]
+
+// const pessoasAutorizadas = pessoas.filter((pessoas) => {
+//     return pessoas.altura >= 1.5 && pessoas.idade > 14 && pessoas.idade < 60
+// })
+
+// console.log(pessoasAutorizadas)
+
+// b. 
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ]
+
+// const pessoasNaoAutorizadas = pessoas.filter((pessoas) => {
+//     return pessoas.altura < 1.5 || pessoas.idade < 14 || pessoas.idade >= 60
+// })
+
+// console.log(pessoasNaoAutorizadas)

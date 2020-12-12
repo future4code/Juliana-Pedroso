@@ -253,8 +253,9 @@
 
 // const array = [1, 2, 3, 4, 5, 6]
 
-// function numerosMultiplicadosPorDois(){
-//     return (array * 2)
-// }
+// const numerosMultiplicadosPorDois = array.map((numero) => {
+//     return 2 * numero
+// })
 
-// console.log(numerosMultiplicadosPorDois())
+// console.log(numerosMultiplicadosPorDois)
+    

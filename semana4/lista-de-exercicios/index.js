@@ -333,3 +333,24 @@
 //         console.log(`Olá, Sr(a). ${consultas.nome}! Infelizmente sua consulta marcada para o dia ${consultas.dataDaConsulta} foi cancelada. Caso queira, pode entrar em contato conosco para remarcá-la`) 
 //     }
 // })
+
+// EXERCÍCIO 5.
+
+// const contas = [
+// 	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+// 	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+// 	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+// 	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+// 	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+// 	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+// ]
+
+// contas[0].saldoTotal = 1000 - 600
+// contas[1].saldoTotal = 7500 - 1240
+// contas[2].saldoTotal = 10000 - 13340
+// contas[3].saldoTotal = 100 - 2000
+// contas[4].saldoTotal = 1800 - 500
+// contas[5].saldoTotal = 1200 - 0
+
+// contas.forEach
+// console.log(contas)

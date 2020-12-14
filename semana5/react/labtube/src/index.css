@@ -1,0 +1,137 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #030303;
+  font-size: 14px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-weight: 770;
+}
+
+h4 {
+  padding: 0;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #030303;
+}
+
+.tela-inteira {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 10%;
+}
+
+main {
+  min-height: 80%;
+  display: flex;
+}
+
+.menu-vertical {
+  flex-basis: 200px;
+  border-right-style: solid;
+  border-right-width: thin;
+}
+
+.botoes-meunu-vertical {
+  list-style-type: none;
+}
+
+.painel-de-videos {
+  padding-left: 20px;
+  padding-top: 20px;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 23.7% 0.2%);
+  grid-column-gap: 0.3vw;
+  grid-template-rows: repeat(2, 242px 10px);
+}
+
+.media1 {
+  background-color: white;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.media2 {
+  background-color: white;
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.media3 {
+  background-color: white;
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+.media4 {
+  background-color: white;
+  grid-column-start: 7;
+  grid-row-start: 1;
+}
+
+.media5 {
+  background-color: white;
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.media6 {
+  background-color: white;
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+
+.media7 {
+  background-color: white;
+  grid-column-start: 5;
+  grid-row-start: 3;
+}
+
+.media8 {
+  background-color: white;
+  grid-column-start: 7;
+  grid-row-start: 3;
+}
+
+.box-pagina-principal {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr;
+  border-style: solid;
+  border-width: thin; 
+  align-items: start;
+  justify-items: stretch;
+}
+
+footer {
+  height: 6%;
+  width: 100%;
+  background-color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.box-pagina-principal > img {
+  width: 100%;
+  height: 200px;
+}
+

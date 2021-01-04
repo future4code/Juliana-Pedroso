@@ -1,0 +1,33 @@
+.smallcard-container {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    border: 1px solid black;
+    padding: 20px 30px 20px 10px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+
+.smallcard-container > img {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.smallcard-container h4 {
+    background-color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.smallcard-container > div {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+}
+
+.smallcard-container > div > p {
+    background-color: #ffffff;
+    margin-left: 5px;
+}

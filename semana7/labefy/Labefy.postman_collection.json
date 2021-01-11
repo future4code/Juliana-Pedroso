@@ -232,7 +232,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Canção Infantil\",\r\n    \"artist\": \"Cesar Mc\",\r\n    \"url\": \"https://www.youtube.com/watch?v=Ri-eF5PJ2X0&ab_channel=PineappleStormTV\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Canção Infantil\",\r\n    \"artist\": \"Cesar Mc\",\r\n    \"url\": \"http://spoti4.future4.com.br/1.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -271,7 +271,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Não Existe Amor em SP\",\r\n    \"artist\": \"Renato Enoch\",\r\n    \"url\": \"https://www.youtube.com/watch?v=r7fYQDZNmU8&ab_channel=RenatoEnoch\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Não Existe Amor em SP\",\r\n    \"artist\": \"Renato Enoch\",\r\n    \"url\": \"http://spoti4.future4.com.br/2.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -310,7 +310,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Poesia Acústica #3\",\r\n    \"artist\": [\"Sant\", \"Tiago Mac\", \"Lord\", \"Choice\"],\r\n    \"url\": \"https://www.youtube.com/watch?v=DjNqxTODmuc&ab_channel=PineappleStormTV\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Poesia Acústica #3\",\r\n    \"artist\": [\"Sant\", \"Tiago Mac\", \"Lord\", \"Choice\"],\r\n    \"url\": \"http://spoti4.future4.com.br/3.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -349,7 +349,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"AmarElo\",\r\n    \"artist\": [\"Belchior\", \"Emicida\", \"Majur\", \"Pabllo Vittar\"],\r\n    \"url\": \"https://www.youtube.com/watch?v=PTDgP3BDPIU&ab_channel=Emicida\"\r\n}",
+					"raw": "{\r\n    \"name\": \"AmarElo\",\r\n    \"artist\": [\"Belchior\", \"Emicida\", \"Majur\", \"Pabllo Vittar\"],\r\n    \"url\": \"http://spoti4.future4.com.br/4.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -388,7 +388,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Sweet Dreams\",\r\n    \"artist\": \"Besomorph\",\r\n    \"url\": \"https://www.youtube.com/watch?v=ouFa5lCI5oQ&ab_channel=TrapCity\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Sweet Dreams\",\r\n    \"artist\": \"Besomorph\",\r\n    \"url\": \"http://spoti4.future4.com.br/5.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -427,7 +427,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Spectrum\",\r\n    \"artist\": \"Inzo\",\r\n    \"url\": \"https://www.youtube.com/watch?v=pr6uq6F8L58&ab_channel=RenatoEnochRenatoEnochCanaloficialdoartista\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Spectrum\",\r\n    \"artist\": \"Inzo\",\r\n    \"url\": \"http://spoti4.future4.com.br/6.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -466,7 +466,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Best Part\",\r\n    \"artist\": \"H.E.R\",\r\n    \"url\": \"https://www.youtube.com/watch?v=vBy7FaapGRo&ab_channel=HERMusicVEVO\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Best Part\",\r\n    \"artist\": \"H.E.R\",\r\n    \"url\": \"http://spoti4.future4.com.br/7.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -505,7 +505,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Body Part\",\r\n    \"artist\": \"Ciara\",\r\n    \"url\": \"https://www.youtube.com/watch?v=B9rSBcoX9ak&ab_channel=CiaraVEVO\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Body Part\",\r\n    \"artist\": \"Ciara\",\r\n    \"url\": \"http://spoti4.future4.com.br/8.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -544,7 +544,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Labirinto\",\r\n    \"artist\": \"Muse Maya\",\r\n    \"url\": \"https://www.youtube.com/watch?v=lTnaLqfYIn0&ab_channel=MUSEMAYA\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Labirinto\",\r\n    \"artist\": \"Muse Maya\",\r\n    \"url\": \"http://spoti4.future4.com.br/9.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -583,7 +583,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Pearls\",\r\n    \"artist\": \"Samantha Gongol\",\r\n    \"url\": \"https://www.youtube.com/watch?v=K9GLdygS8YI&ab_channel=SamanthaGongol-Topic\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Pearls\",\r\n    \"artist\": \"Samantha Gongol\",\r\n    \"url\": \"http://spoti4.future4.com.br/10.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -622,7 +622,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Could've Been\",\r\n    \"artist\": \"H.E.R\",\r\n    \"url\": \"https://www.youtube.com/watch?v=4hYCmPBlmwc&ab_channel=HERMusicVEVO\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Could've Been\",\r\n    \"artist\": \"H.E.R\",\r\n    \"url\": \"http://spoti4.future4.com.br/11.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -661,7 +661,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Bem\",\r\n    \"artist\": \"Chapéu de Palha\",\r\n    \"url\": \"https://www.youtube.com/watch?v=4Oxrpd84GTo&ab_channel=Chap%C3%A9udePalha\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Bem\",\r\n    \"artist\": \"Chapéu de Palha\",\r\n    \"url\": \"http://spoti4.future4.com.br/12.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -700,7 +700,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Seu Olhar\",\r\n    \"artist\": \"Seu Jorge\",\r\n    \"url\": \"https://www.youtube.com/watch?v=drla1-GbmAs&ab_channel=sensatez\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Seu Olhar\",\r\n    \"artist\": \"Seu Jorge\",\r\n    \"url\": \"http://spoti4.future4.com.br/13.mp3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -983,7 +983,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ff37eb0b-c7ab-4424-a999-38452d7f0f57/tracks/11726d43-5890-43ed-879d-7b6db9d8e03b",
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ff37eb0b-c7ab-4424-a999-38452d7f0f57/tracks/eeb261ac-ba05-43ee-9cc4-d4900add9b5d",
 					"protocol": "https",
 					"host": [
 						"us-central1-labenu-apis",
@@ -995,7 +995,7 @@
 						"playlists",
 						"ff37eb0b-c7ab-4424-a999-38452d7f0f57",
 						"tracks",
-						"11726d43-5890-43ed-879d-7b6db9d8e03b"
+						"eeb261ac-ba05-43ee-9cc4-d4900add9b5d"
 					]
 				},
 				"description": "Esta requisição serve para deletar alguma música de alguma playlist."

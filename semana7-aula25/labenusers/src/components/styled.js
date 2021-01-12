@@ -32,14 +32,19 @@ export const InputBox = styled.input`
 `;
 
 export const ButtonSave = styled.button`
-  background-color: #2d3058;
+  background-color: darkblue;
   color: #fff;
+  border-radius: 3px;
+  font-weight: 600;
   height: 5vh;
   width: 5vw;
   margin-top: 4vh;
   
   &:hover {
-      cursor: pointer;
+    background-color: #61dafb;
+    color: black;
+    transition: 300ms;
+    cursor: pointer;
   }
   
 `;

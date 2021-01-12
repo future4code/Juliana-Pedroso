@@ -2,6 +2,8 @@ import React from "react";
 
 export default class RegisterPage extends React.Component {
   render() {
-    return <div></div>;
+    return (
+        <li>{this.props.allUsers}</li>
+    )
   }
 }

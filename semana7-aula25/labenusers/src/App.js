@@ -1,8 +1,13 @@
-import "./App.css"; 
+import "./App.css";
 import React from "react";
-import Home from "./components/Home";
 import axios from "axios";
-import { ButtonNextPage, MainContainer, InputBox, InputContainer, ButtonSave } from "./components/styled";
+import {
+  ButtonNextPage,
+  MainContainer,
+  InputBox,
+  InputContainer,
+  ButtonSave,
+} from "./components/styled";
 
 export default class App extends React.Component {
   state = {
@@ -80,21 +85,23 @@ export default class App extends React.Component {
         <ButtonNextPage>Ir para a página de registro</ButtonNextPage>
         <InputContainer>
           <div>
-            <strong>Nome: </strong><InputBox
-            type="text"
-            onChange={this.onChangeGetUserName}
-            value={this.state.inputValueName}
-          />
+            <strong>Nome: </strong>
+            <InputBox
+              type="text"
+              onChange={this.onChangeGetUserName}
+              value={this.state.inputValueName}
+            />
           </div>
 
           <div>
-            <strong>Email: </strong><InputBox
-            type="email"
-            onChange={this.onChangeGetUserEmail}
-            value={this.state.inputValueEmail}
-          />
+            <strong>Email: </strong>
+            <InputBox
+              type="email"
+              onChange={this.onChangeGetUserEmail}
+              value={this.state.inputValueEmail}
+            />
           </div>
-        
+
           <ButtonSave onClick={this.createUser}>Salvar</ButtonSave>
           <h3>Lista de usuários: </h3>
           {allUsers}

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "./parameters";
+import { ListUsers, ButtonRemove } from "./styled";
 
 export class ListUsersPage extends React.Component {
   state = {
@@ -21,27 +22,13 @@ export class ListUsersPage extends React.Component {
   };
 
   deleteUser = async (id) => {
-      console.log(this.deleteUser)
     try {
-      const response = await axios.delete(`${baseUrl}/{id}`, axiosConfig);
+      const response = await axios.delete(`${baseUrl}/${id}`, axiosConfig);
       this.getAllUsers();
     } catch (error) {
       console.log(error);
     }
   };
-
-
-
-  //   deleteUser = (id) => {
-  //     axios
-  //       .delete(`${baseUrl}/${id}`, axiosConfig)
-  //       .then((response) => {
-  //         this.getAllUsers();
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   };
 
   render() {
     return (
@@ -50,14 +37,14 @@ export class ListUsersPage extends React.Component {
         {this.state.users.map((user) => {
           return (
             <div>
-              <li>{user.name}</li>
-              <button
+              <ListUsers>{user.name}</ListUsers>
+              <ButtonRemove
                 onClick={() => {
                   this.deleteUser(user.id);
                 }}
-              >
+            >
                 x
-              </button>
+            </ButtonRemove>
             </div>
           );
         })}

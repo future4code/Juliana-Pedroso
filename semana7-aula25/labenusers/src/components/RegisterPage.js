@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "./parameters";
+import { ButtonSave, InputBox } from "./styled";
 
 export class RegisterPage extends React.Component {
   state = {
@@ -38,19 +39,19 @@ export class RegisterPage extends React.Component {
     return (
       <div>
         <h2>Cadastro de usuários: </h2>
-        <input
+        <InputBox
           placeholder="Nome"
           onChange={this.onChangeGetUserName}
           value={this.state.inputValueName}
         />
 
-        <input
+        <InputBox
           placeholder="Email"
           onChange={this.onChangeGetUserEmail}
           value={this.state.inputValueEmail}
         />
 
-        <button onClick={this.createUser}>Cadastrar</button>
+        <ButtonSave onClick={this.createUser}>Cadastrar</ButtonSave>
       </div>
     );
   }

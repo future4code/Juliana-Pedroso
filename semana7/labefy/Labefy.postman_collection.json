@@ -1,0 +1,1093 @@
+{
+	"info": {
+		"_postman_id": "df5b73ed-1597-4a03-adba-23a6508e5093",
+		"name": "Labefy",
+		"description": "Criação de playlists de músicas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllPlaylists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Esta requisição serve para ver o id e o name de todas as suas playlists."
+			},
+			"response": []
+		},
+		{
+			"name": "createPlaylist1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"dá play\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Essa requisição cria uma nova playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "createPlaylist2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"para brisar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Essa requisição cria uma nova playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "createPlaylist3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"relax\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Essa requisição cria uma nova playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "createPlaylist4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"sofrência\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Essa requisição cria uma nova playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "createPlaylist5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"curtidas da rádio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Essa requisição cria uma nova playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack1ToPlaylist1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Canção Infantil\",\r\n    \"artist\": \"Cesar Mc\",\r\n    \"url\": \"http://spoti4.future4.com.br/1.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c56087e8-e309-41ef-a04f-bb507521979d/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c56087e8-e309-41ef-a04f-bb507521979d",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack2ToPlaylist1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Não Existe Amor em SP\",\r\n    \"artist\": \"Renato Enoch\",\r\n    \"url\": \"http://spoti4.future4.com.br/2.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c56087e8-e309-41ef-a04f-bb507521979d/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c56087e8-e309-41ef-a04f-bb507521979d",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack3ToPlaylist1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Poesia Acústica #3\",\r\n    \"artist\": [\"Sant\", \"Tiago Mac\", \"Lord\", \"Choice\"],\r\n    \"url\": \"http://spoti4.future4.com.br/3.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c56087e8-e309-41ef-a04f-bb507521979d/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c56087e8-e309-41ef-a04f-bb507521979d",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack4ToPlaylist1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"AmarElo\",\r\n    \"artist\": [\"Belchior\", \"Emicida\", \"Majur\", \"Pabllo Vittar\"],\r\n    \"url\": \"http://spoti4.future4.com.br/4.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c56087e8-e309-41ef-a04f-bb507521979d/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c56087e8-e309-41ef-a04f-bb507521979d",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack1ToPlaylist2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sweet Dreams\",\r\n    \"artist\": \"Besomorph\",\r\n    \"url\": \"http://spoti4.future4.com.br/5.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4cda6826-622e-4992-9503-29ef090fdfb0/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4cda6826-622e-4992-9503-29ef090fdfb0",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack2ToPlaylist2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Spectrum\",\r\n    \"artist\": \"Inzo\",\r\n    \"url\": \"http://spoti4.future4.com.br/6.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4cda6826-622e-4992-9503-29ef090fdfb0/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4cda6826-622e-4992-9503-29ef090fdfb0",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack1ToPlaylist3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Best Part\",\r\n    \"artist\": \"H.E.R\",\r\n    \"url\": \"http://spoti4.future4.com.br/7.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ae6f1b9b-2e3e-43a5-9105-d6b83c984289/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ae6f1b9b-2e3e-43a5-9105-d6b83c984289",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack2ToPlaylist3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Body Part\",\r\n    \"artist\": \"Ciara\",\r\n    \"url\": \"http://spoti4.future4.com.br/8.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ae6f1b9b-2e3e-43a5-9105-d6b83c984289/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ae6f1b9b-2e3e-43a5-9105-d6b83c984289",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack3ToPlaylist3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Labirinto\",\r\n    \"artist\": \"Muse Maya\",\r\n    \"url\": \"http://spoti4.future4.com.br/9.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ae6f1b9b-2e3e-43a5-9105-d6b83c984289/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ae6f1b9b-2e3e-43a5-9105-d6b83c984289",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack4ToPlaylist3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pearls\",\r\n    \"artist\": \"Samantha Gongol\",\r\n    \"url\": \"http://spoti4.future4.com.br/10.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ae6f1b9b-2e3e-43a5-9105-d6b83c984289/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ae6f1b9b-2e3e-43a5-9105-d6b83c984289",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack5ToPlaylist3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Could've Been\",\r\n    \"artist\": \"H.E.R\",\r\n    \"url\": \"http://spoti4.future4.com.br/11.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ae6f1b9b-2e3e-43a5-9105-d6b83c984289/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ae6f1b9b-2e3e-43a5-9105-d6b83c984289",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack1ToPlaylist4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bem\",\r\n    \"artist\": \"Chapéu de Palha\",\r\n    \"url\": \"http://spoti4.future4.com.br/12.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ff37eb0b-c7ab-4424-a999-38452d7f0f57/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ff37eb0b-c7ab-4424-a999-38452d7f0f57",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "addTrack1ToPlaylist5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Seu Olhar\",\r\n    \"artist\": \"Seu Jorge\",\r\n    \"url\": \"http://spoti4.future4.com.br/13.mp3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ba7a08ad-5d20-4717-9675-55e4a8d0b6e4/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ba7a08ad-5d20-4717-9675-55e4a8d0b6e4",
+						"tracks"
+					]
+				},
+				"description": "Essa requisição adiciona uma música a uma playlist existente."
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylist1Tracks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c56087e8-e309-41ef-a04f-bb507521979d/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c56087e8-e309-41ef-a04f-bb507521979d",
+						"tracks"
+					]
+				},
+				"description": "Esta requisição permite verificar quais músicas estão em uma determinada playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylist2Tracks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4cda6826-622e-4992-9503-29ef090fdfb0/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4cda6826-622e-4992-9503-29ef090fdfb0",
+						"tracks"
+					]
+				},
+				"description": "Esta requisição permite verificar quais músicas estão em uma determinada playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylist3Tracks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ae6f1b9b-2e3e-43a5-9105-d6b83c984289/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ae6f1b9b-2e3e-43a5-9105-d6b83c984289",
+						"tracks"
+					]
+				},
+				"description": "Esta requisição permite verificar quais músicas estão em uma determinada playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylist4Tracks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ff37eb0b-c7ab-4424-a999-38452d7f0f57/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ff37eb0b-c7ab-4424-a999-38452d7f0f57",
+						"tracks"
+					]
+				},
+				"description": "Esta requisição permite verificar quais músicas estão em uma determinada playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylist5Tracks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ba7a08ad-5d20-4717-9675-55e4a8d0b6e4/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ba7a08ad-5d20-4717-9675-55e4a8d0b6e4",
+						"tracks"
+					]
+				},
+				"description": "Esta requisição permite verificar quais músicas estão em uma determinada playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "searchPlaylist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=dá play",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "dá play"
+						}
+					]
+				},
+				"description": "Essa requisição parmite pesquisar por uma playlist, usando o nome dela ou parte dele."
+			},
+			"response": []
+		},
+		{
+			"name": "removeTrackFromPlaylist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ff37eb0b-c7ab-4424-a999-38452d7f0f57/tracks/eeb261ac-ba05-43ee-9cc4-d4900add9b5d",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"ff37eb0b-c7ab-4424-a999-38452d7f0f57",
+						"tracks",
+						"eeb261ac-ba05-43ee-9cc4-d4900add9b5d"
+					]
+				},
+				"description": "Esta requisição serve para deletar alguma música de alguma playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "deletePlaylist1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "juliana-pedroso-epps",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c56087e8-e309-41ef-a04f-bb507521979d",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c56087e8-e309-41ef-a04f-bb507521979d"
+					]
+				},
+				"description": "Esta requisição serve para deletar alguma playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "deletePlaylist2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4cda6826-622e-4992-9503-29ef090fdfb0",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4cda6826-622e-4992-9503-29ef090fdfb0"
+					]
+				},
+				"description": "Esta requisição serve para deletar alguma playlist."
+			},
+			"response": []
+		},
+		{
+			"name": "deletePlaylist3",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "juliana-pedroso-epps"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4cda6826-622e-4992-9503-29ef090fdfb0",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4cda6826-622e-4992-9503-29ef090fdfb0"
+					]
+				},
+				"description": "Esta requisição serve para deletar alguma playlist."
+			},
+			"response": []
+		}
+	]
+}

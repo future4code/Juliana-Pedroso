@@ -39,12 +39,12 @@ export class ListUsersPage extends React.Component {
             <div>
               <ListUsers>{user.name}</ListUsers>
               <ButtonRemove
-                onClick={() => {
+                onClick={() => {if(window.confirm('Tem certeza que desejar excluir este usuário?')){
                   this.deleteUser(user.id);
-                }}
-            >
+                }}}
+              >
                 x
-            </ButtonRemove>
+              </ButtonRemove>
             </div>
           );
         })}

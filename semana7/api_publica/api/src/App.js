@@ -2,13 +2,18 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import { MainContainer, PhraseInicial, Title, ButtonShowDetails, Informations } from './styled';
+import { baseUrl } from './parameters';
 
 export default class App extends React.Component {
   state = {
-    title: '',
+    title: [],
     created: '',
     director: '',
     episode_id: null,
+  }
+
+  componentDidMount = () => {
+    this.getFilmsStarWars()
   }
 
   getFilmsStarWars = () => {
@@ -26,6 +31,10 @@ export default class App extends React.Component {
     })
   }
 
+  getById = (e) => {
+    axios.get(`${baseUrl}/films/${e.target.value}`)
+  }
+
   render() {
 
     console.log(this.state)
@@ -35,6 +44,14 @@ export default class App extends React.Component {
         <Title>GOSTA DE FILMES DE STAR WARS?</Title>
         <ButtonShowDetails onClick={this.getFilmsStarWars}>Então clica aqui para ficha técnica!</ButtonShowDetails>
         
+        <select onChange={this.getById}>
+          <option>Escolha um filme</option>
+          {/* {this.state.title.map((titulo) => {
+            return (
+            <option value={films.episode_id}>{titulo.films}</option>
+            )
+          })} */}
+        </select>
 
         <Informations><strong>Título: </strong>{this.state.title}</Informations>
         <Informations><strong>Criação: </strong>{this.state.created}</Informations>

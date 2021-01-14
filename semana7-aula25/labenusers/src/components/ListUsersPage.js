@@ -1,16 +1,22 @@
 import React from "react";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "./parameters";
-import { ListUsers, ButtonRemove } from "./styled";
+import { ContainerList, ListUsers, Subheading, ButtonRemove } from "./styled";
+// import DetailsUsersPage from "./DetailsUsersPage";
 
 export class ListUsersPage extends React.Component {
   state = {
     users: [],
+    // page: true
   };
 
   componentDidMount = () => {
     this.getAllUsers();
   };
+
+//   changePage = () => {
+//     this.setState({ page: !this.state.page });
+//   };
 
   getAllUsers = async () => {
     try {
@@ -33,10 +39,10 @@ export class ListUsersPage extends React.Component {
   render() {
     return (
       <div>
-        <h2>Lista de usuários Labenu: </h2>
+        <Subheading>Lista de usuários Labenu: </Subheading>
         {this.state.users.map((user) => {
           return (
-            <div>
+            <ContainerList>
               <ListUsers>{user.name}</ListUsers>
               <ButtonRemove
                 onClick={() => {if(window.confirm('Tem certeza que desejar excluir este usuário?')){
@@ -45,7 +51,10 @@ export class ListUsersPage extends React.Component {
               >
                 x
               </ButtonRemove>
-            </div>
+              <p> ― </p>
+              {/* {this.state.page ? <DetailsUsersPage /> : <ListUsersPage />}
+              <button onClick={this.changePage}>Detalhes</button> */}
+            </ContainerList>
           );
         })}
       </div>

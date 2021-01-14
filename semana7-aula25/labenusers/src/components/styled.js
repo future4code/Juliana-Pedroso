@@ -13,7 +13,7 @@ export const ButtonNextPage = styled.button`
 
   &:hover {
     background-color: #d3d3d3;
-    transition: 200ms;
+    transition: 300ms;
     cursor: pointer;
   }
 `;
@@ -42,12 +42,11 @@ export const ButtonSave = styled.button`
   border-radius: 3px;
   font-weight: 600;
   height: 5vh;
-  width: 5vw;
+  width: 7vw;
   margin: 1vh;
 
   &:hover {
     background-color: #61dafb;
-    color: black;
     transition: 300ms;
     cursor: pointer;
   }
@@ -55,11 +54,25 @@ export const ButtonSave = styled.button`
 
 export const ButtonRemove = styled.button`
   height: 3.5vh;
-  margin: 0;
+  margin: 2vh;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #61dafb;
+    transition: 300ms;
+    cursor: pointer;
+  }
 `;
 
-export const ListUsers = styled.li`
-  margin-left: 10vw;
-  list-style-type: none;
-  text-align: left;
+export const ListUsers = styled.div`
+  text-align: center;
+`;
+
+export const Subheading = styled.h2`
+  font-size: 20px;
+  font-weight: normal;
+`;
+
+export const ContainerList = styled.div`
+  padding: 0.1vh;
 `;

@@ -7,8 +7,7 @@ import { Paragraph, DeleteButton, DetailsButton } from './styled';
 export default class ListPlaylistsPage extends React.Component {
   state = {
     playlists: [],
-    // artists: []
-    page: true
+    onPage: true
   };
 
   componentDidMount = () => {
@@ -36,8 +35,8 @@ export default class ListPlaylistsPage extends React.Component {
       .catch((error) => {});
   };
 
-  changePage = () => {
-    this.setState({ page: !this.state.page });
+  onChangePage = () => {
+    this.setState({ onPage: !this.state.page });
   };
 
   //   getAllArtists = () => {
@@ -74,8 +73,8 @@ export default class ListPlaylistsPage extends React.Component {
               >
                 x
               </DeleteButton>
-              <DetailsButton onClick={this.changePage}>Detalhes</DetailsButton>
-              {this.state.page ? <ListPlaylistsPage /> : <DetailsPlaylistsPage />}
+              <DetailsButton onClick={this.onChangePage}>Detalhes</DetailsButton>
+              {this.state.onPage ? <DetailsPlaylistsPage /> : <ListPlaylistsPage />}
               {/* <button onClick={this.changePage}>Home</button> */}
             
             </div>

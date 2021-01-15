@@ -49,7 +49,7 @@ export const CreateButton = styled.button`
   padding: 0.5rem 2rem;
   margin-top: -10rem;
   margin-bottom: 1rem;
-  margin-left: 0.3rem;
+  margin-left: 0.6rem;
   border: 3px solid #22dd44;
   border-radius: 0.25rem;
 

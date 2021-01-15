@@ -1,24 +1,57 @@
 import React from 'react';
-import ListPlaylistsPage from './ListPlaylistsPage';
+import axios from 'axios';
+import { baseUrl, axiosConfig } from './parameters';
+import { Paragraph } from './styled'
 
 export default class DetailsPlaylistsPage extends React.Component {
-    // state = {
-    //     page: true
+    state = {
+        tracks: [
+            {
+                "id": "ebfcd9be-ce55-44c7-a1d7-3ce9a2440cae",
+                "name": "Is This Love",
+                "artist": "Bob Marley",
+                "url": "http://spoti4.future4.com.br/1.mp3"
+            }
+        ]
+    }
+
+    // getPlaylistTracks = () => {
+    //     const body = {
+    //         quantity: '',
+    //         tracks: [],
+    //         id: '',
+    //         name: '',
+    //         artist: '',
+    //         url: ''
+    //     }
+    //   axios
+    //   .get(`${baseUrl}/${id}/${tracks}`, body, axiosConfig)
+    //   .then((response) => {
+    //     this.setState({ tracks: response.data.result });
+    //     console.log(response.data.result)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
     // }
 
-    // onChangePage = () => {
-    //     this.setState({ page: !this.state.page });
-    //   };
 
-    render() {
+
+
+    render(){
+        const tracks = this.state.tracks.map((track) => {
+            return(
+                <div>
+                    <p>Música: {track.name}</p>
+                    <p>Artista: {track.artist}</p>
+                </div>
+                
+                
+            )
+        })
         return(
-            <div>
-                <p>Oiiiii</p>
-                {/* <p>Detalhes da playlist: </p>
-                {this.state.page ? <DetailsPlaylistsPage /> : <ListPlaylistsPage />}
-                <button onClick={this.onChangePage}>Home</button> */}
-            </div>
-            
+            <Paragraph>{tracks}</Paragraph>
         )
     }
+
 }

@@ -19,7 +19,7 @@ export default class App extends React.Component {
     return (
       <MainContainer>
         <ImageLogo src={Logo} alt="logo"></ImageLogo>
-        <Header>Labefy - Playlists</Header>
+        <Header>Labefy >> Playlists </Header>
           <WelcomeMessage>Bem-vindx ao Labefy!</WelcomeMessage>
         {this.state.page ? <CreatePlaylistPage /> : <ListPlaylistsPage />}
         <ShowLists onClick={this.changePage}>Lista de playlists</ShowLists>

@@ -7,7 +7,6 @@ import ListPlaylistsPage from './ListPlaylistsPage'
 export default class CreatePlaylistPage extends React.Component {
   state = {
     inputPlaylist: "",
-    // page: false
   };
 
   handleInputPlaylist = (e) => {
@@ -41,10 +40,6 @@ export default class CreatePlaylistPage extends React.Component {
           value={this.state.inputPlaylist}
         ></ContainerInput>
         <CreateButton onClick={this.createPlaylist}>CRIAR</CreateButton>
-        <div>
-            {/* <button onClick={this.changePage}>Home</button> */}
-            {/* {this.state.page ? <ListPlaylistsPage /> : <CreatePlaylistPage />} */}
-        </div>
       </div>
     );
   }

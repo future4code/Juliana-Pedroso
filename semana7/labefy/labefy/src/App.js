@@ -3,7 +3,8 @@ import "./App.css";
 import { baseUrl, axiosConfig } from "./components/parameters";
 import CreatePlaylistPage from "./components/CreatePlaylistPage";
 import ListPlaylistsPage from "./components/ListPlaylistsPage";
-import { MainContainer } from "./components/styled";
+import { MainContainer, Header, ImageLogo, WelcomeMessage, ShowLists } from "./components/styled";
+import Logo from './img/LABEFY.png';
 
 export default class App extends React.Component {
   state = {
@@ -17,9 +18,11 @@ export default class App extends React.Component {
   render() {
     return (
       <MainContainer>
-        <h1>Labefy - Playlists</h1>
+        <ImageLogo src={Logo} alt="logo"></ImageLogo>
+        <Header>Labefy - Playlists</Header>
+          <WelcomeMessage>Bem-vindx ao Labefy!</WelcomeMessage>
         {this.state.page ? <CreatePlaylistPage /> : <ListPlaylistsPage />}
-        <button onClick={this.changePage}>Lista de playlists</button>
+        <ShowLists onClick={this.changePage}>Lista de playlists</ShowLists>
       </MainContainer>
     );
   }

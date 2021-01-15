@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { axiosConfig, baseUrl } from "./parameters";
+import { ContainerInput, CreateButton } from './styled';
 
 export default class CreatePlaylistPage extends React.Component {
   state = {
@@ -31,12 +32,12 @@ export default class CreatePlaylistPage extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <input
+        <ContainerInput
           placeholder="Digite o nome da playlist"
           onChange={this.handleInputPlaylist}
           value={this.state.inputPlaylist}
-        ></input>
-        <button onClick={this.createPlaylist}>Criar</button>
+        ></ContainerInput>
+        <CreateButton onClick={this.createPlaylist}>CRIAR</CreateButton>
       </div>
     );
   }

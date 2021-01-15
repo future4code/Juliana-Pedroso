@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { baseUrl, axiosConfig } from "./parameters";
+import { Paragraph, DeleteButton } from './styled';
 
 export default class ListPlaylistsPage extends React.Component {
   state = {
@@ -53,8 +54,8 @@ export default class ListPlaylistsPage extends React.Component {
         {this.state.playlists.map((playlist) => {
           return (
             <div>
-              <p>Nome: {playlist.name}</p>
-              <button
+              <Paragraph>Nome: {playlist.name}</Paragraph>
+              <DeleteButton
                 onClick={() => {
                   if (
                     window.confirm(
@@ -66,7 +67,7 @@ export default class ListPlaylistsPage extends React.Component {
                 }}
               >
                 x
-              </button>
+              </DeleteButton>
             </div>
           );
         })}

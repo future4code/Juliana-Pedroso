@@ -1,12 +1,14 @@
 import axios from "axios";
 import React from "react";
+import DetailsPlaylistsPage from "./DetailsPlaylistsPage";
 import { baseUrl, axiosConfig } from "./parameters";
-import { Paragraph, DeleteButton } from './styled';
+import { Paragraph, DeleteButton, DetailsButton } from './styled';
 
 export default class ListPlaylistsPage extends React.Component {
   state = {
     playlists: [],
     // artists: []
+    page: true
   };
 
   componentDidMount = () => {
@@ -32,6 +34,10 @@ export default class ListPlaylistsPage extends React.Component {
         this.getAllPlaylists();
       })
       .catch((error) => {});
+  };
+
+  changePage = () => {
+    this.setState({ page: !this.state.page });
   };
 
   //   getAllArtists = () => {
@@ -68,6 +74,10 @@ export default class ListPlaylistsPage extends React.Component {
               >
                 x
               </DeleteButton>
+              <DetailsButton onClick={this.changePage}>Detalhes</DetailsButton>
+              {this.state.page ? <ListPlaylistsPage /> : <DetailsPlaylistsPage />}
+              {/* <button onClick={this.changePage}>Home</button> */}
+            
             </div>
           );
         })}

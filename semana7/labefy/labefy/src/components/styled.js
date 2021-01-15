@@ -36,11 +36,11 @@ export const ContainerInput = styled.input`
 `;
 
 export const Paragraph = styled.p`
-    color: #fff;
-    font-size: 1.3rem;
-    border: 1px dashed #fff;
-    width: 20vw;
-    margin: auto;
+  color: #fff;
+  font-size: 1.3rem;
+  border: 1px dashed #fff;
+  width: 20vw;
+  margin: auto;
 `;
 
 export const CreateButton = styled.button`
@@ -86,7 +86,27 @@ export const ShowLists = styled.button`
 export const DeleteButton = styled.button`
   background: #22dd44;
   color: #fff;
-  margin: 1.5rem;
+  padding: 0.2rem 0.7rem;
+  margin: 1.5rem 0.5rem;
+  border: 3px solid #22dd44;
+  border-radius: 0.25rem;
+
+  &:hover {
+    background: #4ae366;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 200ms;
+    opacity: 1;
+  }
+`;
+
+export const DetailsButton = styled.button`
+  background: #22dd44;
+  color: #fff;
+  padding: 0.2rem 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.3rem;
   border: 3px solid #22dd44;
   border-radius: 0.25rem;
 

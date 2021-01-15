@@ -2,10 +2,12 @@ import React from "react";
 import axios from "axios";
 import { axiosConfig, baseUrl } from "./parameters";
 import { ContainerInput, CreateButton } from './styled';
+import ListPlaylistsPage from './ListPlaylistsPage'
 
 export default class CreatePlaylistPage extends React.Component {
   state = {
     inputPlaylist: "",
+    // page: false
   };
 
   handleInputPlaylist = (e) => {
@@ -21,6 +23,7 @@ export default class CreatePlaylistPage extends React.Component {
       .post(baseUrl, body, axiosConfig)
       .then((response) => {
         alert("Yessss! Playlist criada com sucesso!");
+        this.setState({ inputPlaylist: '' })
       })
       .catch((error) => {
         console.log(error);
@@ -38,6 +41,10 @@ export default class CreatePlaylistPage extends React.Component {
           value={this.state.inputPlaylist}
         ></ContainerInput>
         <CreateButton onClick={this.createPlaylist}>CRIAR</CreateButton>
+        <div>
+            {/* <button onClick={this.changePage}>Home</button> */}
+            {/* {this.state.page ? <ListPlaylistsPage /> : <CreatePlaylistPage />} */}
+        </div>
       </div>
     );
   }

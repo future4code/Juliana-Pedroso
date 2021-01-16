@@ -38,9 +38,25 @@ export const ContainerInput = styled.input`
 export const Paragraph = styled.p`
   color: #fff;
   font-size: 1.3rem;
-  border: 1px dashed #fff;
-  width: 20vw;
+  border: 1px dashed #22dd44;
+  width: 17vw;
   margin: auto;
+`;
+
+export const TextDetails = styled.p`
+  color: #fff;
+  font-size: 1.2rem;
+  width: 16.1vw;
+  margin: auto;
+  padding-top: 0.5rem;
+  text-align: left;
+`;
+
+export const Separator = styled.div`
+  border: 1px solid #fff;
+  width: 25vw;
+  margin: auto;
+  margin-top: 3vh;
 `;
 
 export const CreateButton = styled.button`
@@ -63,7 +79,7 @@ export const CreateButton = styled.button`
   }
 `;
 
-export const ShowLists = styled.button`
+export const ManagePlaylists = styled.button`
   background: #22dd44;
   color: #fff;
   padding: 0.5rem 2rem;

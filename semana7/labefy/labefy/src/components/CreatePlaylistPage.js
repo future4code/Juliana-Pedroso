@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { axiosConfig, baseUrl } from "./parameters";
-import { ContainerInput, CreateButton } from './styled';
-import ListPlaylistsPage from './ListPlaylistsPage'
+import { ContainerInput, CreateButton } from "./styled";
 
 export default class CreatePlaylistPage extends React.Component {
   state = {
@@ -22,7 +21,7 @@ export default class CreatePlaylistPage extends React.Component {
       .post(baseUrl, body, axiosConfig)
       .then((response) => {
         alert("Yessss! Playlist criada com sucesso!");
-        this.setState({ inputPlaylist: '' })
+        this.setState({ inputPlaylist: "" });
       })
       .catch((error) => {
         console.log(error);

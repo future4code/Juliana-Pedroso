@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "./parameters";
-import { TextDetails, Separator } from "./styled";
+import { TextDetails, Separator, PlayMusic } from "./styled";
 
 export default class DetailsPlaylistsPage extends React.Component {
   state = {
@@ -45,7 +45,12 @@ export default class DetailsPlaylistsPage extends React.Component {
             <div>
               <TextDetails><strong>>> Música: </strong>{track.name}</TextDetails>
               <TextDetails><strong>>> Artista: </strong>{track.artist}</TextDetails>
-              <TextDetails><strong>>> Url: </strong>{track.url}</TextDetails>
+                <PlayMusic>
+                    <audio controls="controls">
+                        <source src={track.url} type="audio/mpeg" />
+                    </audio>
+                </PlayMusic>
+            
               <Separator />
               {this.showDetailsPlaylist(track.id)}
             </div>

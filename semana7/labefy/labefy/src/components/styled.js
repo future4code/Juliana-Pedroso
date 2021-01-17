@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContainer = styled.div`
   font-family: "Poppins", sans-serif;
   text-align: center;
-  background: #000;
+  background: black;
   height: auto;
 `;
 
@@ -58,6 +58,10 @@ export const Separator = styled.div`
   width: 25vw;
   margin: auto;
   margin-top: 3vh;
+`;
+
+export const PlayMusic = styled.div`
+  margin: 1rem;
 `;
 
 export const CreateButton = styled.button`

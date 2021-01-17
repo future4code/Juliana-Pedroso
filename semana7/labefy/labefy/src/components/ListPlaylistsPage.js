@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import DetailsPlaylistsPage from "./DetailsPlaylistsPage";
 import { baseUrl, axiosConfig } from "./parameters";
-import { Paragraph, Separator, DeleteButton, DetailsButton } from "./styled";
+import { Paragraph, DeleteButton, DetailsButton } from "./styled";
 
 export default class ListPlaylistsPage extends React.Component {
   state = {
@@ -38,7 +38,6 @@ export default class ListPlaylistsPage extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-      
   };
 
   render() {
@@ -50,7 +49,6 @@ export default class ListPlaylistsPage extends React.Component {
             <div>
               <Paragraph>{playlist.name}</Paragraph>
               {this.state.page ? null : <DetailsPlaylistsPage />}
-              <Separator />
 
               <DetailsButton onClick={() => this.changePage()}>
                 Detalhes

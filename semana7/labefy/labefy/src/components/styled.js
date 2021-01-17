@@ -23,7 +23,7 @@ export const WelcomeMessage = styled.h2`
 
 export const ImageLogo = styled.img`
   height: 30vh;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-right: 50rem;
 `;
 
@@ -31,8 +31,14 @@ export const ContainerInput = styled.input`
   padding: 0.5rem 2rem;
   margin-top: -8rem;
   margin-bottom: 1rem;
+  margin-left: 0.5rem;
   border: 3px solid #22dd44;
   border-radius: 0.25rem;
+`;
+
+export const TextSubititle = styled.h3`
+  color: #22dd44;
+  font-size: 1.3rem;
 `;
 
 export const Paragraph = styled.p`
@@ -139,4 +145,9 @@ export const DetailsButton = styled.button`
     transition: 200ms;
     opacity: 1;
   }
+`;
+
+export const Footer = styled.div`
+  background: black;
+  height: 25vh;
 `;

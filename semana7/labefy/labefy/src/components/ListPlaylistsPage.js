@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import DetailsPlaylistsPage from "./DetailsPlaylistsPage";
 import { baseUrl, axiosConfig } from "./parameters";
-import { Paragraph, DeleteButton, DetailsButton } from "./styled";
+import { ContainerInput, CreateButton, TextSubititle, Paragraph, DeleteButton, DetailsButton } from "./styled";
 
 export default class ListPlaylistsPage extends React.Component {
   state = {
@@ -43,7 +43,7 @@ export default class ListPlaylistsPage extends React.Component {
   render() {
     return (
       <div>
-        <h3>Lista de Playlists: </h3>
+        <TextSubititle>Lista de Playlists: </TextSubititle>
         {this.state.playlists.map((playlist) => {
           return (
             <div>
@@ -68,8 +68,17 @@ export default class ListPlaylistsPage extends React.Component {
                 x
               </DeleteButton>
             </div>
+    
           );
         })}
+        <div>
+          <h3>Formulário para adicionar música:</h3>
+            <ContainerInput placeholder="nome da música"></ContainerInput>
+            <ContainerInput placeholder="nome do artista"></ContainerInput>
+            <ContainerInput placeholder="url da música (.mp3)"></ContainerInput>
+            <ContainerInput placeholder="adicionar na playlist..."></ContainerInput>
+            <CreateButton>Adicionar</CreateButton>
+        </div>
       </div>
     );
   }

@@ -18,11 +18,16 @@ export default class DetailsPlaylistsPage extends React.Component {
         artist: "Elis Regina",
         url: "http://spoti4.future4.com.br/2.mp3",
       },
-    ],
+    ]
+  };
+
+  componentDidMount = () => {
+    this.showDetailsPlaylist();
   };
 
   showDetailsPlaylist = (id) => {
     const body = {
+      id: this.state.id,
       name: this.state.name,
       artist: this.state.artist,
       url: this.state.url,
@@ -30,7 +35,7 @@ export default class DetailsPlaylistsPage extends React.Component {
     axios
       .get(`${baseUrl}/${id}/tracks`, body, axiosConfig)
       .then((response) => {
-        console.log(response.data.result);
+        this.state({ tracks: response.data.result.tracks})
       })
       .catch((error) => {
         console.log(error);
@@ -43,23 +48,25 @@ export default class DetailsPlaylistsPage extends React.Component {
         {this.state.tracks.map((track) => {
           return (
             <div>
-              <TextDetails><strong>>> Música: </strong>{track.name}</TextDetails>
-              <TextDetails><strong>>> Artista: </strong>{track.artist}</TextDetails>
-                <PlayMusic>
-                    <audio controls="controls">
-                        <source src={track.url} type="audio/mpeg" />
-                    </audio>
-                </PlayMusic>
-            
+              <TextDetails>
+                <strong>>> Música: </strong>
+                {track.name}
+              </TextDetails>
+              <TextDetails>
+                <strong>>> Artista: </strong>
+                {track.artist}
+              </TextDetails>
+              <PlayMusic>
+                <audio controls="controls">
+                  <source src={track.url} type="audio/mpeg" />
+                </audio>
+              </PlayMusic>
+
               <Separator />
               {this.showDetailsPlaylist(track.id)}
             </div>
           );
         })}
-        {/* <TextDetails>>> Quantidade: {tracks.id}</TextDetails>
-        <TextDetails>>> Músicas: </TextDetails>
-        <TextDetails>>> Artista: </TextDetails>
-        <TextDetails>>> Url: </TextDetails> */}
       </div>
     );
   }

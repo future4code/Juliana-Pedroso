@@ -8,10 +8,15 @@ export default class ListPlaylistsPage extends React.Component {
   state = {
     playlists: [],
     page: true,
+    name: '',
+    artist: '',
+    url: '',
+    addPlaylist: ''
   };
 
   changePage = () => {
     this.setState({ page: !this.state.page });
+
   };
 
   componentDidMount = () => {
@@ -40,7 +45,29 @@ export default class ListPlaylistsPage extends React.Component {
       });
   };
 
+  addTracksToPlaylist = () => {
+    const body = {
+      name: this.state.name,
+      artist: this.state.artist,
+      url: this.state.url,
+    }
+    axios.post(`${baseUrl}/22880161-d2b2-4553-98cb-8d14384d33d6/tracks`, body, axiosConfig)
+    .then((response) => {
+      alert('Música adicionada com sucesso!')
+      this.setState({ name: '', artist: '', url: '', addPlaylist: '' })
+    })
+    .catch((error) => {
+      alert("Não foi possível adicionar essa música :(")
+      this.setState({ name: '', artist: '', url: '', addPlaylist: '' })
+    })
+  }
+
+  changeInputValues = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div>
         <TextSubititle>Lista de Playlists: </TextSubititle>
@@ -73,11 +100,27 @@ export default class ListPlaylistsPage extends React.Component {
         })}
         <div>
           <h3>Formulário para adicionar música:</h3>
-            <ContainerInput placeholder="nome da música"></ContainerInput>
-            <ContainerInput placeholder="nome do artista"></ContainerInput>
-            <ContainerInput placeholder="url da música (.mp3)"></ContainerInput>
-            <ContainerInput placeholder="adicionar na playlist..."></ContainerInput>
-            <CreateButton>Adicionar</CreateButton>
+            <ContainerInput placeholder="nome da música"
+            name='name'
+            value={this.state.name}
+            onChange={this.changeInputValues}
+            ></ContainerInput>
+            <ContainerInput placeholder="nome do artista"
+            name='artist'
+            value={this.state.artist}
+            onChange={this.changeInputValues}
+            ></ContainerInput>
+            <ContainerInput placeholder="url da música (.mp3)"
+            name='url'
+            value={this.state.url}
+            onChange={this.changeInputValues}
+            ></ContainerInput>
+            <ContainerInput placeholder="adicionar na playlist..."
+            name='addPlaylist'
+            value={this.state.addPlaylist}
+            onChange={this.changeInputValues}
+            ></ContainerInput>
+            <CreateButton onClick={this.addTracksToPlaylist}>Adicionar</CreateButton>
         </div>
       </div>
     );

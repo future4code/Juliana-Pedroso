@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
   font-family: "Poppins", sans-serif;
   text-align: center;
   background: #000;
-  height: 80vw;
+  height: auto;
 `;
 
 export const Header = styled.div`
@@ -45,9 +45,10 @@ export const Paragraph = styled.p`
 
 export const TextDetails = styled.p`
   color: #fff;
-  font-size: 1.2rem;
-  width: 16.1vw;
+  font-size: 1.1rem;
+  width: 25vw;
   margin: auto;
+  padding-left: 1rem;
   padding-top: 0.5rem;
   text-align: left;
 `;

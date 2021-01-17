@@ -35,7 +35,10 @@ export default class ListPlaylistsPage extends React.Component {
       .then((response) => {
         this.getAllPlaylists();
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
+      
   };
 
   render() {

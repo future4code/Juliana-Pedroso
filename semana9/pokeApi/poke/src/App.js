@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PokeCard from "./components/PokeCard";
-import { PokedexLogo, BackgroundColor } from "./components/styled-components";
+import { PokedexLogo } from "./components/styled-components";
 import "./App.css";
 
 export default function App() {

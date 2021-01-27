@@ -18,14 +18,24 @@ export const PerfilePhoto = styled.img`
   width: 80%;
   height: 45vh;
 `;
+
+export const ContainerDetailMatch = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+  margin: 1em;
+
+  p {
+    font-weight: bold;
+    padding: 2em;
+  }
+`;
+
 export const PerfilePhotoDetail = styled.img`
   width: 7vw;
   height: 15vh;
   border-radius: 50%;
-`;
-
-export const ContainerDetailMatch = styled.div`
-  display: flex;
 `;
 
 export const OptionsIcon = styled.img`
@@ -56,10 +66,30 @@ export const ShowListButton = styled.button`
   color: #fff;
   font-weight: bold;
   font-size: 1em;
+  margin: 1em;
 
   &:hover {
     cursor: pointer;
     background: #009000;
+    opacity: 0.8;
+    transition: 300ms;
+  }
+`;
+
+export const ClearButton = styled.button`
+  margin-bottom: 2%;
+  height: 5vh;
+  background: #ff0000;
+  border: transparent;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 1em;
+
+  &:hover {
+    cursor: pointer;
+    background: #ff4000;
     opacity: 0.8;
     transition: 300ms;
   }

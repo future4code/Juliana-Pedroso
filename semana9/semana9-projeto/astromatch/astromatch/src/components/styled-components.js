@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
   border: 1px solid #000;
   height: auto;
   width: 30%;
-  margin: 1% auto;
+  margin: 1% auto 0 auto;
 `;
 
 export const PerfilePhoto = styled.img`

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "./parameters";
-import { ContainerDetailMatch, PerfilePhotoDetail } from "./styled-components";
+import { ContainerDetailMatch, PerfilePhotoDetail, ClearButton } from "./styled-components";
 
 export default function Matches() {
+const [showPerfile, setShowPerfile] = useState([]);
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
@@ -22,16 +23,29 @@ export default function Matches() {
       });
   };
 
+  const clearMatchs = () => {
+    axios.put(`${baseUrl}/${axiosConfig}/clear`)
+    .then((response) => {
+      alert('Seus matches foram removidos com sucesso!')
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
   return (
     <div>
       {matches.map((match) => {
         return (
-          <ContainerDetailMatch>
+          <ContainerDetailMatch>  
             <PerfilePhotoDetail src={match.photo} />
             <p>{match.name}</p>
+            
           </ContainerDetailMatch>
+          
         );
       })}
+      <ClearButton onClick={() => {if(window.confirm("Tem certeza que deseja limpar a sua lista de matches?")) {clearMatchs(showPerfile.id)}}}>Limpar Matches</ClearButton>
     </div>
   );
 }

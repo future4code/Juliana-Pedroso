@@ -1,12 +1,17 @@
 import React from 'react';
-import Home from './components/Home'
+import Home from './components/Home';
+import Logo from './img/logo.png';
+import { LogoAstroMatch } from './components/styled-components'
 import './App.css';
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Olá, mundo!</h1>
+      <LogoAstroMatch src={Logo} />
       <Home />
+      <div>
+        <button>Tela de Matches</button>
+      </div>
     </div>
   );
 }

@@ -1,18 +1,16 @@
 import React from 'react';
 import Home from './components/Home';
 import Logo from './img/logo.png';
-import { LogoAstroMatch } from './components/styled-components'
+import { LogoAstroMatch, MainContainer } from './components/styled-components'
 import './App.css';
 
 export default function App() {
   return (
-    <div className="App">
+    <MainContainer className="App">
       <LogoAstroMatch src={Logo} />
+      <hr />
       <Home />
-      <div>
-        <button>Tela de Matches</button>
-      </div>
-    </div>
+    </MainContainer>
   );
 }
 

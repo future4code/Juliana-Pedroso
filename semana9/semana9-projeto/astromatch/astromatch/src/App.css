@@ -1,5 +1,8 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
 .App {
   text-align: center;
+  font-family: "FontAwesome", sans-serif;
 }
 
 .App-logo {

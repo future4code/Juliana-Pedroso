@@ -14,17 +14,16 @@ export default function Matches() {
   const [showPage, setShowPage] = useState('');
 
 
-//   useEffect(() => {
-//     getMatches();
-//   }, [showPerfile]);
+  useEffect(() => {
+    getMatches();
+  }, [showPerfile]);
 
-  console.log(matches)
+//   console.log(matches)
 
   const getMatches = () => {
     axios
       .get(`${baseUrl}/${axiosConfig}/matches`)
       .then((response) => {
-        console.log(response.data.matches);
         setMatches(response.data.matches);
       })
       .catch((error) => {
@@ -42,10 +41,6 @@ export default function Matches() {
         console.log(error);
       });
   };
-
-  useEffect(() => {
-    getMatches();
-  }, [showPerfile]);
 
   const changePage = () => {
     setShowPage(!showPage);

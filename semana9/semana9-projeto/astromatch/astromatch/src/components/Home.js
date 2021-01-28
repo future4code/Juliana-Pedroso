@@ -15,7 +15,6 @@ import IconRemove from "../img/remove.jpg";
 export default function Home() {
   const [showPerfile, setShowPerfile] = useState([]);
   const [showPage, setShowPage] = useState("");
-  const [isMatch, setIsMatch] = useState("");
   const [answer, setAnswer] = useState(true);
 
   useEffect(() => {
@@ -23,8 +22,6 @@ export default function Home() {
       getProfileToChoose();
     }
   });
-
-  console.log(showPerfile)
 
   const changePage = () => {
     setShowPage(!showPage);
@@ -55,7 +52,7 @@ export default function Home() {
     axios
       .post(`${baseUrl}/${axiosConfig}/choose-person`, body)
       .then((response) => {
-        setIsMatch(response.data.isMatch);
+        getProfileToChoose();
         setAnswer(answer);
         alert("Uhuuu, você curtiu!");
       })
@@ -72,7 +69,7 @@ export default function Home() {
     axios
       .post(`${baseUrl}/${axiosConfig}/choose-person`, body)
       .then((response) => {
-        setIsMatch(response.data.isMatch);
+        getProfileToChoose();
         setAnswer(answer);
         alert("Que pena, você não curtiu :(");
       })

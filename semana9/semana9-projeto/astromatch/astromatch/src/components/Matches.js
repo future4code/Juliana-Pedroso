@@ -18,8 +18,6 @@ export default function Matches() {
     getMatches();
   }, [showPerfile]);
 
-//   console.log(matches)
-
   const getMatches = () => {
     axios
       .get(`${baseUrl}/${axiosConfig}/matches`)
@@ -36,6 +34,7 @@ export default function Matches() {
       .put(`${baseUrl}/${axiosConfig}/clear`)
       .then((response) => {
         alert("Seus matches foram removidos com sucesso!");
+        getMatches()
       })
       .catch((error) => {
         console.log(error);

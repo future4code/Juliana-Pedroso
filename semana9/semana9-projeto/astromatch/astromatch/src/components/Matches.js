@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Home from './Home';
+import Home from "./Home";
 import { baseUrl, axiosConfig } from "./parameters";
 import {
   ContainerDetailMatch,
   PerfilePhotoDetail,
-  ClearButton, BackButton
+  ClearButton,
+  BackButton,
 } from "./styled-components";
 
 export default function Matches() {
   const [showPerfile, setShowPerfile] = useState([]);
   const [matches, setMatches] = useState([]);
-  const [showPage, setShowPage] = useState('');
-
+  const [showPage, setShowPage] = useState("");
 
   useEffect(() => {
     getMatches();
@@ -34,7 +34,7 @@ export default function Matches() {
       .put(`${baseUrl}/${axiosConfig}/clear`)
       .then((response) => {
         alert("Seus matches foram removidos com sucesso!");
-        getMatches()
+        getMatches();
       })
       .catch((error) => {
         console.log(error);
@@ -45,11 +45,11 @@ export default function Matches() {
     setShowPage(!showPage);
   };
 
-  if(showPage) {
-    return <Home />
-} else if (showPage !==showPage) {
-    return <Matches />
-}
+  if (showPage) {
+    return <Home />;
+  } else if (showPage !== showPage) {
+    return <Matches />;
+  }
 
   return (
     <div>

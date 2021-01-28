@@ -14,10 +14,16 @@ export const MainContainer = styled.div`
 `;
 
 export const TextDetail = styled.div`
- p {
-     text-align: left;
-     margin: 0 0.8em;
- }
+  h3 {
+    color: #fff;
+    font-size: 1.3em;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+
+  p {
+    text-align: left;
+    margin: 0 0.8em;
+  }
 `;
 
 export const PerfilePhoto = styled.img`
@@ -34,7 +40,8 @@ export const ContainerDetailMatch = styled.div`
   margin: 1em;
 
   p {
-    font-weight: bold;
+    font-size: 1em;
+    font-weight: normal;
     padding: 2em;
   }
 `;

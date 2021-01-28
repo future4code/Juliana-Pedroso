@@ -1,8 +1,8 @@
-import React from 'react';
-import Home from './components/Home';
-import Logo from './img/logo.png';
-import { LogoAstroMatch, MainContainer } from './components/styled-components'
-import './App.css';
+import React from "react";
+import Home from "./components/Home";
+import Logo from "./img/logo.png";
+import { LogoAstroMatch, MainContainer } from "./components/styled-components";
+import "./App.css";
 
 export default function App() {
   return (
@@ -13,4 +13,3 @@ export default function App() {
     </MainContainer>
   );
 }
-

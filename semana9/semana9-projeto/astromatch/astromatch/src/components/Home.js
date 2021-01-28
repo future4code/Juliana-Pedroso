@@ -4,6 +4,7 @@ import Matches from "./Matches";
 import { baseUrl, axiosConfig } from "./parameters";
 import {
   PerfilePhoto,
+  TextDetail,
   OptionsIcon,
   OptionsButton,
   ShowListButton,
@@ -13,8 +14,8 @@ import IconRemove from "../img/remove.jpg";
 
 export default function Home() {
   const [showPerfile, setShowPerfile] = useState([]);
-  const [showPage, setShowPage] = useState('');
-//   const [isMatch, setIsMatch] = useState("");
+  const [showPage, setShowPage] = useState("");
+  const [isMatch, setIsMatch] = useState("");
   const [answer, setAnswer] = useState(true);
 
   useEffect(() => {
@@ -23,9 +24,17 @@ export default function Home() {
     }
   });
 
+  console.log(showPerfile)
+
   const changePage = () => {
     setShowPage(!showPage);
   };
+
+  if (showPage) {
+    return <Matches />;
+  } else if (showPage !== showPage) {
+    return <Home />;
+  }
 
   const getProfileToChoose = () => {
     axios
@@ -46,8 +55,8 @@ export default function Home() {
     axios
       .post(`${baseUrl}/${axiosConfig}/choose-person`, body)
       .then((response) => {
-        // setIsMatch(response.data.isMatch);
-        setAnswer(true);
+        setIsMatch(response.data.isMatch);
+        setAnswer(answer);
         alert("Uhuuu, você curtiu!");
       })
       .catch((error) => {
@@ -63,7 +72,8 @@ export default function Home() {
     axios
       .post(`${baseUrl}/${axiosConfig}/choose-person`, body)
       .then((response) => {
-        setAnswer(false);
+        setIsMatch(response.data.isMatch);
+        setAnswer(answer);
         alert("Que pena, você não curtiu :(");
       })
       .catch((error) => {
@@ -71,15 +81,8 @@ export default function Home() {
       });
   };
 
-  
-  if(showPage) {
-      return <Matches />
-  } else if (showPage !==showPage) {
-      return <Home />
-  }
-
   return (
-    <div>
+    <TextDetail>
       <PerfilePhoto src={showPerfile.photo} alt="Logo Astromatch" />
       <h3>
         {showPerfile.name}, {showPerfile.age} anos
@@ -104,6 +107,6 @@ export default function Home() {
           <ShowListButton onClick={changePage}>Mostrar Matches</ShowListButton>
         </div>
       </div>
-    </div>
+    </TextDetail>
   );
 }

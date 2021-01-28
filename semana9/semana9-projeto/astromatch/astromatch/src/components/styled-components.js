@@ -13,6 +13,13 @@ export const MainContainer = styled.div`
   margin: 1% auto 0 auto;
 `;
 
+export const TextDetail = styled.div`
+ p {
+     text-align: left;
+     margin: 0 0.8em;
+ }
+`;
+
 export const PerfilePhoto = styled.img`
   border-radius: 5px;
   width: 80%;
@@ -90,6 +97,25 @@ export const ClearButton = styled.button`
   &:hover {
     cursor: pointer;
     background: #ff4000;
+    opacity: 0.8;
+    transition: 300ms;
+  }
+`;
+
+export const BackButton = styled.button`
+  margin-bottom: 2%;
+  height: 5vh;
+  background: #762d93;
+  border: transparent;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 1em;
+
+  &:hover {
+    cursor: pointer;
+    background: #762d93;
     opacity: 0.8;
     transition: 300ms;
   }

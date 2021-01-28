@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Home from './Home';
 import { baseUrl, axiosConfig } from "./parameters";
-import { ContainerDetailMatch, PerfilePhotoDetail, ClearButton } from "./styled-components";
+import {
+  ContainerDetailMatch,
+  PerfilePhotoDetail,
+  ClearButton, BackButton
+} from "./styled-components";
 
 export default function Matches() {
-const [showPerfile, setShowPerfile] = useState([]);
+  const [showPerfile, setShowPerfile] = useState([]);
   const [matches, setMatches] = useState([]);
+  const [showPage, setShowPage] = useState('');
 
-  useEffect(() => {
-    getMatches();
-  }, [matches]);
+
+//   useEffect(() => {
+//     getMatches();
+//   }, [showPerfile]);
+
+  console.log(matches)
 
   const getMatches = () => {
     axios
@@ -24,28 +33,54 @@ const [showPerfile, setShowPerfile] = useState([]);
   };
 
   const clearMatchs = () => {
-    axios.put(`${baseUrl}/${axiosConfig}/clear`)
-    .then((response) => {
-      alert('Seus matches foram removidos com sucesso!')
-    })
-    .catch((error) => {
-        console.log(error)
-    })
+    axios
+      .put(`${baseUrl}/${axiosConfig}/clear`)
+      .then((response) => {
+        alert("Seus matches foram removidos com sucesso!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getMatches();
+  }, [showPerfile]);
+
+  const changePage = () => {
+    setShowPage(!showPage);
+  };
+
+  if(showPage) {
+    return <Home />
+} else if (showPage !==showPage) {
+    return <Matches />
 }
 
   return (
     <div>
       {matches.map((match) => {
         return (
-          <ContainerDetailMatch>  
+          <ContainerDetailMatch>
             <PerfilePhotoDetail src={match.photo} />
             <p>{match.name}</p>
-            
           </ContainerDetailMatch>
-          
         );
       })}
-      <ClearButton onClick={() => {if(window.confirm("Tem certeza que deseja limpar a sua lista de matches?")) {clearMatchs(showPerfile.id)}}}>Limpar Matches</ClearButton>
+      <ClearButton
+        onClick={() => {
+          if (
+            window.confirm(
+              "Tem certeza que deseja limpar a sua lista de matches?"
+            )
+          ) {
+            clearMatchs(showPerfile.id);
+          }
+        }}
+      >
+        Limpar Matches
+      </ClearButton>
+      <BackButton onClick={changePage}>Voltar</BackButton>
     </div>
   );
 }

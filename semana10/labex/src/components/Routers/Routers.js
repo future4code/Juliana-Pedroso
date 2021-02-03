@@ -8,7 +8,7 @@ import CreateTripPage from "../CreateTripPage/CreateTripPage";
 import ListTripsPage from "../ListTripsPage/ListTripsPage";
 import TripDetailsPage from "../TripDetailsPage/TripDetailsPage";
 
-export default function Router() {
+export default function Routers() {
   return (
     <BrowserRouter>
       <Header />

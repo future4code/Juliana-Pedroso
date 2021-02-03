@@ -2,7 +2,7 @@ import React from "react";
 import Cover from "../../img/cover.png";
 import { HeaderCover, ContainerAccessButtons } from "./styled";
 import { useHistory } from "react-router-dom";
-import { goToLoginPage, goToApplicationFormPage } from '../Router/Coordinator';
+import { goToLoginPage, goToApplicationFormPage } from '../Routers/Coordinator';
 
 export default function Header() {
   const history = useHistory()

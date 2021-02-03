@@ -5,4 +5,3 @@ export const goToLoginPage = (history) => {
 export const goToApplicationFormPage = (history) => {
     history.push('/application-form')
 }
-

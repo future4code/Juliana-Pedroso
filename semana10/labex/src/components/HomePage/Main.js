@@ -1,21 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { ContainerMain, ContainerFilter } from "./styled";
-import { baseUrl, user } from '../parameters';
+import {
+  ContainerMain,
+  ContainerFilter,
+  CardContainer,
+  GridMain,
+} from "./styled";
+import { baseUrl, user } from "../parameters";
 
 export default function Main() {
-  const [trips, setTrips] = useState({})
+  const [trips, setTrips] = useState([]);
 
   useEffect(() => {
-    axios.get(`${baseUrl}/${user}/trips`)
-    .then((res) => {
-      setTrips(res.data)
-      console.log(res.data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }, [])
+    axios
+      .get(`${baseUrl}/${user}/trips`)
+      .then((res) => {
+        setTrips(res.data.trips);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <ContainerMain>
@@ -23,7 +28,7 @@ export default function Main() {
         <div className="space stars1"></div>
         <p>Pesquisar viagens disponíveis</p>
         <label>Título da viagem</label>
-          <input className="search-title" placeholder="Busca por título"></input>
+        <input className="search-title" placeholder="Busca por título"></input>
         <div>
           <label>Data da viagem</label>
           <input className="search-date" placeholder="Ex. xx/xx/xxxx"></input>
@@ -31,15 +36,21 @@ export default function Main() {
         <div>
           <button>Buscar</button>
         </div>
-      
       </ContainerFilter>
-        <div className='grid-trips'>
-          <p>{trips.name}</p>
-          <p>{trips.planet}</p>
-          <p>{trips.durationInDays}</p>
-          <p>{trips.date}</p>
-          <p>{trips.description}</p>
-        </div>
+        <GridMain>
+          {trips.map((trip) => {
+            return (
+              <CardContainer>
+                <h1>{trip.name}</h1>
+                <p>Planeta: {trip.planet}</p>
+                <p>Data: {trip.date}</p>
+                <p>Duração: {trip.durationInDays} dias</p>
+                <p>Descrição: {trip.description}</p>
+                <button>Quero embarcar!</button>
+              </CardContainer>
+            );
+          })}
+        </GridMain>
     </ContainerMain>
   );
 }

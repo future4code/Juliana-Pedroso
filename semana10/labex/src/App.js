@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import Router from './components/Router/Router'
+import Routers from './components/Routers/Routers'
 
 function App() {
   return (
-    <Router />
+    <div>
+      <Routers />
+    </div>
+    
   );
 }
 

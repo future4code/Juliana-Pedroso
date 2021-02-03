@@ -5,7 +5,6 @@ export const ContainerText = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 80px;
-
 `;
 
 export const CardTrips = styled.div`
@@ -14,10 +13,10 @@ export const CardTrips = styled.div`
   padding: 20px;
 
   h2 {
-      margin: 0;
+    margin: 0;
   }
 
-   p {
+  p {
     margin: 0;
   }
 `;

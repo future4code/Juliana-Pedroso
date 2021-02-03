@@ -7,9 +7,12 @@ import {
   GridMain,
 } from "./styled";
 import { baseUrl, user } from "../parameters";
+import { useHistory } from 'react-router-dom';
+import { goToApplicationFormPage } from '../Routers/Coordinator'
 
 export default function Main() {
   const [trips, setTrips] = useState([]);
+  const history = useHistory()
 
   useEffect(() => {
     axios
@@ -37,20 +40,20 @@ export default function Main() {
           <button>Buscar</button>
         </div>
       </ContainerFilter>
-        <GridMain>
-          {trips.map((trip) => {
-            return (
-              <CardContainer>
-                <h1>{trip.name}</h1>
-                <p>Planeta: {trip.planet}</p>
-                <p>Data: {trip.date}</p>
-                <p>Duração: {trip.durationInDays} dias</p>
-                <p>Descrição: {trip.description}</p>
-                <button>Quero embarcar!</button>
-              </CardContainer>
-            );
-          })}
-        </GridMain>
+      <GridMain>
+        {trips.map((trip) => {
+          return (
+            <CardContainer>
+              <h1>{trip.name}</h1>
+              <p>Planeta: {trip.planet}</p>
+              <p>Data: {trip.date}</p>
+              <p>Duração: {trip.durationInDays} dias</p>
+              <p>Descrição: {trip.description}</p>
+              <button onClick={() => goToApplicationFormPage(history)}>Quero embarcar!</button>
+            </CardContainer>
+          );
+        })}
+      </GridMain>
     </ContainerMain>
   );
 }

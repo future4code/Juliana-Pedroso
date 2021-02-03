@@ -15,7 +15,7 @@ export default function ApplicationFormPage() {
         cols="80"
       ></textarea>
       <div>
-        <button onClick={()=> window.alert('Sua inscrição foi recebida! Aguarde nosso contato :)')}>Canditar-me!</button>
+        <button onClick={()=> window.alert('Sua inscrição foi recebida! Aguarde nosso contato :)')}>Candidatar-me!</button>
       </div>
     </ContainerForm>
   );

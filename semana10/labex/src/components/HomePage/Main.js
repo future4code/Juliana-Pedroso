@@ -7,12 +7,14 @@ import {
   GridMain,
 } from "./styled";
 import { baseUrl, user } from "../parameters";
-import { useHistory } from 'react-router-dom';
-import { goToApplicationFormPage } from '../Routers/Coordinator'
+import { useHistory } from "react-router-dom";
+import { goToApplicationFormPage } from "../Routers/Coordinator";
 
 export default function Main() {
   const [trips, setTrips] = useState([]);
-  const history = useHistory()
+  const [inputText, setInputText] = useState("");
+  const [inputDate, setInputDate] = useState("");
+  const history = useHistory();
 
   useEffect(() => {
     axios
@@ -25,23 +27,51 @@ export default function Main() {
       });
   }, []);
 
+  const onChangeFilterText = (e) => {
+    setInputText(e.target.value);
+  };
+
+  const onChangeFilterDate = (e) => {
+    setInputDate(e.target.value);
+  };
+
+  const filterList = () => {
+    return trips.filter((trip) => {
+      const title = trip.name.toLowerCase();
+      return title.indexOf(inputText.toLowerCase()) > -1;
+    });
+    // .filter((trip) => {
+
+    // })
+  };
+
   return (
     <ContainerMain>
       <ContainerFilter>
         <div className="space stars1"></div>
         <p>Pesquisar viagens disponíveis</p>
         <label>Título da viagem</label>
-        <input className="search-title" placeholder="Busca por título"></input>
+        <input
+          onChange={onChangeFilterText}
+          value={inputText}
+          className="search-title"
+          placeholder="Busca por título"
+        ></input>
         <div>
           <label>Data da viagem</label>
-          <input className="search-date" placeholder="Ex. xx/xx/xxxx"></input>
+          <input
+            onChange={onChangeFilterDate}
+            value={inputDate}
+            className="search-date"
+            placeholder="Ex. xx/xx/xxxx"
+          ></input>
         </div>
         <div>
           <button>Buscar</button>
         </div>
       </ContainerFilter>
       <GridMain>
-        {trips.map((trip) => {
+        {filterList().map((trip) => {
           return (
             <CardContainer>
               <h1>{trip.name}</h1>
@@ -49,7 +79,9 @@ export default function Main() {
               <p>Data: {trip.date}</p>
               <p>Duração: {trip.durationInDays} dias</p>
               <p>Descrição: {trip.description}</p>
-              <button onClick={() => goToApplicationFormPage(history)}>Quero embarcar!</button>
+              <button onClick={() => goToApplicationFormPage(history)}>
+                Quero embarcar!
+              </button>
             </CardContainer>
           );
         })}

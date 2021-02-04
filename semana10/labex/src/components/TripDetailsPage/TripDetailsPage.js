@@ -6,7 +6,8 @@ import { useHistory } from "react-router-dom";
 import { goToCreateTripPage } from "../Routers/Coordinator";
 
 export default function TripDetailsPage() {
-  const [tripDetail, setTripDetail] = useState({});
+  const [trip, setTrip] = useState([]);
+  const [tripId, setTripId] = useState("");
   const history = useHistory();
 
   useEffect(() => {
@@ -16,18 +17,14 @@ export default function TripDetailsPage() {
       history.push("/login");
     }
 
-    getTripDetail();
+    getTrip();
   }, []);
 
-  const getTripDetail = () => {
+  const getTrip = () => {
     axios
-      .get(`${baseUrl}/${user}/trip/BOs3axCrgBaohRGx7Nuw`, {
-        headers: {
-          auth: localStorage.getItem("token"),
-        },
-      })
+      .get(`${baseUrl}/${user}/trips`)
       .then((res) => {
-        setTripDetail(res.data.trip);
+        setTrip(res.data.trips);
       })
       .catch((err) => {
         console.log(err);
@@ -38,9 +35,22 @@ export default function TripDetailsPage() {
     <ContainerText>
       <h1>Página com os detalhes das viagens</h1>
       <CardTrips>
-        <h2>{tripDetail.name}</h2>
-        <p>Planeta: {tripDetail.planet}</p>
-        <p>Descrição: {tripDetail.description}</p>
+        {trip.map((trip) => {
+          return (
+            <div>
+              <h2>{trip.name}</h2>
+              <p>Planeta: {trip.planet}</p>
+              <p>Descrição: {trip.description}</p>
+              <button
+                onClick={() => {
+                  setTripId(trip.id);
+                }}
+              >
+                Lista de candidatos
+              </button>
+            </div>
+          );
+        })}
       </CardTrips>
       <div>
         <button onClick={() => goToCreateTripPage(history)}>

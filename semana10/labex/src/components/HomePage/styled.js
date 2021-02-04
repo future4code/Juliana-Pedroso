@@ -22,7 +22,7 @@ export const ContainerAccessButtons = styled.div`
     padding: 0.3rem;
     border: transparent;
     width: auto;
-    font-weight: 400; 
+    font-weight: 400;
     margin: 10px;
     z-index: 1;
 
@@ -168,30 +168,7 @@ export const ContainerFilter = styled.div`
   }
 
   .search-date {
-    width: 7vw;
+    width: 9vw;
     z-index: -1;
-  }
-
-  button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    position: center;
-    background-color: #0057d8;
-    color: #fff;
-    font-weight: 400;
-    width: auto;
-    border-radius: 3px;
-    padding: 0.3rem;
-    border: transparent;
-
-    &:hover {
-      cursor: pointer;
-      background-color: #0087d8;
-      transition: 300ms;
-      border: 1px solid #fff;
-    }
   }
 `;

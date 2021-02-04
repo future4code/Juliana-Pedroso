@@ -36,13 +36,11 @@ export default function Main() {
   };
 
   const filterList = () => {
-    return trips.filter((trip) => {
-      const title = trip.name.toLowerCase();
-      return title.indexOf(inputText.toLowerCase()) > -1;
-    });
-    // .filter((trip) => {
-
-    // })
+    return trips
+      .filter((trip) => {
+        const title = trip.name.toLowerCase();
+        return title.indexOf(inputText.toLowerCase()) > -1;
+      })
   };
 
   return (
@@ -56,6 +54,7 @@ export default function Main() {
           value={inputText}
           className="search-title"
           placeholder="Busca por título"
+          type="text"
         ></input>
         <div>
           <label>Data da viagem</label>
@@ -64,16 +63,15 @@ export default function Main() {
             value={inputDate}
             className="search-date"
             placeholder="Ex. xx/xx/xxxx"
+            type="date"
           ></input>
         </div>
-        <div>
-          <button>Buscar</button>
-        </div>
+        
       </ContainerFilter>
       <GridMain>
         {filterList().map((trip) => {
           return (
-            <CardContainer>
+            <CardContainer key={trip.id}>
               <h1>{trip.name}</h1>
               <p>Planeta: {trip.planet}</p>
               <p>Data: {trip.date}</p>

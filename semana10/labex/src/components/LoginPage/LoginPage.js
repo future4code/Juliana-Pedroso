@@ -37,7 +37,7 @@ export default function LoginPage() {
 
   return (
     <ContainerInputs>
-      <h1>Faça o seu login para começar :)</h1>
+      <h1>Astronauta, faça o seu login para começar :)</h1>
       <input
         onChange={onChangeEmail}
         value={email}

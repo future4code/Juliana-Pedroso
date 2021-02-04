@@ -6,7 +6,25 @@ export const ContainerForm = styled.div`
   justify-content: center;
   margin-top: 80px;
 
-  input, textarea {
+  h2 {
+    margin: auto;
+    padding: 10px;
+  }
+
+  h3 {
+    margin: auto;
+    padding-bottom: 30px;
+    font-weight: normal;
+  }
+
+  form {
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+  }
+
+  input,
+  textarea {
     width: 20vw;
     padding: 5px;
     border-radius: 5px;

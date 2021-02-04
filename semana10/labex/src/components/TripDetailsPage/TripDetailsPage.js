@@ -3,16 +3,17 @@ import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { ContainerText, CardTrips } from "./styled";
 import { useHistory } from "react-router-dom";
+import { goToCreateTripPage } from "../Routers/Coordinator";
 
 export default function TripDetailsPage() {
   const [tripDetail, setTripDetail] = useState({});
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
 
     if (token === null) {
-        history.push('/login')
+      history.push("/login");
     }
 
     getTripDetail();
@@ -41,6 +42,11 @@ export default function TripDetailsPage() {
         <p>Planeta: {tripDetail.planet}</p>
         <p>Descrição: {tripDetail.description}</p>
       </CardTrips>
+      <div>
+        <button onClick={() => goToCreateTripPage(history)}>
+          Criar nova viagem
+        </button>
+      </div>
     </ContainerText>
   );
 }

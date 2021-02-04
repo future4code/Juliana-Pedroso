@@ -3,6 +3,7 @@ import { ContainerForm } from "./styled";
 import useForm from "../useForm";
 import axios from "axios";
 import { baseUrl, user } from "../parameters";
+import { useHistory } from "react-router-dom";
 
 export default function ApplicationFormPage() {
   const [form, onChangeForm, clearFields] = useForm({
@@ -17,7 +18,9 @@ export default function ApplicationFormPage() {
   const submitForm = (e) => {
     e.preventDefault();
     clearFields();
-    alert('Olá, Astronauta! Sua inscrição foi recebida com sucesso! Aguarde nosso contato :)')
+    alert(
+      "Olá, Astronauta! Sua inscrição foi recebida com sucesso! Aguarde nosso contato :)"
+    );
     axios
       .post(`${baseUrl}/${user}/trips/BOs3axCrgBaohRGx7Nuw/apply`)
       .then((res) => {
@@ -31,6 +34,7 @@ export default function ApplicationFormPage() {
   return (
     <ContainerForm>
       <h2>Página de aplicação de formulário</h2>
+      <h3>Astronauta, por favor preencha os campos abaixo:</h3>
       <form onSubmit={submitForm}>
         <input
           name="name"
@@ -84,9 +88,7 @@ export default function ApplicationFormPage() {
           type="text"
         ></textarea>
         <div>
-          <button>
-            Candidatar-me!
-          </button>
+          <button>Candidatar-me!</button>
         </div>
       </form>
     </ContainerForm>

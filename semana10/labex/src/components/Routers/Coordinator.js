@@ -1,7 +1,11 @@
 export const goToLoginPage = (history) => {
-    history.push('/login')
-}
+  history.push("/login");
+};
 
 export const goToApplicationFormPage = (history) => {
-    history.push('/application-form')
-}
+  history.push("/application-form");
+};
+
+export const goToCreateTripPage = (history) => {
+  history.push("/trips-create");
+};

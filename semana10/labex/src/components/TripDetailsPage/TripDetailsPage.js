@@ -34,6 +34,7 @@ export default function TripDetailsPage() {
 
   return (
     <ContainerText>
+      {console.log(tripId)}
       <div>
         <button onClick={() => goToCreateTripPage(history)}>
           Criar nova viagem

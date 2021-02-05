@@ -3,19 +3,8 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { ContainerCreateTripForm } from "./styled";
-import useForm from "../useForm";
 
 export default function CreateTripPage() {
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-  // const [form, onChangeForm, clearFields] = useForm({
-  //   name: "",
-  //   planet: "",
-  //   date: "",
-  //   durationInDays: "",
-  //   description: "",
-  // });
-
   const [form, setForm] = useState({
     name: "",
     planet: "",
@@ -38,7 +27,7 @@ export default function CreateTripPage() {
   }, [history]);
 
   const createTrip = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const token = localStorage.getItem("token");
 
@@ -56,34 +45,15 @@ export default function CreateTripPage() {
       },
     };
 
-    axios.post(`${baseUrl}/${user}/trips`, body, axiosConfig)
-    .then((res) => {
-      alert('Viagem criada com sucesso!')
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
-
-  // const createTripForm = (e) => {
-  //   const body = {
-  //     email: email,
-  //     password: password
-
-  //   };
-  //   e.preventDefault();
-  //   clearFields();
-  //   axios
-  //     .post(`${baseUrl}/${user}/trips`, body)
-  //     .then((res) => {
-  //       localStorage.setItem("token", res.data.token);
-  //       alert("Uhuuuu!! Viagem criada com sucesso!");
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+    axios
+      .post(`${baseUrl}/${user}/trips`, body, axiosConfig)
+      .then((res) => {
+        alert("Viagem criada com sucesso!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <ContainerCreateTripForm>
@@ -103,7 +73,7 @@ export default function CreateTripPage() {
         ></input>
         <select
           name="planet"
-          id='planet'
+          id="planet"
           value={form.planet}
           onChange={handleInputChange}
           required
@@ -127,6 +97,7 @@ export default function CreateTripPage() {
           placeholder="Data da viagem"
           required
           title={"Insira uma data no futuro"}
+          pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{2}$"
           type="date"
         ></input>
         <input

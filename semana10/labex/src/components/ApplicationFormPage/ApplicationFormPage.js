@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { ContainerForm } from "./styled";
-import useForm from "../useForm";
 import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { useHistory } from "react-router-dom";
 
 export default function ApplicationFormPage() {
   const [trip, setTrip] = useState([])
-  const [form, onChangeForm, clearFields] = useForm({
+  const [form, setForm] = useState({
     name: "",
     age: "",
+    applicationText: "",
     profession: "",
     country: "",
-    trip: "",
-    applicationText: "",
   });
 
-  const submitForm = (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+   const submitForm = (e) => {
     e.preventDefault();
-    clearFields();
     alert(
       "Olá, Astronauta! Sua inscrição foi recebida com sucesso! Aguarde nosso contato :)"
     );
@@ -41,7 +43,7 @@ export default function ApplicationFormPage() {
         <input
           name="name"
           value={form.name}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Nome*"
           required
           pattern={"^.{3,}"}
@@ -51,7 +53,7 @@ export default function ApplicationFormPage() {
         <input
           name="age"
           value={form.age}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Idade*"
           required
           min="18"
@@ -60,7 +62,7 @@ export default function ApplicationFormPage() {
         <input
           name="profession"
           value={form.profession}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Profissão*"
           required
           pattern={"^.{10,}"}
@@ -365,7 +367,7 @@ export default function ApplicationFormPage() {
         <textarea
           name="applicationText"
           value={form.applicationText}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Por que você gostaria de embarcar nessa viagem?*"
           rows="8"
           cols="80"

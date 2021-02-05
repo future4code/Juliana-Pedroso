@@ -9,3 +9,7 @@ export const goToApplicationFormPage = (history) => {
 export const goToCreateTripPage = (history) => {
   history.push("/trips-create");
 };
+
+export const gotoListTripsPage = (history) => {
+  history.push("/trips-list");
+};

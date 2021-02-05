@@ -18,14 +18,27 @@ export const ContainerForm = styled.div`
   }
 
   form {
+    display: grid;
+    justify-items: center;
     margin: auto;
-    width: 20vw;
+    width: 40vw;
     padding: 5px;
   }
 
   input,
   textarea {
-    width: 20vw;
+    width: 30vw;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    &:hover {
+      border: 3px solid #0057d8;
+    }
+  }
+
+  select {
+    width: 31vw;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;

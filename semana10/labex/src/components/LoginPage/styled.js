@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const ContainerInputs = styled.div`
   display: grid;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   margin-top: 50px;
-
+  
   input {
     width: 20vw;
     padding: 5px;

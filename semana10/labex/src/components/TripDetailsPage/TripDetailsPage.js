@@ -3,7 +3,8 @@ import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { ContainerText, CardTrips } from "./styled";
 import { useHistory } from "react-router-dom";
-import { goToCreateTripPage } from "../Routers/Coordinator";
+import { useProtectedPage } from "../Routers/useProtectPage";
+import { goToCreateTripPage, gotoListTripsPage } from "../Routers/Coordinator";
 
 export default function TripDetailsPage() {
   const [trip, setTrip] = useState([]);
@@ -33,6 +34,11 @@ export default function TripDetailsPage() {
 
   return (
     <ContainerText>
+      <div>
+        <button onClick={() => goToCreateTripPage(history)}>
+          Criar nova viagem
+        </button>
+      </div>
       <h1>Página com os detalhes das viagens</h1>
       <CardTrips>
         {trip.map((trip) => {
@@ -43,20 +49,16 @@ export default function TripDetailsPage() {
               <p>Descrição: {trip.description}</p>
               <button
                 onClick={() => {
-                  setTripId(trip.id);
+                  setTripId(trip.id) || gotoListTripsPage(history);
                 }}
               >
                 Lista de candidatos
               </button>
+              <hr />
             </div>
           );
         })}
       </CardTrips>
-      <div>
-        <button onClick={() => goToCreateTripPage(history)}>
-          Criar nova viagem
-        </button>
-      </div>
     </ContainerText>
   );
 }

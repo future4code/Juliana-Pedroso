@@ -31,13 +31,14 @@ export default function LoginPage() {
         history.push("/trips-details");
       })
       .catch((err) => {
+        alert('Ops, é necessário preencher os campos para continuar')
         console.log(err);
       });
   };
 
   return (
     <ContainerInputs>
-      <h1>Astronauta, faça o seu login para começar :)</h1>
+      <h2>Astronauta, faça o seu login para começar :)</h2>
       <input
         onChange={onChangeEmail}
         value={email}

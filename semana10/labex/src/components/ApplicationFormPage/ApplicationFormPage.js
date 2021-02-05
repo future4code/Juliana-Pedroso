@@ -3,32 +3,48 @@ import { ContainerForm } from "./styled";
 import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { useHistory } from "react-router-dom";
+import useForm from "../useForm";
 
 export default function ApplicationFormPage() {
-  const [trip, setTrip] = useState([])
-  const [form, setForm] = useState({
+  const [trips, setTrips] = useState([]);
+  const [form, onChangeForm, clearFields] = useForm({
     name: "",
     age: "",
-    applicationText: "",
     profession: "",
     country: "",
+    trip: "",
+    applicationText: "",
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-   const submitForm = (e) => {
-    e.preventDefault();
-    alert(
-      "Olá, Astronauta! Sua inscrição foi recebida com sucesso! Aguarde nosso contato :)"
-    );
+  useEffect(() => {
     axios
-      .post(`${baseUrl}/${user}/trips/BOs3axCrgBaohRGx7Nuw/apply/apply`)
+      .get(`${baseUrl}/${user}/trips`)
       .then((res) => {
-        setTrip(res.data)
-        console.log(res.data);
+        setTrips(res.data.trips);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    const body = {
+      name: form.name,
+      age: form.age,
+      profession: form.profession,
+      country: form.country,
+      applicationText: form.applicationText,
+    };
+
+    axios
+      .post(`${baseUrl}/${user}/trips/${form.trip.id}/apply`, body)
+      .then((res) => {
+        alert(
+          "Olá, Astronauta! Sua inscrição foi recebida com sucesso! Aguarde nosso contato :)"
+        );
+        clearFields()
       })
       .catch((err) => {
         console.log(err);
@@ -43,7 +59,7 @@ export default function ApplicationFormPage() {
         <input
           name="name"
           value={form.name}
-          onChange={handleInputChange}
+          onChange={onChangeForm}
           placeholder="Nome*"
           required
           pattern={"^.{3,}"}
@@ -53,7 +69,7 @@ export default function ApplicationFormPage() {
         <input
           name="age"
           value={form.age}
-          onChange={handleInputChange}
+          onChange={onChangeForm}
           placeholder="Idade*"
           required
           min="18"
@@ -62,14 +78,21 @@ export default function ApplicationFormPage() {
         <input
           name="profession"
           value={form.profession}
-          onChange={handleInputChange}
+          onChange={onChangeForm}
           placeholder="Profissão*"
           required
           pattern={"^.{10,}"}
           title={"A profissão deve ter no mínimo 10 caracteres"}
           type="text"
         ></input>
-        <select id="country" name="country" required>
+        <select
+          name="country"
+          value={form.country}
+          onChange={onChangeForm}
+          id="country"
+          name="country"
+          required
+        >
           <option value="Select" selected disabled>
             Selecione um país
           </option>
@@ -364,10 +387,15 @@ export default function ApplicationFormPage() {
           <option value="Zambia">Zambia</option>
           <option value="Zimbabwe">Zimbabwe</option>
         </select>
+        <select name="trip" value={form.trip} onChange={onChangeForm}>
+          {trips.map((trip) => {
+            return <option value={trip}>{trip.name}</option>;
+          })}
+        </select>
         <textarea
           name="applicationText"
           value={form.applicationText}
-          onChange={handleInputChange}
+          onChange={onChangeForm}
           placeholder="Por que você gostaria de embarcar nessa viagem?*"
           rows="8"
           cols="80"
@@ -377,7 +405,7 @@ export default function ApplicationFormPage() {
           type="text"
         ></textarea>
         <div>
-          <button>Candidatar-me!</button>
+          <button type="submit">Candidatar-me!</button>
         </div>
       </form>
     </ContainerForm>

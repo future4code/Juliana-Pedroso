@@ -5,7 +5,7 @@ export const ContainerInputs = styled.div`
   align-items: center;
   justify-items: center;
   margin-top: 50px;
-  
+
   input {
     width: 20vw;
     padding: 5px;
@@ -33,5 +33,4 @@ export const ContainerInputs = styled.div`
       border: 2px solid #0057d8;
     }
   }
-
 `;

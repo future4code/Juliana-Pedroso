@@ -31,7 +31,7 @@ export default function LoginPage() {
         history.push("/trips-details");
       })
       .catch((err) => {
-        alert('Ops, é necessário preencher os campos para continuar')
+        alert("Ops, é necessário preencher os campos para continuar");
         console.log(err);
       });
   };

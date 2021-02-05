@@ -3,6 +3,8 @@ import { ContainerList, CardTripsList } from "./styled";
 import axios from "axios";
 
 export default function ListTripsPage() {
+  // const []
+
   return (
     <ContainerList>
       <h2>Página com a lista dos candidatos por viagem</h2>

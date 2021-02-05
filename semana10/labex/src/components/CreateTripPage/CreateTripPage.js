@@ -1,50 +1,100 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { ContainerCreateTripForm } from "./styled";
 import useForm from "../useForm";
 
 export default function CreateTripPage() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-  const [form, onChangeForm, clearFields] = useForm({
-    id: "",
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+  // const [form, onChangeForm, clearFields] = useForm({
+  //   name: "",
+  //   planet: "",
+  //   date: "",
+  //   durationInDays: "",
+  //   description: "",
+  // });
+
+  const [form, setForm] = useState({
     name: "",
     planet: "",
     date: "",
-    durationInDays: "",
     description: "",
+    durationInDays: "",
   });
 
-  const createTripForm = (e) => {
-    const body = {
-      email: email,
-      password: password
-
-    };
-    e.preventDefault();
-    clearFields();
-    axios
-      .post(`${baseUrl}/${user}/trips`, body)
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        alert("Uhuuuu!! Viagem criada com sucesso!");
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
   };
+
+  const history = useHistory();
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    if (token === null) {
+      history.push("/login");
+    }
+  }, [history]);
+
+  const createTrip = (e) => {
+    e.preventDefault()
+
+    const token = localStorage.getItem("token");
+
+    const body = {
+      name: form.name,
+      planet: form.planet,
+      date: form.date,
+      durationInDays: form.durationInDays,
+      description: form.description,
+    };
+
+    const axiosConfig = {
+      headers: {
+        auth: token,
+      },
+    };
+
+    axios.post(`${baseUrl}/${user}/trips`, body, axiosConfig)
+    .then((res) => {
+      alert('Viagem criada com sucesso!')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
+  // const createTripForm = (e) => {
+  //   const body = {
+  //     email: email,
+  //     password: password
+
+  //   };
+  //   e.preventDefault();
+  //   clearFields();
+  //   axios
+  //     .post(`${baseUrl}/${user}/trips`, body)
+  //     .then((res) => {
+  //       localStorage.setItem("token", res.data.token);
+  //       alert("Uhuuuu!! Viagem criada com sucesso!");
+  //       console.log(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   return (
     <ContainerCreateTripForm>
+      {console.log(createTrip)}
       <h2>Página de criação de viagem</h2>
       <h3>Insira as informações para a próxima aventura!</h3>
-      <form onSubmit={createTripForm}>
+      <form onSubmit={createTrip}>
         <input
           name="name"
           value={form.name}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Título da viagem*"
           required
           pattern={"^.{5,}"}
@@ -55,7 +105,7 @@ export default function CreateTripPage() {
           name="planet"
           id='planet'
           value={form.planet}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           required
         >
           <option value="Select" selected>
@@ -73,7 +123,7 @@ export default function CreateTripPage() {
         <input
           name="date"
           value={form.date}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Data da viagem"
           required
           title={"Insira uma data no futuro"}
@@ -82,7 +132,7 @@ export default function CreateTripPage() {
         <input
           name="durationInDays"
           value={form.durationInDays}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Duração da viagem (em dias)"
           min="50"
           type="number"
@@ -90,7 +140,7 @@ export default function CreateTripPage() {
         <textarea
           name="description"
           value={form.description}
-          onChange={onChangeForm}
+          onChange={handleInputChange}
           placeholder="Descrição sobre a viagem"
           rows="8"
           colums="80"

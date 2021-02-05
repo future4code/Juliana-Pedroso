@@ -4,7 +4,7 @@ import { baseUrl, user } from "../parameters";
 import { ContainerText, CardTrips } from "./styled";
 import { useHistory } from "react-router-dom";
 import { useProtectedPage } from "../Routers/useProtectPage";
-import { goToCreateTripPage, gotoListTripsPage } from "../Routers/Coordinator";
+import { goToCreateTripPage, goToListTripsPage } from "../Routers/Coordinator";
 
 export default function TripDetailsPage() {
   const [trip, setTrip] = useState([]);
@@ -49,7 +49,7 @@ export default function TripDetailsPage() {
               <p>Descrição: {trip.description}</p>
               <button
                 onClick={() => {
-                  setTripId(trip.id) || gotoListTripsPage(history);
+                  setTripId(trip.id) || goToListTripsPage(history);
                 }}
               >
                 Lista de candidatos

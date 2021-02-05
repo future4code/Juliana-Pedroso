@@ -6,6 +6,7 @@ import { baseUrl, user } from "../parameters";
 import { useHistory } from "react-router-dom";
 
 export default function ApplicationFormPage() {
+  const [trip, setTrip] = useState([])
   const [form, onChangeForm, clearFields] = useForm({
     name: "",
     age: "",
@@ -22,8 +23,9 @@ export default function ApplicationFormPage() {
       "Olá, Astronauta! Sua inscrição foi recebida com sucesso! Aguarde nosso contato :)"
     );
     axios
-      .post(`${baseUrl}/${user}/trips/BOs3axCrgBaohRGx7Nuw/apply`)
+      .post(`${baseUrl}/${user}/trips/BOs3axCrgBaohRGx7Nuw/apply/apply`)
       .then((res) => {
+        setTrip(res.data)
         console.log(res.data);
       })
       .catch((err) => {

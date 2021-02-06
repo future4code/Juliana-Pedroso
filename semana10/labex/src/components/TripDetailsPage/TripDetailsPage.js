@@ -3,8 +3,9 @@ import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { ContainerText, CardTrips } from "./styled";
 import { useHistory } from "react-router-dom";
+import ListCandidatesPage from '../ListCandidatesPage/ListCandidatesPage'
 import { useProtectedPage } from "../Routers/useProtectPage";
-import { goToCreateTripPage, goToListTripsPage } from "../Routers/Coordinator";
+import { goToCreateTripPage, goToListCandidatesPage } from "../Routers/Coordinator";
 
 export default function TripDetailsPage() {
   const [trip, setTrip] = useState([]);
@@ -47,10 +48,12 @@ export default function TripDetailsPage() {
             <div>
               <h2>{trip.name}</h2>
               <p>Planeta: {trip.planet}</p>
+              <p>Data: {trip.date}</p>
+              <p>Duração: {trip.durationInDays} dias</p>
               <p>Descrição: {trip.description}</p>
               <button
                 onClick={() => {
-                  setTripId(trip.id) || goToListTripsPage(history);
+                  setTripId(trip.id) || goToListCandidatesPage(history);
                 }}
               >
                 Lista de candidatos
@@ -60,6 +63,7 @@ export default function TripDetailsPage() {
           );
         })}
       </CardTrips>
+      <ListCandidatesPage />
     </ContainerText>
   );
 }

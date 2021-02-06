@@ -43,6 +43,7 @@ export const CardTrips = styled.div`
 
   button {
     display: flex;
+    flex-wrap: wrap;
     background-color: #0057d8;
     color: #fff;
     font-weight: 400;

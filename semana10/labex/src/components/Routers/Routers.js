@@ -5,7 +5,7 @@ import HomePage from "../HomePage/HomePage";
 import ApplicationFormPage from "../ApplicationFormPage/ApplicationFormPage";
 import LoginPage from "../LoginPage/LoginPage";
 import CreateTripPage from "../CreateTripPage/CreateTripPage";
-import ListTripsPage from "../ListTripsPage/ListTripsPage";
+import ListCandidatesPage from "../ListCandidatesPage/ListCandidatesPage";
 import TripDetailsPage from "../TripDetailsPage/TripDetailsPage";
 
 export default function Routers() {
@@ -29,8 +29,8 @@ export default function Routers() {
           <CreateTripPage />
         </Route>
 
-        <Route exact path="/trips-list">
-          <ListTripsPage />
+        <Route exact path="/candidates-list">
+          <ListCandidatesPage />
         </Route>
 
         <Route exact path="/trips-details">

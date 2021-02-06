@@ -10,10 +10,10 @@ export const goToCreateTripPage = (history) => {
   history.push("/trips-create");
 };
 
-export const goToListTripsPage = (history) => {
-  history.push("/trips-list");
+export const goToListCandidatesPage = (history) => {
+  history.push("/candidates-list");
 };
 
-export const goToTripsDetails = (history, id) => {
-  history.push("")
+export const goToTripsDetails = (history) => {
+  history.push("/trips-details")
 }

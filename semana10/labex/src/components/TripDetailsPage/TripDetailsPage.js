@@ -3,8 +3,6 @@ import axios from "axios";
 import { baseUrl, user } from "../parameters";
 import { ContainerText, CardTrips } from "./styled";
 import { useHistory } from "react-router-dom";
-import ListCandidatesPage from '../ListCandidatesPage/ListCandidatesPage'
-import { useProtectedPage } from "../Routers/useProtectPage";
 import { goToCreateTripPage, goToListCandidatesPage } from "../Routers/Coordinator";
 
 export default function TripDetailsPage() {
@@ -35,7 +33,6 @@ export default function TripDetailsPage() {
 
   return (
     <ContainerText>
-      {console.log(tripId)}
       <div>
         <button onClick={() => goToCreateTripPage(history)}>
           Criar nova viagem
@@ -53,7 +50,7 @@ export default function TripDetailsPage() {
               <p>Descrição: {trip.description}</p>
               <button
                 onClick={() => {
-                  setTripId(trip.id) && goToListCandidatesPage(history);
+                  goToListCandidatesPage(history);
                 }}
               >
                 Lista de candidatos
@@ -63,7 +60,6 @@ export default function TripDetailsPage() {
           );
         })}
       </CardTrips>
-      <ListCandidatesPage                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             />
     </ContainerText>
   );
 }

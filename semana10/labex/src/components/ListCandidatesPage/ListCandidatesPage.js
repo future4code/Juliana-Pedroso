@@ -4,6 +4,17 @@ import axios from "axios";
 import { baseUrl, user } from "../parameters";
 
 export default function ListTripsPage(props) {
+  const decideCandidate = (approve) => {
+    axios.put(`${baseUrl}/${user}/trips/${props.tripId}`)
+  }
+
+  const approved = () => {
+    alert("Candidato aprovado!")
+  }
+  const reject = () => {
+    alert("Poxa, candidato reprovado :(")
+  }
+
   const [tripId, setTripId] = useState("");
 
   useEffect(() => {
@@ -19,8 +30,8 @@ export default function ListTripsPage(props) {
         <p>Planeta: Saturno</p>
         <p>Descrição: Quero muito irrrrr!!!!!</p>
         <div className="grid-buttons">
-          <button className="ok">Aprovado</button>
-          <button className="no-ok">Reprovado</button>
+          <button className="ok" onClick={approved}>Aprovado</button>
+          <button className="no-ok" onClick={reject}>Reprovado</button>
         </div>
         <hr />
         <p>Bananinha</p>
@@ -28,8 +39,8 @@ export default function ListTripsPage(props) {
         <p>Planeta: Plutão</p>
         <p>Descrição: Sou o candidato perfeito para embarcar nessa aventura</p>
         <div className="grid-buttons">
-          <button className="ok">Aprovado</button>
-          <button className="no-ok">Reprovado</button>
+          <button className="ok" onClick={approved}>Aprovado</button>
+          <button className="no-ok" onClick={reject}>Reprovado</button>
         </div>
         <hr />
       </CardTripsList>

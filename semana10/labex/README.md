@@ -27,7 +27,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Wireframe](https://wireframe.cc/)
 
 ### 🔗 Link do Surge:
-http://outgoing-bulb.surge.sh/candidates-list
+http://outgoing-bulb.surge.sh/
 
 ### 🔓 Informações de acesso:
 

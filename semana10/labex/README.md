@@ -27,7 +27,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Wireframe](https://wireframe.cc/)
 
 ### 🔗 Link do Surge:
-- www
+http://outgoing-bulb.surge.sh/candidates-list
 
 ### 🔓 Informações de acesso:
 
@@ -35,7 +35,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - senha: 123456
 
 ### 📷 Prints:
-- colocar suas imagens aqui 
+<img src="https://user-images.githubusercontent.com/68782453/106516939-8f8add00-64b6-11eb-9b31-6e99d6fafe30.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106517005-a6c9ca80-64b6-11eb-95aa-cbe33e36b422.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106517043-b77a4080-64b6-11eb-98ef-0e823e92f58f.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106517087-c660f300-64b6-11eb-949e-a8b578fa263c.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106517124-d37de200-64b6-11eb-9be3-8dcbd2bac129.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106660676-10ada700-657f-11eb-997b-4201ea4ce725.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106801761-e3c1c880-6640-11eb-94b5-6dbd4a209b1d.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106801818-f2a87b00-6640-11eb-966e-ba5d1483c3e9.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106801905-0bb12c00-6641-11eb-84ba-73b919a2eccb.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106801981-1ff52900-6641-11eb-8f47-9e7368eee3b1.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106946990-9577fc80-6708-11eb-9617-ad2c73d53164.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/106947267-e982e100-6708-11eb-9ea9-4b602fe2f0dc.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107080657-5b722d80-67d0-11eb-9052-73f5b258d009.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107080905-a7bd6d80-67d0-11eb-8e17-5cce062d0c26.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107080933-b3109900-67d0-11eb-9961-bdd22aaa79a7.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107080987-c7ed2c80-67d0-11eb-8e96-8a81f5339018.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157596-b1c3a580-6963-11eb-9714-483cf2c2eeaf.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157603-c2741b80-6963-11eb-8f48-818a1f831381.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157624-df105380-6963-11eb-8f1d-909b36335523.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157645-ee8f9c80-6963-11eb-8512-0c7eed04beb2.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157656-fc452200-6963-11eb-8adb-52fd813c0fbb.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157667-0bc46b00-6964-11eb-8947-52e6758ac06e.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157673-17179680-6964-11eb-85cc-7a416a30da7d.png" width="90%"></img> <img src="https://user-images.githubusercontent.com/68782453/107157678-23035880-6964-11eb-8934-c18238e990d6.png" width="90%"></img> 
 
 <hr />
 

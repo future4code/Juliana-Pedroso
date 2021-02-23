@@ -1,15 +1,18 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import LoginPage from '../Pages/LoginPage';
-import RegisterPage from '../Pages/RegisterPage';
-import FeedPage from '../Pages/FeedPage';
-import PostsPage from '../Pages/PostsPage'
+import LoginPage from '../pages/LoginPage';
+import RegisterPage from '../pages/RegisterPage';
+import FeedPage from '../pages/FeedPage';
+import PostsPage from '../pages/PostsPage';
+import ErrorPage from "../pages/ErrorPage";
+import Header from "../components/Header";
 
 const Routers = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/login">
           <LoginPage />
         </Route>
 
@@ -26,7 +29,7 @@ const Routers = () => {
         </Route>
         
         <Route>
-            <p>Ops! Página não encontrada :(</p>
+            <ErrorPage />
         </Route>
 
       </Switch>

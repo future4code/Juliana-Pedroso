@@ -1,7 +1,7 @@
 import React from 'react';
 import useProtectedPage from "../hooks/useProtectedPage";
 
-const PostsPage = () => {
+const PostsDetailPage = () => {
     useProtectedPage();
 
     return(
@@ -9,4 +9,4 @@ const PostsPage = () => {
     )
 }
 
-export default PostsPage;
+export default PostsDetailPage;

@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../constants/parameters";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -16,6 +15,7 @@ import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 import { goToRegisterPage } from "../routes/Coordinators";
 import useUnprotectedPage from "../hooks/useUnprotectedPage";
+import { ExitToApp } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginPage() {
+export default function LoginPage({setHandleButton}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -54,6 +54,7 @@ export default function LoginPage() {
 
   const onSubmitForm = (e) => {
     e.preventDefault()
+    handleLogin(setHandleButton)
   }
 
   const handleLogin = () => {
@@ -67,9 +68,10 @@ export default function LoginPage() {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         history.push("/feed");
+        setHandleButton(<ExitToApp />)
       })
       .catch((err) => {
-        alert("Ops, usuário ou senha incorretos :(");
+        alert(err.response.data.message);
         console.log(err);
       });
   };
@@ -88,7 +90,7 @@ export default function LoginPage() {
   }
 
   return (
-    <Grid container style={{ minHeight: "90vh" }}>
+    <Grid container style={{ minHeight: "90vh" }} >
       <img
         src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png"
         style={{
@@ -116,7 +118,7 @@ export default function LoginPage() {
               <LockOutlinedIcon />
             </Avatar>
           </div>
-          <form onSubmit={onSubmitForm}>
+          <form onSubmit={onSubmitForm} >
             <TextField
               onChange={onChangeEmail}
               value={email}

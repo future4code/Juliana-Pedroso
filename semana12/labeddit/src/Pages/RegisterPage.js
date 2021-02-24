@@ -10,6 +10,8 @@ import { TextField } from "@material-ui/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
+import useUnprotectedPage from "../hooks/useUnprotectedPage";
+import { ExitToApp } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -31,12 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RegisterPage() {
+export default function RegisterPage({setHandleButton}) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
   const classes = useStyles();
+  useUnprotectedPage();
 
   const onChangeUserName = (e) => {
     setUserName(e.target.value);
@@ -52,6 +55,7 @@ export default function RegisterPage() {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
+    handleRegister(setHandleButton)
   };
 
   const handleRegister = () => {
@@ -65,11 +69,12 @@ export default function RegisterPage() {
       .post(`${BASE_URL}/signup`, body)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        alert("Usuário criado com sucesso! Aproveite o nosso feed :)")
+        alert("Usuário criado com sucesso! Aproveite o nosso feed :)");
         history.push("/feed");
+        setHandleButton(<ExitToApp />)
       })
       .catch((err) => {
-        alert("Ops, algo deu errado com o seu cadastro :(");
+        alert(err.response.data.message);
         console.log(err);
       });
   };

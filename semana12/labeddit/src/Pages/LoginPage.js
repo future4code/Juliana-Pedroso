@@ -14,6 +14,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
+import { goToRegisterPage } from "../routes/Coordinators";
+import useUnprotectedPage from "../hooks/useUnprotectedPage";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,6 +42,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const history = useHistory();
   const classes = useStyles();
+  useUnprotectedPage();
 
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -48,6 +51,10 @@ export default function LoginPage() {
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  const onSubmitForm = (e) => {
+    e.preventDefault()
+  }
 
   const handleLogin = () => {
     const body = {
@@ -109,7 +116,7 @@ export default function LoginPage() {
               <LockOutlinedIcon />
             </Avatar>
           </div>
-          <Grid>
+          <form onSubmit={onSubmitForm}>
             <TextField
               onChange={onChangeEmail}
               value={email}
@@ -118,6 +125,7 @@ export default function LoginPage() {
               required
               fullWidth
               id="email"
+              type="email"
               label="Email Address"
               name="email"
               autoComplete="email"
@@ -137,7 +145,7 @@ export default function LoginPage() {
               id="password"
               autoComplete="current-password"
             />
-          </Grid>
+          </form>
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
@@ -154,6 +162,7 @@ export default function LoginPage() {
           </Button>
 
           <Button
+            onClick={()=> goToRegisterPage(history)}
             type="submit"
             fullWidth
             variant="contained"

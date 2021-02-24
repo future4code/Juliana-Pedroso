@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginPage({setHandleButton}) {
+export default function LoginPage({ setHandleButton }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -53,9 +53,9 @@ export default function LoginPage({setHandleButton}) {
   };
 
   const onSubmitForm = (e) => {
-    e.preventDefault()
-    handleLogin(setHandleButton)
-  }
+    e.preventDefault();
+    handleLogin(setHandleButton);
+  };
 
   const handleLogin = () => {
     const body = {
@@ -68,7 +68,7 @@ export default function LoginPage({setHandleButton}) {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         history.push("/feed");
-        setHandleButton(<ExitToApp />)
+        setHandleButton(<ExitToApp />);
       })
       .catch((err) => {
         alert(err.response.data.message);
@@ -90,7 +90,7 @@ export default function LoginPage({setHandleButton}) {
   }
 
   return (
-    <Grid container style={{ minHeight: "90vh" }} >
+    <Grid container style={{ minHeight: "90vh" }}>
       <img
         src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png"
         style={{
@@ -118,7 +118,7 @@ export default function LoginPage({setHandleButton}) {
               <LockOutlinedIcon />
             </Avatar>
           </div>
-          <form onSubmit={onSubmitForm} >
+          <form onSubmit={onSubmitForm}>
             <TextField
               onChange={onChangeEmail}
               value={email}
@@ -164,7 +164,7 @@ export default function LoginPage({setHandleButton}) {
           </Button>
 
           <Button
-            onClick={()=> goToRegisterPage(history)}
+            onClick={() => goToRegisterPage(history)}
             type="submit"
             fullWidth
             variant="contained"

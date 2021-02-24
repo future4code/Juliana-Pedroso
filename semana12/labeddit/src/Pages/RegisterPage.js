@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RegisterPage({setHandleButton}) {
+export default function RegisterPage({ setHandleButton }) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,7 +55,7 @@ export default function RegisterPage({setHandleButton}) {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    handleRegister(setHandleButton)
+    handleRegister(setHandleButton);
   };
 
   const handleRegister = () => {
@@ -71,7 +71,7 @@ export default function RegisterPage({setHandleButton}) {
         localStorage.setItem("token", res.data.token);
         alert("Usuário criado com sucesso! Aproveite o nosso feed :)");
         history.push("/feed");
-        setHandleButton(<ExitToApp />)
+        setHandleButton(<ExitToApp />);
       })
       .catch((err) => {
         alert(err.response.data.message);

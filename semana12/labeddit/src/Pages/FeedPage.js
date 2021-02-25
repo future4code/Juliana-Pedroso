@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_URL, superUser } from "../constants/parameters";
+import { goToPostsDetailPage } from "../routes/Coordinators";
 import useProtectedPage from "../hooks/useProtectedPage";
 import SimpleCard from "../components/SimpleCard";
 import { StyleSimpleCard } from "../components/styled";
-import { Card } from "@material-ui/core";
 
 const FeedPage = () => {
   const [feed, setFeed] = useState([]);
@@ -34,6 +34,10 @@ const FeedPage = () => {
       });
   };
 
+  const onClickCard = (id) => {
+    goToPostsDetailPage(history, id)
+  };
+
   return (
     <StyleSimpleCard>
       {feed.map((item) => {
@@ -42,7 +46,9 @@ const FeedPage = () => {
             <SimpleCard
               key={item.id}
               username={item.username}
+              title={item.title}
               text={item.text}
+              onClickCard={() => onClickCard(item.id)}
             ></SimpleCard>
           </div>
         );

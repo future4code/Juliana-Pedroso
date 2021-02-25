@@ -14,8 +14,8 @@ export const goToFeedPage = (history) => {
   history.push("/feed");
 };
 
-export const goToPostsDetailPage = (history) => {
-  history.push("/detail/:id")
+export const goToPostsDetailPage = (history, id) => {
+  history.push(`/detail/${id}`)
 }
 
 export const goToPostsPage = (history) => {

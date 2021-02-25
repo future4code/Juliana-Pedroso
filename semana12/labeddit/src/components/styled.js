@@ -13,10 +13,6 @@ export const StyledToolbar = styled(Toolbar)`
   justify-content: space-between;
 `;
 
-// export const StyledCntainerCard = styled.div`
-//   height: 30vh;
-// `;
-
 export const StyleSimpleCard = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

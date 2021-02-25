@@ -10,20 +10,24 @@ const SimpleCard = (props) => {
   return (
     <Card variant="outlined">
       <CardContent style={{ height: "20vh", overflowY: "auto" }}
-        username={props.username}
-        text={props.text}
       >
-        <Typography color="textSecondary" gutterBottom>
+        <Typography component="h1" color="textSecondary">
+          <strong>{props.title.toUpperCase()}</strong>
+        </Typography>
+        <br />
+        
+        <Typography color="textSecondary">
           {props.username.toUpperCase()}
         </Typography>
-        
+        <br />
+
         <Typography variant="body2" component="p">
           {props.text}
           <br />
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button onClick={props.onClickCard} size="small">Learn More</Button>
       </CardActions>
     </Card>
   );

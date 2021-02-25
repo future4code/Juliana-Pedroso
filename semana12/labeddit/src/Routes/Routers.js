@@ -31,7 +31,7 @@ const Routers = ({setHandleButton}) => {
         <PostsPage />
       </Route>
 
-      <Route exact path="/posts-detail/:id">
+      <Route exact path="/detail/:id">
         <PostsDetailPage />
       </Route>
 

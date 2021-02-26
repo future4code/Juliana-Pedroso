@@ -27,7 +27,7 @@ const Routers = ({setHandleButton}) => {
         <FeedPage />
       </Route>
 
-      <Route exact path="/posts">
+      <Route exact path="/comments">
         <PostsPage />
       </Route>
 

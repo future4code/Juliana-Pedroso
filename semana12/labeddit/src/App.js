@@ -10,7 +10,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function App() {
   const token = localStorage.getItem("token")
-  const [handleButton, setHandleButton] = useState(token ? <ExitToAppIcon /> : <AccountCircleIcon />);
+  const [handleButton, setHandleButton] = useState(token ? <ExitToAppIcon style={{ fontSize: 40 }}/> : <AccountCircleIcon style={{ fontSize: 40 }}/>);
 
   document.title = "LabEddit";
 

@@ -17,7 +17,7 @@ const FeedPage = () => {
 
   useEffect(() => {
     showFeed();
-  }, [feed, vote]);
+  }, []);
 
   const showFeed = () => {
     const authorization = {

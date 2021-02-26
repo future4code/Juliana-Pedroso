@@ -71,7 +71,7 @@ export default function RegisterPage({ setHandleButton }) {
         localStorage.setItem("token", res.data.token);
         alert("Usuário criado com sucesso! Aproveite o nosso feed :)");
         history.push("/feed");
-        setHandleButton(<ExitToApp />);
+        setHandleButton(<ExitToApp style={{ fontSize: 40 }}/>);
       })
       .catch((err) => {
         alert(err.response.data.message);
@@ -118,7 +118,7 @@ export default function RegisterPage({ setHandleButton }) {
               fullWidth
               id="name"
               type="text"
-              label="Name"
+              label="Nome"
               name="name"
               autoFocus
             />
@@ -132,7 +132,7 @@ export default function RegisterPage({ setHandleButton }) {
               fullWidth
               id="email"
               type="email"
-              label="Email Address"
+              label="Endereço de E-mail"
               name="email"
               autoComplete="email"
               autoFocus
@@ -146,7 +146,7 @@ export default function RegisterPage({ setHandleButton }) {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Senha"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -154,7 +154,7 @@ export default function RegisterPage({ setHandleButton }) {
           </form>
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label="Lembrar-me"
           />
 
           <Button

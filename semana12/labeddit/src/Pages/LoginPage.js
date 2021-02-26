@@ -68,7 +68,7 @@ export default function LoginPage({ setHandleButton }) {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         history.push("/feed");
-        setHandleButton(<ExitToApp />);
+        setHandleButton(<ExitToApp style={{ fontSize: 40 }}/>);
       })
       .catch((err) => {
         alert(err.response.data.message);
@@ -115,7 +115,7 @@ export default function LoginPage({ setHandleButton }) {
         <div>
           <div align="center">
             <Avatar className={classes.avatar}>
-              <LockOutlinedIcon />
+              <LockOutlinedIcon/>
             </Avatar>
           </div>
           <form onSubmit={onSubmitForm}>
@@ -128,7 +128,7 @@ export default function LoginPage({ setHandleButton }) {
               fullWidth
               id="email"
               type="email"
-              label="Email Address"
+              label="Endereço de E-mail"
               name="email"
               autoComplete="email"
               autoFocus
@@ -142,7 +142,7 @@ export default function LoginPage({ setHandleButton }) {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Senha"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -150,7 +150,7 @@ export default function LoginPage({ setHandleButton }) {
           </form>
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label="Lembrar-me"
           />
           <Button
             onClick={handleLogin}

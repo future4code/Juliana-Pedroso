@@ -21,3 +21,27 @@ export const StyleSimpleCard = styled.div`
   grid-gap: 1rem;
   margin: 2rem 1rem;
 `;
+
+export const StylePostCard = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  row-gap: 2rem;
+  width: 100%;
+  margin: 2rem auto;
+`;
+
+export const StyleCommentsCard = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  row-gap: 2rem;
+  width: 40vw;
+  margin: 2rem auto;
+`;

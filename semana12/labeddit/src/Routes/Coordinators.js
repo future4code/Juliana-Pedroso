@@ -18,6 +18,6 @@ export const goToPostsDetailPage = (history, id) => {
   history.push(`/detail/${id}`)
 }
 
-export const goToPostsPage = (history) => {
-  history.push("/posts");
+export const goToCommentsPage = (history) => {
+  history.push("/comments");
 };

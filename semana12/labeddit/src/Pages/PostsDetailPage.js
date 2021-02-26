@@ -49,9 +49,10 @@ const PostsDetailPage = () => {
         {comments.map((comment) => {
             return(
                 <div key={comment.id}>
-                    <p>{comment.username}</p>
+                    <h4>{comment.username}</h4>
                     <p>{comment.text}</p>
-                    <p>{comment.comments.votesCount}</p>
+                    <p>{comment.votesCount}</p>
+                    <p>{comment.commentsCount}</p>
                 </div>
             )
         })}

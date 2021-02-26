@@ -1,3 +1,33 @@
+# LABEDDIT
+
+<h4 align='center'>
+👉 Status: 🚧 Em construção... 🚧
+</h4>
+<hr />
+
+### ✨ Funcionamento:
+- [x] Página Home
+- [x] Rotas 
+- [x] Página Feed com todos os posts
+- [x] Página de detalhes de cada post
+- [x] Página para criar comentário
+- [x] Responsividade 
+
+### 💻 Tecnologias:
+As seguintes tecnologias foram usadas na construção do projeto:
+- [React](https://pt-br.reactjs.org/)
+- [JavaScript](https://www.javascript.com/)
+- [Material-UI](https://material-ui.com/pt/)
+
+### 🎨 Layout:
+- Styled-componentes
+- Material-UI
+
+### 🔗 Link do Surge:
+http://well-to-do-suit.surge.sh/ (link temporário)
+
+<hr />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

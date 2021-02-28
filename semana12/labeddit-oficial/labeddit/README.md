@@ -1,3 +1,46 @@
+# 📌 LABEDDIT <img src="https://external-preview.redd.it/iDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png?auto=webp&s=38648ef0dc2c3fce76d5e1d8639234d8da0152b2" width="30px" alt="Logo Reddit"/>
+
+<h4 align='center'>
+👉 Status: Concluído ✔️👏
+</h4>
+<hr />
+
+### ✨ Funcionamento:
+- [x] Rotas
+- [x] Página Home 
+- [x] Página de Login
+- [x] Página de Cadatro
+- [x] Página Feed protegida
+- [x] Página de Detalhes protegida
+- [x] Funcionalidade de adicionar/curtir comentário
+- [x] Funcionalidade de criar/curtir post
+- [x] Funcionalidade de pesquisar post por título
+
+### 💻 Tecnologias:
+As seguintes tecnologias foram usadas na construção do projeto:
+- [React](https://pt-br.reactjs.org/)
+- [JavaScript](https://www.javascript.com/)
+- [Material-UI](https://material-ui.com/pt/)
+
+### 🎨 Layout:
+- Material-UI
+- Styled-componentes
+
+### 🔗 Link do Surge:
+http://easy-hydrant.surge.sh/
+
+### 📷 Prints:
+<img src="https://user-images.githubusercontent.com/68782453/109404786-35135e00-7948-11eb-9d89-31538c49a798.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404790-40ff2000-7948-11eb-868f-0784093db112.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404793-4a888800-7948-11eb-99ae-e7daa5a9fba1.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404805-6be97400-7948-11eb-8713-27f57d4be026.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404810-799ef980-7948-11eb-914b-da7225a81906.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404821-8f142380-7948-11eb-88ff-b63ce949511d.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404833-a9e69800-7948-11eb-8075-1a1fcb8045b8.png" width="90%"></img> 
+<img src="https://user-images.githubusercontent.com/68782453/109404838-b965e100-7948-11eb-9b4c-6e254c72c495.png" width="90%"></img> 
+
+<hr />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

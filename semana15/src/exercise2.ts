@@ -45,7 +45,9 @@ function obterEstatisticas(numeros: number[]) {
 }
 
 /* b. Que outras variáveis compõem essa função? Explicite a tipagem de todas elas  */
-// R. existe uma variável sort para ordenação, do tipo crescente, uma variaável de repetição 
+// R. existe a função principal que recebe uma tipagem number e tem um array, uma variável 
+// sort para ordenação, do tipo crescente, que também recebe uma tipagem number, uma variaável 
+// de repetição 
 // for e uma variável do tipo objeto que armazema 3 propriedades: maior, menor e media
 
 /* c. Crie um type para representar uma amostra de dados, isto é, um objeto com as chaves numeros e 
@@ -59,7 +61,7 @@ obterEstatisticas. Abaixo, temos um exemplo de objeto desse tipo, declarado em J
 // R.
 
 type AmostraDeDados = {
-    numeros: [21, 18, 65, 44, 15, 18],
-    obterEstatisticas: ,
+    numeros: number[],
+    obterEstatisticas: (numeros: number) => {number:any}
 }
 

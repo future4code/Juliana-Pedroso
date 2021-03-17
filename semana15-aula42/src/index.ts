@@ -24,3 +24,8 @@ const server = app.listen(process.env.PORT || 3003, () => {
 app.get("/countries/all", (req: Request, res: Response) => {
     res.send({message: countries});
 })
+
+/* ----- EXERCÍCIO 2 ----- */
+
+
+/* ----- EXERCÍCIO 3 ----- */

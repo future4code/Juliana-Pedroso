@@ -1,0 +1,15 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "exercício 1 de back-end em node",
+  "main": "exercicio1.js",
+  "scripts": {
+    "start": "node ./exercicio1.js"
+  },
+  "keywords": [
+    "node",
+    "back-end"
+  ],
+  "author": "Juliana Pedroso",
+  "license": "ISC"
+}

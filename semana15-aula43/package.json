@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./build/index.js"
+    "start": "tsc && node ./build/index.js",
+    "start-dev": "ts-node-dev ./src/index.ts",
+    "ts-start": "ts-node ./src/index.ts"
   },
   "keywords": [
     "api",
@@ -20,5 +22,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1"
   }
 }

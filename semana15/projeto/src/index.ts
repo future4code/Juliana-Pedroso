@@ -1,3 +1,4 @@
+import { AddressInfo } from "net";
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 
@@ -7,34 +8,59 @@ app.use(express.json());
 app.use(cors());
 
 type user = {
-  CPF: number;
-  nome: string;
-  dataNascimento: string;
+  cpf: number;
+  name: string;
+  birthDate: string;
+  balance: number;
+  transactions: [];
 };
 
 let users: user[] = [
   {
-    CPF: 12345678900,
-    nome: "Astrodev",
-    dataNascimento: "21/03/2019",
+    cpf: 12345678900,
+    name: "Astrodev",
+    birthDate: "21/03/2019",
+    balance: 0,
+    transactions: [],
+  },
+  {
+    cpf: 34123578611,
+    name: "Labenu",
+    birthDate: "01/03/2019",
+    balance: 0,
+    transactions: [],
+  },
+];
+
+type transaction = {
+  value: number;
+  date: string;
+  description: string;
+};
+
+let transactions: transaction[] = [
+  {
+    value: 10,
+    date: "18/08/2019",
+    description: "compra de um sorvetin",
   },
 ];
 
 app.get("/users", (req: Request, res: Response) => {
   let errorCode: number = 404;
-  
-  const nome: string = req.query.nome as string;
+
+  const name: string = req.query.name as string;
   const myUsers = users;
   const myUser = myUsers.find((user) => {
-      return user.nome === nome;
-  })
+    return user.name === name;
+  });
 
   if (!myUsers) {
-      errorCode = 404;
-      throw new Error("User not found")
+    errorCode = 404;
+    throw new Error("User not found");
   }
 
-  res.status(200).send({myUser})
+  res.status(200).send({ myUser });
 
   try {
   } catch (error) {
@@ -42,7 +68,65 @@ app.get("/users", (req: Request, res: Response) => {
   }
 });
 
-import { AddressInfo } from "net";
+app.get("/users/:cpf", (req: Request, res: Response) => {
+  let errorCode: number = 400;
+
+  const cpf: number = Number(req.params.cpf);
+  if (isNaN(cpf)) {
+    errorCode = 422;
+    throw new Error("Invalid value for id. Please send a number!");
+  }
+  const myUsers = users;
+  const myUser = myUsers.find((user) => {
+    return user.cpf === cpf;
+  });
+
+  if (!myUser) {
+    errorCode = 404;
+    throw new Error("User not found :(");
+  }
+
+  res.status(200).send({ myUser });
+
+  try {
+  } catch (error) {
+    res.status(errorCode).send({ message: error.message });
+  }
+});
+
+app.post("/users", (req: Request, res: Response) => {
+  let errorCode: number = 400;
+
+  try {
+    // const {cpf, name, birthDate, balance, transactions} = req.body
+    const reqBody: user = {
+      cpf: req.body.cpf,
+      name: req.body.name,
+      birthDate: req.body.birthDate,
+      balance: req.body.balance,
+      transactions: req.body.transactions,
+    };
+
+    if (
+      !reqBody.cpf ||
+      !reqBody.name ||
+      !reqBody.birthDate ||
+      !reqBody.balance ||
+      !reqBody.transactions
+    ) {
+      errorCode = 422;
+      throw new Error("Please check the fields");
+    }
+
+    users.push(reqBody);
+    // status 201 is created
+    res.status(201).send({ message: "User created succesfully!" });
+  } catch (error) {
+    res.status(errorCode).send({ message: error.message });
+  }
+});
+
+// rodar no servidor:
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {

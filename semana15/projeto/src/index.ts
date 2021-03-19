@@ -46,6 +46,7 @@ let transactions: transaction[] = [
   },
 ];
 
+// requisição para mostrar usuário por query ?name=
 app.get("/users", (req: Request, res: Response) => {
   let errorCode: number = 404;
 
@@ -68,6 +69,12 @@ app.get("/users", (req: Request, res: Response) => {
   }
 });
 
+// requisição para mostrar todos os usuários
+app.get("/users/all", (req: Request, res: Response) => {
+    res.send(users);
+})
+
+// requisição para mostrar usuário por id com parms
 app.get("/users/:cpf", (req: Request, res: Response) => {
   let errorCode: number = 400;
 
@@ -94,6 +101,7 @@ app.get("/users/:cpf", (req: Request, res: Response) => {
   }
 });
 
+// requisição para criar novo usuário
 app.post("/users", (req: Request, res: Response) => {
   let errorCode: number = 400;
 
@@ -111,7 +119,7 @@ app.post("/users", (req: Request, res: Response) => {
       !reqBody.cpf ||
       !reqBody.name ||
       !reqBody.birthDate ||
-      !reqBody.balance ||
+      reqBody.balance < 0 ||
       !reqBody.transactions
     ) {
       errorCode = 422;

@@ -12,25 +12,10 @@ type user = {
   name: string;
   birthDate: string;
   balance: number;
-  transactions: [];
+  statement: Array<transaction>;
 };
 
-let users: user[] = [
-  {
-    cpf: 12345678900,
-    name: "Astrodev",
-    birthDate: "21/03/2019",
-    balance: 0,
-    transactions: [],
-  },
-  {
-    cpf: 34123578611,
-    name: "Labenu",
-    birthDate: "01/03/2019",
-    balance: 0,
-    transactions: [],
-  },
-];
+let users: user[] = [];
 
 type transaction = {
   value: number;
@@ -38,30 +23,22 @@ type transaction = {
   description: string;
 };
 
-let transactions: transaction[] = [
-  {
-    value: 10,
-    date: "18/08/2019",
-    description: "compra de um sorvetin",
-  },
-];
-
 // requisição para mostrar usuário por query ?name=
 app.get("/users", (req: Request, res: Response) => {
   let errorCode: number = 404;
 
   const name: string = req.query.name as string;
   const myUsers = users;
-  const myUser = myUsers.find((user) => {
-    return user.name === name;
+  const filteredUsers = myUsers.filter((user) => {
+    return user.name.includes(name);
   });
 
-  if (!myUsers) {
+  if (filteredUsers.length) {
+    res.status(200).send(filteredUsers);
+  } else {
     errorCode = 404;
     throw new Error("User not found");
   }
-
-  res.status(200).send({ myUser });
 
   try {
   } catch (error) {
@@ -71,7 +48,17 @@ app.get("/users", (req: Request, res: Response) => {
 
 // requisição para mostrar todos os usuários:
 app.get("/users/all", (req: Request, res: Response) => {
-  res.send(users);
+  
+    if (!users.length) {
+    res.statusCode = 404;
+    throw new Error("No account found");
+  }
+
+  try {
+    res.status(200).send(users);
+  } catch (error) {
+    res.send({ message: error.message });
+  }
 });
 
 // requisição para mostrar usuário por id com parms:
@@ -93,7 +80,7 @@ app.get("/users/:cpf", (req: Request, res: Response) => {
     throw new Error("User not found :(");
   }
 
-  res.status(200).send({ myUser });
+  res.status(200).send(myUser);
 
   try {
   } catch (error) {
@@ -112,13 +99,13 @@ app.post("/users", (req: Request, res: Response) => {
       name: req.body.name,
       birthDate: req.body.birthDate,
       balance: req.body.balance,
-      transactions: req.body.transactions,
+      statement: req.body.statement,
     };
 
     Number(reqBody.birthDate);
 
     let event = new Date(req.body.birthDate);
-    let ageInMilisseconds = Date.now() -event.getTime();
+    let ageInMilisseconds = Date.now() - event.getTime();
     let ageinYears = ageInMilisseconds / 1000 / 60 / 60 / 24 / 365;
 
     if (ageinYears < 18) {
@@ -131,7 +118,7 @@ app.post("/users", (req: Request, res: Response) => {
       !reqBody.name ||
       !reqBody.birthDate ||
       reqBody.balance < 0 ||
-      !reqBody.transactions
+      !reqBody.statement
     ) {
       errorCode = 422;
       throw new Error("Please check the fields");
@@ -144,6 +131,50 @@ app.post("/users", (req: Request, res: Response) => {
     res.status(errorCode).send({ message: error.message });
   }
 });
+
+// requisição para alterar dados de usuário:
+app.put("/users", (req: Request, res: Response) => {
+    let errorCode: number = 400;
+  
+    try {
+      // const {cpf, name, birthDate, balance, transactions} = req.body
+      const reqBody: user = {
+        cpf: req.body.cpf,
+        name: req.body.name,
+        birthDate: req.body.birthDate,
+        balance: req.body.balance,
+        statement: req.body.statement,
+      };
+  
+      Number(reqBody.birthDate);
+  
+      let event = new Date(req.body.birthDate);
+      let ageInMilisseconds = Date.now() - event.getTime();
+      let ageinYears = ageInMilisseconds / 1000 / 60 / 60 / 24 / 365;
+  
+      if (ageinYears < 18) {
+        errorCode = 401;
+        throw new Error("Unauthorized age");
+      }
+  
+      if (
+        !reqBody.cpf ||
+        !reqBody.name ||
+        !reqBody.birthDate ||
+        reqBody.balance < 0 ||
+        !reqBody.statement
+      ) {
+        errorCode = 422;
+        throw new Error("Please check the fields");
+      }
+  
+      users.push(reqBody);
+      // status 201 is created
+      res.status(201).send({ message: "Successful changes!" });
+    } catch (error) {
+      res.status(errorCode).send({ message: error.message });
+    }
+  });
 
 // rodar no servidor:
 const server = app.listen(process.env.PORT || 3003, () => {

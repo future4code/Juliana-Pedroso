@@ -69,12 +69,12 @@ app.get("/users", (req: Request, res: Response) => {
   }
 });
 
-// requisição para mostrar todos os usuários
+// requisição para mostrar todos os usuários:
 app.get("/users/all", (req: Request, res: Response) => {
-    res.send(users);
-})
+  res.send(users);
+});
 
-// requisição para mostrar usuário por id com parms
+// requisição para mostrar usuário por id com parms:
 app.get("/users/:cpf", (req: Request, res: Response) => {
   let errorCode: number = 400;
 
@@ -101,7 +101,7 @@ app.get("/users/:cpf", (req: Request, res: Response) => {
   }
 });
 
-// requisição para criar novo usuário
+// requisição para criar novo usuário:
 app.post("/users", (req: Request, res: Response) => {
   let errorCode: number = 400;
 
@@ -114,6 +114,17 @@ app.post("/users", (req: Request, res: Response) => {
       balance: req.body.balance,
       transactions: req.body.transactions,
     };
+
+    Number(reqBody.birthDate);
+
+    let event = new Date(req.body.birthDate);
+    let ageInMilisseconds = Date.now() -event.getTime();
+    let ageinYears = ageInMilisseconds / 1000 / 60 / 60 / 24 / 365;
+
+    if (ageinYears < 18) {
+      errorCode = 401;
+      throw new Error("Unauthorized age");
+    }
 
     if (
       !reqBody.cpf ||
@@ -135,7 +146,6 @@ app.post("/users", (req: Request, res: Response) => {
 });
 
 // rodar no servidor:
-
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;

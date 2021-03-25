@@ -101,3 +101,23 @@ INSERT INTO MovieCast(movie_id, actor_id)
 ainda a questão da chave estrangeira, que só permite unir informações existentes na tabela de origem, neste caso, não foi possível unir a informação do filme de id 005 ao ator 003, porque o filme não existe
 ```
 </p>
+
+<p><i>d. Tente apagar um ator que possua uma relação nessa tabela. Anote e explique o resultado da query</i>
+
+```
+INSERT INTO MovieCast(movie_id, actor_id)
+    VALUES ("005", "003");
+
+não foi possível excluir a linha com o filme especificado por conta da restrição da chave estrangeira
+```
+</p>
+
+<p><strong>3.</strong> Para ler informações dessas tabelas, nós podemos aproveitar a relação entre elas e já juntar informações delas duas. Isso pode ser feito através do operador JOIN. 
+</p>
+
+<p><i>a. Explique, com suas palavras, a query acima. O que é o operador ON?</i>
+
+```
+ele é a condição para buscas em mais de uma tabela, unindo os registros em uma única
+```
+</p>

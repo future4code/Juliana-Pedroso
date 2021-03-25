@@ -44,5 +44,9 @@ informa que não é possível criar a avaliação por conta da restrição da ch
 <p><i>d. Altere a tabela de filmes para que ela não tenha mais uma coluna chamada rating</i>
 </p>
 
+```
+ALTER TABLE Movie DROP COLUMN rating;
+```
+
 <p><i>e. Tente apagar um filme que possua avaliações. Anote e explique o resultado da query</i>
 </p>

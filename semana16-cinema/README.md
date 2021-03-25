@@ -80,6 +80,14 @@ essa tabela vai servir como uma tabela auxiliar para unir as chaves estrangeiras
 <p><i>b. Crie, ao menos, 6 relações nessa tabela</i>
 
 ```
+INSERT INTO MovieCast(movie_id, actor_id)
+VALUES
+	("001","001"),
+    ("002","001"),
+    ("004", "003"),
+    ("002", "004"),
+    ("003", "005"),
+    ("003", "004");
 
 ```
 </p>

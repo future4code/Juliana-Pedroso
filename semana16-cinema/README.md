@@ -50,3 +50,10 @@ ALTER TABLE Movie DROP COLUMN rating;
 
 <p><i>e. Tente apagar um filme que possua avaliações. Anote e explique o resultado da query</i>
 </p>
+
+```
+DELETE from Movie
+WHERE title = "Se Eu Fosse Você";
+
+não foi possível excluir a linha com o filme especificado por conta da restrição da chave estrangeira
+```

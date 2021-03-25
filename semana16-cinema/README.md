@@ -1,4 +1,4 @@
-# PROJETO CINEMA
+# CINEMA 🎬
 
 ### Exercícios:
 
@@ -15,7 +15,6 @@ chave estrangeira é uma forma de buscar e relacionar informações vindas de ou
 </p>
 
 <p><i>b. Crie a tabela e, ao menos, uma avaliação para cada um dos filmes</i>
-</p>
 
 ```
 CREATE TABLE Rating (
@@ -33,23 +32,23 @@ VALUES
 ("av3", "Conseguiu me tirar algumas risadas", 7, "003"),
 ("av4", "Melhor filme nacional dos últimos tempos, com uma sacada política que todos deveriam discutir a respeito!", 10, "004");
 ```
+</p>
 
 <p><i>c. Tente criar uma avaliação para um filme que não existe (ou seja, um id inválido). Anote e explique o resultado da query.*</i>
-</p>
 
  ```
 informa que não é possível criar a avaliação por conta da restrição da chave estrangeira que está atrelada aos id's existentes na tabela Movie
 ```
+</p>
 
 <p><i>d. Altere a tabela de filmes para que ela não tenha mais uma coluna chamada rating</i>
-</p>
 
 ```
 ALTER TABLE Movie DROP COLUMN rating;
 ```
+</p>
 
 <p><i>e. Tente apagar um filme que possua avaliações. Anote e explique o resultado da query</i>
-</p>
 
 ```
 DELETE from Movie
@@ -57,3 +56,30 @@ WHERE title = "Se Eu Fosse Você";
 
 não foi possível excluir a linha com o filme especificado por conta da restrição da chave estrangeira
 ```
+</p>
+
+<p><strong>2.</strong> Algo muito importante que está faltando na nossa aplicação é representar o elenco dos filmes. Até agora, possuímos uma tabela com os filmes e outra tabela com os atores. Nós sabemos que um ator pode participar de vários filmes; e um filme pode ser estrelado por vários autores. Isso caracteriza uma relação N:M.
+
+```
+CREATE TABLE MovieCast (
+		movie_id VARCHAR(255),
+		actor_id VARCHAR(255),
+    FOREIGN KEY (movie_id) REFERENCES Movie(id),
+    FOREIGN KEY (actor_id) REFERENCES Actor(id)
+);
+```
+</p>
+
+<p><i>a. Explique, com as suas palavras, essa tabela</i>
+
+```
+essa tabela vai servir como uma tabela auxiliar para unir as chaves estrangeiras das tabelas em comum
+```
+</p>
+
+<p><i>b. Crie, ao menos, 6 relações nessa tabela</i>
+
+```
+
+```
+</p>

@@ -36,7 +36,10 @@ VALUES
 
 <p><i>c. Tente criar uma avaliação para um filme que não existe (ou seja, um id inválido). Anote e explique o resultado da query.*</i>
 </p>
- 
+
+ ```
+informa que não é possível criar a avaliação por conta da restrição da chave estrangeira que está atrelada aos id's existentes na tabela Movie
+```
 
 <p><i>d. Altere a tabela de filmes para que ela não tenha mais uma coluna chamada rating</i>
 </p>

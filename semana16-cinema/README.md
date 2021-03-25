@@ -121,3 +121,12 @@ não foi possível excluir a linha com o filme especificado por conta da restri�
 ele é a condição para buscas em mais de uma tabela, unindo os registros em uma única
 ```
 </p>
+
+<p><i>b. Escreva uma query que retorne somente o nome, id e nota de avaliação dos filmes que já foram avaliados.</i>
+
+```
+SELECT title, movie_id,  rate
+FROM Movie JOIN Rating
+ON Movie.id = Rating.movie_id;
+```
+</p>

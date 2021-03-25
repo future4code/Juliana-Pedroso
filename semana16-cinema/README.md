@@ -143,3 +143,12 @@ ON Movie.id = Rating.movie_id;
 ```
 </p>
 
+<p><i>b. Escreva uma query que retorne todas as relações de elenco, junto com as informações do filme. A sua query deve retornar o id do filme, título do filme e id do ator</i>
+
+```
+SELECT movie_id, title, actor_id
+FROM Movie RIGHT JOIN MovieCast
+ON movie_id = id;
+```
+</p>
+

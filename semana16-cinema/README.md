@@ -130,3 +130,16 @@ FROM Movie JOIN Rating
 ON Movie.id = Rating.movie_id;
 ```
 </p>
+
+<p><strong>4.</strong> Existem outros dois operadores do tipo JOIN: LEFT JOIN e RIGHT JOIN. O primeiro retorna todas as ocorrências da primeira tabela (à esquerda) e, então, procura todas as correspondências dessa tabela na outra. O segundo operador retorna todas as ocorrências da segunda tabela (à direita) e, então, procura todas as correspondências na outra tabela. 
+</p>
+
+<p><i>a. Escreva uma query que retorne todos os filmes e suas avaliações (com essa avaliação existindo ou não). A sua query deve retornar somente o nome, id, nota do filme e comentário</i>
+
+```
+SELECT title, movie_id,  rate, comment
+FROM Movie LEFT JOIN Rating
+ON Movie.id = Rating.movie_id;
+```
+</p>
+

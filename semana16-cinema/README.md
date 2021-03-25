@@ -91,3 +91,13 @@ VALUES
 
 ```
 </p>
+
+<p><i>c. Tente criar uma relação com um filme ou um ator inexistente. Anote e explique o resultado da query</i>
+
+```
+INSERT INTO MovieCast(movie_id, actor_id)
+    VALUES ("005", "003");
+
+ainda a questão da chave estrangeira, que só permite unir informações existentes na tabela de origem, neste caso, não foi possível unir a informação do filme de id 005 ao ator 003, porque o filme não existe
+```
+</p>

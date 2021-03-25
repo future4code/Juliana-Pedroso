@@ -1,11 +1,10 @@
 # CINEMA 🎬
 
-### Exercícios:
+## Exercícios:
 
 <p><strong>1.</strong> No nosso sistema, os filmes podem ser avaliados com uma nota de 0 a 10. Só que, agora, queremos pegar comentários junto com essas notas. Para isso, teremos que criar uma tabela para guardar essas informações. 
 As avaliações estão diretamente relacionadas aos filmes. Cada filme pode ter várias avaliações; e uma avaliação está sempre atrelada a apenas um filme. Ou seja, é uma relação 1:N. Essa situação é representada colocando uma referência da tabela de filmes na tabela de avaliação, através de uma chave estrangeira. Abaixo, há a Query que cria essa tabela
 </p>
-<br/>
 
 <p><i>a. Explique o que é uma chave estrangeira</i>
 
@@ -57,6 +56,7 @@ WHERE title = "Se Eu Fosse Você";
 não foi possível excluir a linha com o filme especificado por conta da restrição da chave estrangeira
 ```
 </p>
+<br/>
 
 <p><strong>2.</strong> Algo muito importante que está faltando na nossa aplicação é representar o elenco dos filmes. Até agora, possuímos uma tabela com os filmes e outra tabela com os atores. Nós sabemos que um ator pode participar de vários filmes; e um filme pode ser estrelado por vários autores. Isso caracteriza uma relação N:M.
 
@@ -111,6 +111,7 @@ INSERT INTO MovieCast(movie_id, actor_id)
 não foi possível excluir a linha com o filme especificado por conta da restrição da chave estrangeira
 ```
 </p>
+<br/>
 
 <p><strong>3.</strong> Para ler informações dessas tabelas, nós podemos aproveitar a relação entre elas e já juntar informações delas duas. Isso pode ser feito através do operador JOIN. 
 </p>
@@ -130,6 +131,7 @@ FROM Movie JOIN Rating
 ON Movie.id = Rating.movie_id;
 ```
 </p>
+<br/>
 
 <p><strong>4.</strong> Existem outros dois operadores do tipo JOIN: LEFT JOIN e RIGHT JOIN. O primeiro retorna todas as ocorrências da primeira tabela (à esquerda) e, então, procura todas as correspondências dessa tabela na outra. O segundo operador retorna todas as ocorrências da segunda tabela (à direita) e, então, procura todas as correspondências na outra tabela. 
 </p>
@@ -149,6 +151,16 @@ ON Movie.id = Rating.movie_id;
 SELECT movie_id, title, actor_id
 FROM Movie RIGHT JOIN MovieCast
 ON movie_id = id;
+```
+</p>
+
+<p><i>c. Escreva uma query que retorne a média das avaliações de todos os filmes agrupada em relação aos filmes (mesmo que ele não tenha sido avaliado ainda)</i>
+
+```
+SELECT AVG (rate), movie_id, title
+FROM Movie JOIN Rating
+ON Movie.id = movie_id
+GROUP BY (Movie.id);
 ```
 </p>
 

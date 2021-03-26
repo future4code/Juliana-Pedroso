@@ -1,2 +1,7 @@
 import app from "./app";
-import connection from "./connection";
+import createUser from "./endpoints/createUser";
+import getUser from "./endpoints/getUser";
+
+app.put("/user", createUser);
+
+app.get("/user:id", getUser)

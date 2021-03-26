@@ -1,0 +1,11 @@
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+{   
+    "id": 1,
+    "name": "Astro Dev",
+    "nickname": "astrodev",
+    "email": "astro@dev.com"
+}
+
+###

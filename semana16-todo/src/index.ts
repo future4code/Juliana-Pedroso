@@ -1,7 +1,7 @@
 import app from "./app";
 import createUser from "./endpoints/createUser";
-import getUser from "./endpoints/getUser";
+import getUserById from "./endpoints/getUserById";
 
 app.put("/user", createUser);
 
-app.get("/user:id", getUser)
+app.get("/user/:id", getUserById);

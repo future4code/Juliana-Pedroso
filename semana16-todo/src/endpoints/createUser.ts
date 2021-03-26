@@ -15,8 +15,13 @@ const createUser = async (req: Request, res: Response) => {
             );`
     );
 
+    if (!req.body.id || !req.body.name || !req.body.nickname || !req.body.email) {
+        errorCode = 402;
+        throw new Error("Please check the fields.");
+      }
+
     res.status(201).send({ message: "User created successfully!" });
-    
+
   } catch (error) {
     console.log(error.message);
     res.status(errorCode).send({ message: error.message });

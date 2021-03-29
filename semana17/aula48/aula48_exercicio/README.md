@@ -116,35 +116,92 @@ app.get("/users/search", async (req: Request, res: Response) => {
 ```
 </p>
 
-<p><strong>3.</strong> Para ler informações dessas tabelas, nós podemos aproveitar a relação entre elas e já juntar informações delas duas. Isso pode ser feito através do operador JOIN. 
+<p><strong>3.</strong> Gere uma cópia do endpoint original, e faça com que ele exiba apenas 5 users por vez, e permita que o usuário possa passar a página que deseja ver. O número da página deve ser passado por query params. 
 </p>
 
-<p><i>a. Explique, com suas palavras, a query acima. O que é o operador ON?</i>
-
 ```
-ele é a condição para buscas em mais de uma tabela, unindo os registros em uma única
+app.get("/users/search/order", async (req: Request, res: Response) => {
+
+  try {
+
+    const name = req.query.name
+    let orderBy = req.query.orderBy as string
+    let orderType = req.query.orderType as string
+    let page = req.query.page
+
+    if (!name) {
+      throw new Error("Please send a valid name");
+    }
+
+    if (orderBy !== "name" && orderBy !== "type") {
+      orderBy = "email";
+    }
+
+    if (
+      orderType.toUpperCase() !== "ASC" &&
+      orderType.toUpperCase() !== "DESC"
+    ) {
+      orderType = "ASC";
+    }
+
+    if (isNaN(Number(page)) || Number(page) < 1) {
+        page = "1"
+    }
+
+    const limit = 5
+    const offset = limit * (Number(page) - 1)
+
+    const result = await connection.raw(`
+       SELECT id, name, email, type
+       FROM aula48_exercicio
+       WHERE aula48_exercicio.name like "%${name}%"
+       ORDER BY ${orderBy} ${orderType}
+       LIMIT ${limit}
+       OFFSET ${offset};
+       `);
+
+    if (!result[0].length) {
+      throw new Error("User not found");
+    }
+
+    res.status(200).send(result[0]);
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+});
 ```
 </p>
 
-<p><i>b. Escreva uma query que retorne somente o nome, id e nota de avaliação dos filmes que já foram avaliados.</i>
+<p><strong>4.</strong> Crie um último endpoint que possua todas as funcionalidades acima (as duas filtragens, a ordenação e a paginação). Atribua valores padrão para filtragem, ordenação e paginação para que:
+</p>
+
+<p><i>a. Caso o usuário não forneça parâmetro de filtragem, o endpoint busque todos os users.</i>
 
 ```
-SELECT title, movie_id,  rate
-FROM Movie JOIN Rating
-ON Movie.id = Rating.movie_id;
+
+
+
 ```
 </p>
 <br/>
 
-<p><strong>4.</strong> Existem outros dois operadores do tipo JOIN: LEFT JOIN e RIGHT JOIN. O primeiro retorna todas as ocorrências da primeira tabela (à esquerda) e, então, procura todas as correspondências dessa tabela na outra. O segundo operador retorna todas as ocorrências da segunda tabela (à direita) e, então, procura todas as correspondências na outra tabela. 
-</p>
-
-<p><i>a. Escreva uma query que retorne todos os filmes e suas avaliações (com essa avaliação existindo ou não). A sua query deve retornar somente o nome, id, nota do filme e comentário</i>
+<p><i>b. Caso o usuário não forneça parâmetro de filtragem, o endpoint busque todos os users.</i>
 
 ```
-SELECT title, movie_id,  rate, comment
-FROM Movie LEFT JOIN Rating
-ON Movie.id = Rating.movie_id;
+
+
+
 ```
 </p>
+<br/>
+
+<p><i>c. Caso o usuário não forneça número de página, deve começar na página 1</i>
+
+```
+
+
+
+```
+</p>
+<br/>
 

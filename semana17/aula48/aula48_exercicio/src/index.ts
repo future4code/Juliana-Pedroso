@@ -180,6 +180,54 @@ app.get("/users/search/order", async (req: Request, res: Response) => {
   }
 });
 
+app.get("/users/search/all", async (req: Request, res: Response) => {
+
+    try {
+  
+      const name = req.query.name
+      const type = req.query.type
+      let orderBy = req.query.orderBy as string
+      let orderType = req.query.orderType as string
+      let page = req.query.page
+  
+      if (orderBy !== "name" && orderBy !== "type") {
+        orderBy = "name";
+      }
+  
+      if (
+        orderType.toUpperCase() !== "ASC" &&
+        orderType.toUpperCase() !== "DESC"
+      ) {
+        orderType = "DESC";
+      }
+  
+      if (isNaN(Number(page)) || Number(page) < 1) {
+          page = "1"
+      }
+  
+      const limit = 5
+      const offset = limit * (Number(page) - 1)
+  
+      const result = await connection.raw(`
+         SELECT id, name, email, type
+         FROM aula48_exercicio
+         WHERE aula48_exercicio.name like "%${name}%" 
+         OR aula48_exercicio.type like "%${type}%"
+         ORDER BY ${orderBy} ${orderType}
+         LIMIT ${limit}
+         OFFSET ${offset};
+         `);
+  
+      if (!result[0].length) {
+        throw new Error("User not found");
+      }
+  
+      res.status(200).send(result[0]);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  });
+
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;

@@ -45,7 +45,7 @@ app.get("/users/all", async function (
    }
 });
 
-app.get("/users/search", async (req: Request, res: Response) => {
+app.get("/users/search/name", async (req: Request, res: Response) => {
 
    try {
 
@@ -73,7 +73,7 @@ app.get("/users/search", async (req: Request, res: Response) => {
    }
 })
 
-app.get("/users/search", async (req: Request, res: Response) => {
+app.get("/users/search/type", async (req: Request, res: Response) => {
 
     try {
  
@@ -91,6 +91,45 @@ app.get("/users/search", async (req: Request, res: Response) => {
  
        if (!result[0].length) {
           throw new Error("Type not found")
+       }
+ 
+       res.status(200).send(result[0]);
+       
+    } catch (error) {
+       res.status(400).send({message: error.message})
+       
+    }
+ })
+
+ app.get("/users/search", async (req: Request, res: Response) => {
+
+    try {
+ 
+       const name = req.query.name;
+       let orderBy = req.query.orderBy as string
+       let orderType = req.query.orderType as string
+ 
+       if (!name) {
+          throw new Error("Please send a valid name");
+       }
+
+       if (orderBy !== "name" && orderBy !== "type") {
+            orderBy = "email"
+       }
+
+       if (orderType.toUpperCase() !== "ASC" && orderType.toUpperCase() !== "DESC") {
+           orderType = "ASC"
+       }
+ 
+       const result = await connection.raw(`
+       SELECT id, name, email, type
+       FROM aula48_exercicio
+       WHERE aula48_exercicio.name like "%${name}%"
+       ORDER BY ${orderBy} ${orderType};
+       `);
+ 
+       if (!result[0].length) {
+          throw new Error("User not found")
        }
  
        res.status(200).send(result[0]);

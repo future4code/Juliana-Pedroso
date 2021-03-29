@@ -8,7 +8,7 @@
 <p><i>a. Crie uma cópia do endpoint acima, e altere-o para que ele possa receber um parâmetro de filtragem por nome. Este nome deve ser enviado por query params.</i>
 
 ```
-app.get("/users/search", async (req: Request, res: Response) => {
+app.get("/users/search/name", async (req: Request, res: Response) => {
 
    try {
 
@@ -41,7 +41,7 @@ app.get("/users/search", async (req: Request, res: Response) => {
 <p><i>b. Crie mais uma cópia do endpoint acima, e agora permita que haja filtragem por tipo de user. O tipo de user deve ser passado por path params.</i>
 
 ```
-app.get("/users/search", async (req: Request, res: Response) => {
+app.get("/users/search/type", async (req: Request, res: Response) => {
 
     try {
  
@@ -71,15 +71,48 @@ app.get("/users/search", async (req: Request, res: Response) => {
 ```
 </p>
 
-<p><strong>2.</strong> Algo muito importante que está faltando na nossa aplicação é representar o elenco dos filmes. Até agora, possuímos uma tabela com os filmes e outra tabela com os atores. Nós sabemos que um ator pode participar de vários filmes; e um filme pode ser estrelado por vários autores. Isso caracteriza uma relação N:M.
+<p><strong>2.</strong> Faça uma cópia do endpoint original, e adicione a ele a funcionalidade de ordenação que possa receber nome ou tipo de user. A ordenação padrão deve ser crescente, e caso o usuário não passe nenhum parâmetro, a ordenação deve ser por email.
+</p>
 
 ```
-CREATE TABLE MovieCast (
-		movie_id VARCHAR(255),
-		actor_id VARCHAR(255),
-    FOREIGN KEY (movie_id) REFERENCES Movie(id),
-    FOREIGN KEY (actor_id) REFERENCES Actor(id)
-);
+app.get("/users/search", async (req: Request, res: Response) => {
+
+    try {
+ 
+       const name = req.query.name;
+       let orderBy = req.query.orderBy as string
+       let orderType = req.query.orderType as string
+ 
+       if (!name) {
+          throw new Error("Please send a valid name");
+       }
+
+       if (orderBy !== "name" && orderBy !== "type") {
+            orderBy = "email"
+       }
+
+       if (orderType.toUpperCase() !== "ASC" && orderType.toUpperCase() !== "DESC") {
+           orderType = "ASC"
+       }
+ 
+       const result = await connection.raw(`
+       SELECT id, name, email, type
+       FROM aula48_exercicio
+       WHERE aula48_exercicio.name like "%${name}%"
+       ORDER BY ${orderBy} ${orderType};
+       `);
+ 
+       if (!result[0].length) {
+          throw new Error("User not found")
+       }
+ 
+       res.status(200).send(result[0]);
+       
+    } catch (error) {
+       res.status(400).send({message: error.message})
+       
+    }
+ })
 ```
 </p>
 

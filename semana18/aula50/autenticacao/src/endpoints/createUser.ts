@@ -10,14 +10,14 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const { name, nickname, email, password } = req.body
+      const { email, password } = req.body
 
-      if (!name || !nickname || !email || !password) {
+      if (!email || !password) {
          res.statusCode = 422
-         throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
+         throw new Error("Preencha os campos 'email' e 'password'")
       }
 
-      const [user] = await connection('to_do_list_users')
+      const [user] = await connection('aula50_users')
          .where({ email })
 
       if (user) {
@@ -28,9 +28,9 @@ export default async function createUser(
       // cria o id:
       const id: string = generateId()
 
-      const newUser: user = { id, name, nickname, email, password }
+      const newUser: user = { id, email, password }
 
-      await connection('to_do_list_users')
+      await connection('aula50_users')
          .insert(newUser)
 
       // cria o token com o caminho signup:

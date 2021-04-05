@@ -7,17 +7,6 @@ export type userCredentials = {
   password: string
 }
 
-export type userPersonalInfo = {
-  name: string,
-  nickname: string
-}
+export type user = authenticationData & userCredentials;
 
-export type user = authenticationData & userCredentials & userPersonalInfo;
-  
-  // dá pra resumir essas informações como está acima com &...
-  // id: string;
-  // email: string;
-  // password: string;
-  // name: string;
-  // nickname: string;
 

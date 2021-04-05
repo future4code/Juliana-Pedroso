@@ -10,19 +10,24 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const { email, password } = req.body
+   // validação do email
+    if (!req.body.email || req.body.email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
+    }
 
-      if (!email || !password) {
-         res.statusCode = 422
-         throw new Error("Preencha os campos 'email' e 'password'")
-      }
+    // validação da senha
+    if (!req.body.password || req.body.password.length < 6) {
+      throw new Error("Invalid password");
+    }
+
+      const { email, password } = req.body
 
       const [user] = await connection('aula50_users')
          .where({ email })
 
       if (user) {
          res.statusCode = 409
-         throw new Error('Email já cadastrado')
+         throw new Error('E-mail already registered')
       }
 
       // cria o id:

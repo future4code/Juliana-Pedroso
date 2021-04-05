@@ -156,7 +156,26 @@ export default generateToken;
 <br />
 
 ### Exercício 4:
+Pronto, com essas três funções preparadas podemos criar o nosso endpoint. As informações dele são:
 
+- Verbo/Método: POST
+- Path: `/user/signup`
+- Input: O body da requisição deve ser:
+```
+{
+	"email": "email do usuário",
+	"password": "senha do usuário"
+}
+```
+
+- Output: O body da resposta deve ser:
+```
+{
+	"token": "token gerado pelo jwt"
+}
+```
+
+<br />
 
 ### Exercício 5:
 

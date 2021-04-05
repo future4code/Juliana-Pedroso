@@ -1,12 +1,8 @@
-export type authenticationData = {
-  id: string;
-};
-
-export type userCredentials = {
+export type user = {
+  id: string,
   email: string,
   password: string
 }
 
-export type user = authenticationData & userCredentials;
 
 

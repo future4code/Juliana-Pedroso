@@ -96,10 +96,75 @@ const aula50_users = "User";
 	};
 ```
 
+<br /> 
 
 ### Exercício 3:
+Antes de poder fazer o endpoint de cadastro, precisamos de uma forma para gerar o token de autenticação do usuário. Para isso, vamos usar o JWT. Ele possui uma função que permite gerar o token do usuário, que recebe três informações:
+- os dados que serão salvos no token (no nosso caso, o id);
+- a chave secreta usada pra criptografar o token;
+- algumas configurações, como o tempo de expiração
+
+```
+import * as jwt from "jsonwebtoken";
+
+const expiresIn = "1min"
+
+const generateToken = (id: string): string => {
+  const token = jwt.sign(
+    {
+      id
+    },
+    process.env.JWT_KEY as string,
+    {
+      expiresIn
+    }
+  );
+  return token;
+}
+```
+
+<p><em>a. O que a linha as string faz? Por que precisamos usar ela ali?</em></p>
+
+``
+R. informa que o arquivo JWT_KEY está vindo como um texto, ela servirá como core do nosso token
+``
+
+<p><em>b. Agora, crie a função que gere o token. Além disso, crie um type  para representar o input dessa função.</em></p>
+
+```
+const expiresIn = "1min";
+const generateToken(input: AuthenticationData): string => {
+    const token = jwt.sign(
+      {
+        id: input.id,
+      },
+      process.env.JWT_KEY as string,
+      {
+        expiresIn
+      }
+    );
+    return token;
+  }
+
+type AuthenticationData = {
+  id: string;
+}
+
+export default generateToken;
+```
+
+<br />
+
 ### Exercício 4:
+
+
 ### Exercício 5:
+
+
 ### Exercício 6:
+
+
 ### Exercício 7:
+
+
 ### Exercício 8:

@@ -4,44 +4,40 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// primeiro jeito de fazer:
-// const myToken = jwt.sign(
-//   {
-//     name: "Teste",
-//     id: "123456",
-//   },
-//   "hytrfsg66664321hrteksoelsjsuppf",
-//   {
-//     expiresIn: "24h",
-//   }
-// );
+const expiresIn = "1min";
+const generateToken(input: AuthenticationData): string => {
+    const token = jwt.sign(
+      {
+        id: input.id,
+      },
+      process.env.JWT_KEY as string,
+      {
+        expiresIn
+      }
+    );
+    return token;
+  }
 
-// --------------------------------
-
-// segundo jeito e recomendado:
-const generateToken = (payload: authenticationData): string => {
-  return jwt.sign(payload, String(process.env.JWT_KEY), { expiresIn: "24h" });
-};
+type AuthenticationData = {
+  id: string;
+}
 
 export default generateToken;
 
-export const getTokenData = (
-    token: string): authenticationData | null => {
+// export const getTokenData = (
+//     token: string): authenticationData | null => {
         
-  try {
+//   try {
 
-    const { id } = jwt.verify(
-      token,
-      process.env.JWT_KEY!
-    ) as authenticationData;
+//     const { id } = jwt.verify(
+//       token,
+//       process.env.JWT_KEY!
+//     ) as authenticationData;
 
-    return { id };
+//     return { id };
 
-  } catch (error) {
-    console.log(error.message);
-    return null;
-  }
-};
-
-// verifica os dados do token, como name, id, tempo de experação, etc no primeiro jeito de fazer:
-// console.log(jwt.verify(myToken, "hytrfsg66664321hrteksoelsjsuppf"));
+//   } catch (error) {
+//     console.log(error.message);
+//     return null;
+//   }
+// };

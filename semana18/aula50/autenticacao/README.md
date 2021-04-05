@@ -30,7 +30,6 @@ export default generateId;
 ```
 <br/>
 
-
 ### Exercício 2:
 
 Agora que já possuímos um id, podemos começar a modelagem do banco. O nosso usuário precisa ter um email e uma senha salva para que a gente consiga fazer a autenticação dele. 
@@ -60,7 +59,6 @@ const createUser = async (id: string, email: string, password: string) => {
     .into(userTableName);
 };
 ```
-
 <p><em>a. Explique o código acima com as suas palavrasa. Qual a sua opinião em relação a usar strings para representar os ids? Você concorda que seja melhor do que usar números?</em></p>
 
 ``
@@ -95,7 +93,6 @@ const aula50_users = "User";
 	    .into(aula50_users);
 	};
 ```
-
 <br /> 
 
 ### Exercício 3:
@@ -152,7 +149,6 @@ type AuthenticationData = {
 
 export default generateToken;
 ```
-
 <br />
 
 ### Exercício 4:
@@ -309,7 +305,6 @@ export default async function createUser(
    }
 }
 ```
-
 <br />
 
 ### Exercício 5:
@@ -346,7 +341,6 @@ const getUserByEmail = async (req: Request, res: Response): Promise<any> => {
 
 export default getUserByEmail;
 ```
-
 <br />
 
 ### Exercício 6:
@@ -438,8 +432,69 @@ const login = async (req: Request, res: Response): Promise<void> => {
 
 export default login;
 ```
+<br />
 
 ### Exercício 7:
+Ufa, agora temos toda a nossa base pronta para identificar o usuário. Antes de prosseguir, precisamos criar uma função que recebe o token e devolve as informações do usuário salvas nele. Veja o exemplo abaixo:
 
+```
+const expiresIn = "1min";
+
+const getData = (token: string): AuthenticationData => {
+  const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
+  const result = {
+    id: payload.id,
+  };
+  return result;
+};
+```
+<br />
 
 ### Exercício 8:
+Agora, vamos criar um endpoint que retorne as informações do usuário logado. As especificações dele estão abaixo:
+
+- Verbo/Método: GET
+- Path: `/user/profile`
+- Input: Deve receber, nos headers, o token de autenticação:
+```
+Authorization: token.do.usuario
+```
+- Output: O body da resposta deve ser:
+```
+{
+	"id": "id do usuário",
+	"email": "email do usuário"
+}
+```
+<p><em>a. Comece criando uma função no data que retorne o usuário a partir do id.</em></p>
+
+```
+const getUserById = async (req: Request, res: Response): Promise<any> => {
+
+  try {
+    const id = req.params.id;
+
+    if (!id) {
+      throw new Error("Please send a valid id");
+    }
+
+    const result = await connection.raw(`
+          SELECT id, email, password
+          FROM aula50_users
+          WHERE id = "${id}"
+          `);
+
+    if (!result[0].length) {
+      throw new Error("ID not found");
+    }
+
+    res.status(200).send(result[0]);
+    
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
+
+export default getUserById;
+
+```

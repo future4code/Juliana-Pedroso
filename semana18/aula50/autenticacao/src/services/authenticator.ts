@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const expiresIn = "1min";
-const generateToken = (input: AuthenticationData): string => {
+const generateToken = (input: authenticationData): string => {
     const token = jwt.sign(
       {
         id: input.id,
@@ -17,26 +17,26 @@ const generateToken = (input: AuthenticationData): string => {
     return token;
   }
 
-type AuthenticationData = {
+type authenticationData = {
   id: string;
 }
 
 export default generateToken;
 
-// export const getTokenData = (
-//     token: string): authenticationData | null => {
+export const getTokenData = (
+    token: string): authenticationData | null => {
         
-//   try {
+  try {
 
-//     const { id } = jwt.verify(
-//       token,
-//       process.env.JWT_KEY!
-//     ) as authenticationData;
+    const { id } = jwt.verify(
+      token,
+      process.env.JWT_KEY!
+    ) as authenticationData;
 
-//     return { id };
+    return { id };
 
-//   } catch (error) {
-//     console.log(error.message);
-//     return null;
-//   }
-// };
+  } catch (error) {
+    console.log(error.message);
+    return null;
+  }
+};

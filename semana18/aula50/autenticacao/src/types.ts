@@ -3,3 +3,7 @@ export type user = {
   email: string,
   password: string
 }
+
+export type authenticationData = {
+  id: string;
+};

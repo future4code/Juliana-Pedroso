@@ -313,10 +313,131 @@ export default async function createUser(
 <br />
 
 ### Exercício 5:
+No login, vamos receber o email e a senha do usuário. Então, vamos precisar de uma função que realize essa busca no banco de dados para gente. 
 
+<p><em>a. Crie uma função que retorne as informações de um usuário a partir do email.</em></p>
+
+```
+const getUserByEmail = async (req: Request, res: Response): Promise<any> => {
+
+  try {
+    const email = req.query.email;
+
+    if (!email) {
+      throw new Error("Please send a valid email");
+    }
+
+    const result = await connection.raw(`
+          SELECT id, email, password
+          FROM aula50_users
+          WHERE email like "%${email}%"
+          `);
+
+    if (!result[0].length) {
+      throw new Error("E-mail not found");
+    }
+
+    res.status(200).send(result[0]);
+    
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
+
+export default getUserByEmail;
+```
+
+<br />
 
 ### Exercício 6:
+Agora, vamos implementar o endpoint de login, com as seguintes especificações:
 
+- Verbo/Método: POST
+- Path: `/user/login`
+- Input: O body da requisição deve ser:
+
+```
+{
+	"email": "email do usuário",
+	"password": "senha do usuário"
+}
+```
+
+- Output: O body da resposta deve ser: 
+```
+{
+	"token": "token gerado pelo jwt"
+}
+```
+
+<p><em>a. Crie o endpoint que realize isso, com as funções que você implementou anteriormente.</em></p>
+
+```
+const login = async (req: Request, res: Response): Promise<void> => {
+
+  try {
+    const { email, password } = req.body;
+
+    const [user] = await connection("aula50_users")
+    .where({ email });
+
+    if (!user || user.password !== password) {
+      res.statusCode = 401;
+      throw new Error("Invalid password");
+    }
+
+    const token: string = generateToken({ id: user.id });
+
+    res.send({ token });
+
+  } catch (error) {
+
+    if (res.statusCode == 200) {
+      res.status(500).send({ message: "Internal server error" });
+    } else {
+      res.send({ message: error.message });
+    }
+  }
+};
+
+export default login;
+```
+<p><em>b. Altere o seu endpoint para ele não aceitar um email vazio ou que não possua um "@"</em></p>
+
+```
+const login = async (req: Request, res: Response): Promise<void> => {
+
+  try {
+    const { email, password } = req.body;
+
+    if (!req.body.email || req.body.email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
+    }
+
+    const [user] = await connection("aula50_users")
+    .where({ email });
+
+    if (!user || user.password !== password) {
+      res.statusCode = 401;
+      throw new Error("Invalid password");
+    }
+
+    const token: string = generateToken({ id: user.id });
+
+    res.send({ token });
+
+  } catch (error) {
+
+    if (res.statusCode == 200) {
+      res.status(500).send({ message: "Internal server error" });
+    } else {
+      res.send({ message: error.message });
+    }
+  }
+};
+
+export default login;
+```
 
 ### Exercício 7:
 

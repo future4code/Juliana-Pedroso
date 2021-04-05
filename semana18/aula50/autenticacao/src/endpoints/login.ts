@@ -7,16 +7,16 @@ const login = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password) {
-      res.statusCode = 422;
-      throw new Error("'email' e 'senha' são obrigatórios");
+    if (!req.body.email || req.body.email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
     }
-    const [user] = await connection("to_do_list_users")
+
+    const [user] = await connection("aula50_users")
     .where({ email });
 
     if (!user || user.password !== password) {
       res.statusCode = 401;
-      throw new Error("Credenciais inválidas");
+      throw new Error("Invalid password");
     }
 
     const token: string = generateToken({ id: user.id });

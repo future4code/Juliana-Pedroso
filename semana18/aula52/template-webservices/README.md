@@ -62,21 +62,6 @@ CREATE TABLE to_do_list_address (
 Refatore o endpoint de cadastro para ele receba, também, as informações básicas de endereço do usuário (CEP, número e complemento) e preencha todos os campos da tabela criada no exercício anterior.
 
 ```
-import * as jwt from "jsonwebtoken";
 
-const expiresIn = "1min"
-
-const generateToken = (id: string): string => {
-  const token = jwt.sign(
-    {
-      id
-    },
-    process.env.JWT_KEY as string,
-    {
-      expiresIn
-    }
-  );
-  return token;
-}
 ```
 

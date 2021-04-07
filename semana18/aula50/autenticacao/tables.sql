@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS aula50_users (
+    id VARCHAR(64) PRIMARY KEY,
+    email VARCHAR(64) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);

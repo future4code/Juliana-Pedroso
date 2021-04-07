@@ -46,35 +46,16 @@ No seu banco de dados, crie uma tabela para guardar as seguintes informações d
 - Estado
 
 ```
-const userTableName = "User";
-
-const connection = knex({
-  client: "mysql",
-  connection: {
-    host: process.env.DB_HOST,
-    port: 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_SCHEMA,
-  },
-});
-
-const createUser = async (id: string, email: string, password: string) => {
-  await connection
-    .insert({
-      id,
-      email,
-      password,
-    })
-    .into(userTableName);
-};
+CREATE TABLE to_do_list_address (
+    zip_code VARCHAR(50) PRIMARY KEY NOT NULL,
+    street VARCHAR(50) NOT NULL,
+    number INT NOT NULL,
+    complement VARCHAR(50) NOT NULL ,
+    neighborhood VARCHAR(50),
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50) NOT NULL
+);
 ```
-<p><em>a. Explique o código acima com as suas palavrasa. Qual a sua opinião em relação a usar strings para representar os ids? Você concorda que seja melhor do que usar números?</em></p>
-
-``
-R. a função createUser vai criar um usuário na tabela aula50_users com o comando de insert quando os campos de verificação forem executados, em caso de e-mail repetido por exemplo, ele vai gerar o erro 409 ("email já castrado").
-``
-
 <br /> 
 
 ### Exercício 3:

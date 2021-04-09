@@ -10,7 +10,6 @@ export type userCredentials = {
 
 export type userPersonalInfo = {
     id: string;
-    name: string;
     email: string
   };
 

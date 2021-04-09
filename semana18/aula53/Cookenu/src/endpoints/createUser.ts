@@ -19,14 +19,17 @@ export default async function createUser(
     }
 
     if (email.indexOf("@") === -1) {
+        res.statusCode = 400;
       throw new Error("Invalid email");
     }
 
     if (password.length < 6) {
+        res.statusCode = 400;
       throw new Error("Password must be at least 6 characters");
     }
 
-    const [user] = await connection("cookenu_users").where({ email });
+    const [user] = await connection("cookenu_users")
+        .where({ email });
 
     if (user) {
       res.statusCode = 409;
@@ -47,15 +50,16 @@ export default async function createUser(
 
     const newUser: user = { id, name, email, password: cypherText, role };
 
-    await connection("cookenu_users").insert(newUser);
+    await connection("cookenu_users")
+        .insert(newUser);
 
     const token: string = generateToken({ id, role });
 
     res.status(201).send({ token });
-    
+
   } catch (error) {
     if (res.statusCode === 200) {
-      res.status(500).send({ message: "Internal server error" });
+      res.status(500).send({ message: error.message })
     } else {
       res.send({ message: error.message });
     }

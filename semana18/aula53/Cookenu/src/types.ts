@@ -1,12 +1,18 @@
-export type userCredentials = {
-    email: string
-    password: string
- }
-
 export type authenticationData = {
     id: string,
     role: string
 }
+
+export type userCredentials = {
+    email: string
+    password: string
+}
+
+export type userPersonalInfo = {
+    id: string;
+    name: string;
+    email: string
+  };
 
 export enum userRole {
     NORMAL = "NORMAL",

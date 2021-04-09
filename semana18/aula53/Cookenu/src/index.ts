@@ -1,4 +1,4 @@
-import app from "./app"
+import app from "./app";
 import createUser from "./endpoints/createUser";
 import login from "./endpoints/login";
 import createRecepie from "./endpoints/createRecepie";
@@ -8,17 +8,15 @@ import getRecepie from "./endpoints/getRecepie";
 // import getAddressInfo from "./services/getAddressInfo";
 // import resetPassword from "./endpoints/resetPassword";
 
-app.post('/user/signup', createUser);
+app.post("/user/signup", createUser);
 
-app.post('/user/login', login);
+app.post("/user/login", login);
 
-app.post('/recepie', createRecepie);
+app.post("/recepie", createRecepie);
 
-app.get('/user/profile', getProfile);
+app.get("/user/profile", getProfile);
 
-app.get('/recepie', getRecepie);
-
-
+app.get("/recepie", getRecepie);
 
 // app.put('/user/edit',);
 

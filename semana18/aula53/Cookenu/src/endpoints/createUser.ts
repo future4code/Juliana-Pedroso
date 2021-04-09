@@ -1,64 +1,63 @@
 import { Request, Response } from "express";
 import connection from "../connection";
-import { userRole } from "../types";
+import generateId from "../services/idGenarator";
+import { generateToken } from "../services/authenticator";
+import { user, userRole } from "../types";
+import { hash } from "../services/hashManager";
 
 export default async function createUser(
-    req: Request, 
-    res: Response
-    ): Promise<void> {
+  req: Request,
+  res: Response
+): Promise<void> {
+
+  try {
+    const { name, email, password, role } = req.body;
+
+    if (!name || !email || !password || !role) {
+      res.statusCode = 422;
+      throw new Error("Please check the fields");
+    }
+
+    if (email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
+    }
+
+    if (password.length < 6) {
+      throw new Error("Password must be at least 6 characters");
+    }
+
+    const [user] = await connection("cookenu_users").where({ email });
+
+    if (user) {
+      res.statusCode = 409;
+      throw new Error("Email already registered");
+    }
+
+    if (
+      role.toUpperCase() !== userRole.ADMIN &&
+      role.toUpperCase() !== userRole.NORMAL
+    ) {
+      res.statusCode = 422;
+      throw new Error("Options are 'NORMAL' or 'ADMIN'");
+    }
+
+    const id: string = generateId();
+
+    const cypherText = await hash(password);
+
+    const newUser: user = { id, name, email, password: cypherText, role };
+
+    await connection("cookenu_users").insert(newUser);
+
+    const token: string = generateToken({ id, role });
+
+    res.status(201).send({ token });
     
-        try {
-            if (!req.body.name || !req.body.email || !req.body.password){
-                throw new Error("Please check the fields")
-            }
-    
-            if(req.body.email.indexOf("@") === -1) {
-                throw new Error("Invalid email")
-            }
-    
-            if (req.body.password.length < 6) {
-                throw new Error("Password must be at least 6 characters")
-            }
-    
-            const userData = {
-                name: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
-                role: req.body.role
-            }
-    
-            if(!userData.role) {
-                userData.role = userRole.NORMAL
-            }
-            
-            if (userData.role !== userRole.ADMIN && userData.role !== userRole.NORMAL) {
-                throw new Error ("Pptions are 'NORMAL' or 'ADMIN'")
-            }
-            
-    
-            const id = new idGenerator()
-            const newId = id.generateId()
-    
-            const hashManager = new HashManager()
-            const cypherPassword = await hashManager.hash(userData.password)
-    
-            const userDatabase = new UserDatabase()
-            await userDatabase.createUser(newId, userData.name, userData.email, cypherPassword, userData.role)
-    
-            const authenticator = new Authenticator()
-            const token = authenticator.generateToken({
-                id: newId,
-                email: userData.email,
-                role: userData.role
-            })
-    
-            res.status(200).send({
-                message: "Usuário cadastrado com sucesso!",
-                token: token
-            })
-        } catch (error) {
-            res.status(400).send({message: error.message})
-        } finally {
-            BaseDatabase.destroyConnection()
-        }
+  } catch (error) {
+    if (res.statusCode === 200) {
+      res.status(500).send({ message: "Internal server error" });
+    } else {
+      res.send({ message: error.message });
+    }
+  }
 }

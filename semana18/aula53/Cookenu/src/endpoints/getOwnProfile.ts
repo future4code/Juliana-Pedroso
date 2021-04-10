@@ -3,7 +3,7 @@ import connection from "../connection";
 import { getTokenData } from "../services/authenticator";
 import { authenticationData } from "../types";
 
-export default async function getProfile(
+export default async function getOwnProfile(
   req: Request,
   res: Response
 ): Promise<void> {
@@ -34,8 +34,8 @@ export default async function getProfile(
   } catch (error) {
     if (res.statusCode === 200) {
       res.status(500).send({ message: error.message });
+    } else {
+      res.send({ message: error.message });
     }
-
-    res.send({ message: error.message });
   }
 }

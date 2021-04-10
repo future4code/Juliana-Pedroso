@@ -24,7 +24,7 @@ export default async function getRecipeById (
 
     if (!id) {
       res.statusCode = 401;
-      throw new Error("Envie o ID via URL recipe/:id");
+      throw new Error("Necessary to inform id in url");
     }
     const result = await connection("cookenu_recipes")
       .select("id", "title", "description", "created_date")

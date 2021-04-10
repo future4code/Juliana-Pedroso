@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import connection from "../connection";
 import { getTokenData } from "../services/authenticator";
-import { authenticationData, userPersonalInfo, userRole } from "../types";
+import { authenticationData } from "../types";
 
 export default async function getProfile(
   req: Request,

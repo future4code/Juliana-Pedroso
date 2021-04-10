@@ -39,7 +39,7 @@ export default async function createRecipe(
     await connection("cookenu_recipes")
       .insert(recipe);
 
-    res.status(201).send("Recipe successfully created!");
+    res.status(201).send("Recipe created successfully!");
 
   } catch (error) {
     if (res.statusCode === 200) {

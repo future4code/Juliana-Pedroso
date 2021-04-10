@@ -32,7 +32,7 @@ export default async function createRecipe(
     const recipe = {
       title,
       description,
-      created_date: `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`,
+      created_date: date,
       user_id: tokenData.id,
     };
 

@@ -3,7 +3,7 @@ import connection from "../connection";
 import { getTokenData } from "../services/authenticator";
 import { authenticationData } from "../types";
 
-export default async function getFeed(
+export default async function getRecipeFeed(
   req: Request,
   res: Response
 ): Promise<void> {

@@ -3,7 +3,7 @@ import connection from "../connection";
 import { getTokenData } from "../services/authenticator";
 import { authenticationData } from "../types";
 
-export default async function getRecipeById (
+export default async function getRecipeById(
   req: Request,
   res: Response
 ): Promise<void> {
@@ -26,6 +26,7 @@ export default async function getRecipeById (
       res.statusCode = 401;
       throw new Error("Necessary to inform id in url");
     }
+
     const result = await connection("cookenu_recipes")
       .select("id", "title", "description", "created_date")
       .where("id", id);
@@ -40,8 +41,8 @@ export default async function getRecipeById (
   } catch (error) {
     if (res.statusCode === 200) {
       res.status(500).send({ message: error.message });
+    } else {
+      res.send({ message: error.message });
     }
-
-    res.send({ message: error.message });
   }
-};
+}
